@@ -10,6 +10,8 @@
         <li><?= $this->Form->postLink(__('Delete User'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?> </li>
         <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Colours'), ['controller' => 'Colours', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Colour'), ['controller' => 'Colours', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Recipes'), ['controller' => 'Recipes', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Recipe'), ['controller' => 'Recipes', 'action' => 'add']) ?> </li>
     </ul>
@@ -32,6 +34,10 @@
         <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($user->id) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Colour Id') ?></th>
+            <td><?= $this->Number->format($user->colour_id) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Created') ?></th>

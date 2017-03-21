@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
 
 /**
  * Users Controller
@@ -18,6 +19,9 @@ class UsersController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['Colours']
+        ];
         $users = $this->paginate($this->Users);
 
         $this->set(compact('users'));
@@ -34,7 +38,7 @@ class UsersController extends AppController
     public function view($id = null)
     {
         $user = $this->Users->get($id, [
-            'contain' => ['Recipes']
+            'contain' => ['Colours', 'Recipes']
         ]);
 
         $this->set('user', $user);
@@ -58,7 +62,8 @@ class UsersController extends AppController
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
-        $this->set(compact('user'));
+        $colours = $this->Users->Colours->find('list', ['limit' => 200]);
+        $this->set(compact('user', 'colours'));
         $this->set('_serialize', ['user']);
     }
 
@@ -83,7 +88,8 @@ class UsersController extends AppController
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
-        $this->set(compact('user'));
+        $colours = $this->Users->Colours->find('list', ['limit' => 200]);
+        $this->set(compact('user', 'colours'));
         $this->set('_serialize', ['user']);
     }
 
@@ -107,16 +113,27 @@ class UsersController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
-    // Login
-    public function login(){
+
+  public function beforeFilter(Event $event)
+  {
+      parent::beforeFilter($event);
+      $this->Auth->allow(['add', 'logout']);
+  }
+
+  public function login()
+    {
         if ($this->request->is('post')) {
             $user = $this->Auth->identify();
             if ($user) {
                 $this->Auth->setUser($user);
-                return $this->redirect(['controller' => 'recipes']);
+                return $this->redirect($this->Auth->redirectUrl());
             }
-            //Bad Login
-            $this->Flash->error('Incorrect Login');
+            $this->Flash->error(__('Invalid username or password, try again'));
         }
+    }
+
+    public function logout(){
+        $this->Flash->success('You are logged out');
+        return $this->redirect($this->Auth->logout());
     }
 }
