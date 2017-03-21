@@ -67,6 +67,23 @@ class UsersController extends AppController
         $this->set('_serialize', ['user']);
     }
 
+    public function register()
+    {
+        $user = $this->Users->newEntity();
+        if ($this->request->is('post')) {
+            $user = $this->Users->patchEntity($user, $this->request->getData());
+            if ($this->Users->save($user)) {
+                $this->Flash->success(__('New user created!'));
+
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('Unable to register user :().'));
+        }
+        $colours = $this->Users->Colours->find('list', ['limit' => 200]);
+        $this->set(compact('user', 'colours'));
+        $this->set('_serialize', ['user']);
+    }
+
     /**
      * Edit method
      *
@@ -113,13 +130,6 @@ class UsersController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
-
-  public function beforeFilter(Event $event)
-  {
-      parent::beforeFilter($event);
-      $this->Auth->allow(['add', 'logout']);
-  }
-
   public function login()
     {
         if ($this->request->is('post')) {
@@ -135,5 +145,10 @@ class UsersController extends AppController
     public function logout(){
         $this->Flash->success('You are logged out');
         return $this->redirect($this->Auth->logout());
+    }
+
+    //Public pages which don't require user login
+    public function beforeFilter(Event $event){
+      $this->Auth->allow(['register']);
     }
 }
