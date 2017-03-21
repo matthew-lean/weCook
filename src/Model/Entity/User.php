@@ -11,9 +11,11 @@ use Cake\Auth\DefaultPasswordHasher;
  * @property string $name
  * @property string $email
  * @property string $password
+ * @property int $colour_id
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified
  *
+ * @property \App\Model\Entity\Colour $colour
  * @property \App\Model\Entity\Recipe[] $recipes
  */
 class User extends Entity
@@ -42,6 +44,7 @@ class User extends Entity
         'password'
     ];
 
+    // Password Hasher
     protected function _setPassword($password)
     {
     return (new DefaultPasswordHasher)->hash($password);

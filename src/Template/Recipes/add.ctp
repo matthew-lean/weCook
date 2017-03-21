@@ -16,6 +16,7 @@
     <fieldset>
         <legend><?= __('Add Recipe') ?></legend>
         <?php
+        echo $this->Form->input('user_id', array('type' => 'text','readonly' => 'readonly'));
             echo $this->Form->control('user_id', ['options' => $users]);
             echo $this->Form->control('name');
             echo $this->Form->control('description');
