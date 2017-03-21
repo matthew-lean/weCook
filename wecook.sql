@@ -3,11 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
-<<<<<<< HEAD
--- Generation Time: Mar 21, 2017 at 04:36 PM
-=======
--- Generation Time: Mar 20, 2017 at 02:35 PM
->>>>>>> 7962c1c54c72a4d5e8ee19a1207367234007307b
+-- Generation Time: Mar 21, 2017 at 06:27 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -27,7 +23,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
-<<<<<<< HEAD
 -- Table structure for table `colours`
 --
 
@@ -48,8 +43,6 @@ INSERT INTO `colours` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
-=======
->>>>>>> 7962c1c54c72a4d5e8ee19a1207367234007307b
 -- Table structure for table `recipes`
 --
 
@@ -75,10 +68,7 @@ CREATE TABLE `users` (
   `name` varchar(32) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
-<<<<<<< HEAD
   `colour_id` int(11) NOT NULL,
-=======
->>>>>>> 7962c1c54c72a4d5e8ee19a1207367234007307b
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -87,29 +77,23 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-<<<<<<< HEAD
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `colour_id`, `created`, `modified`) VALUES
 (1, 'matt', 'mttlean@gmail.com', '$2y$10$Q65/gUFq8L49EEeFiipRneVePypfjNZfSdMnYCsMj0DsKHzTpdh4W', 1, '2017-03-19 22:51:01', '2017-03-19 22:53:10'),
-(2, 'John', 'john@mail.com', '$2y$10$e2tfHLLVeU.m1oc38mXsJ.ciCbEQZPBdoxGA7hXztOMHK3PnFhi2q', 2, '2017-03-21 15:10:09', '2017-03-21 16:16:22');
-=======
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `created`, `modified`) VALUES
-(1, 'matt', 'mttlean@gmail.com', '$2y$10$Q65/gUFq8L49EEeFiipRneVePypfjNZfSdMnYCsMj0DsKHzTpdh4W', '2017-03-19 22:51:01', '2017-03-19 22:53:10');
->>>>>>> 7962c1c54c72a4d5e8ee19a1207367234007307b
+(2, 'John', 'john@mail.com', '$2y$10$e2tfHLLVeU.m1oc38mXsJ.ciCbEQZPBdoxGA7hXztOMHK3PnFhi2q', 2, '2017-03-21 15:10:09', '2017-03-21 16:16:22'),
+(3, 'Peter', 'peter@mail.com', '$2y$10$jwlvDYq1Si1S6nQqXBCXmefPfyPcUnrhFFxgXKEQJ7eC8b/sw.CP.', 1, '2017-03-21 17:57:53', '2017-03-21 17:57:53'),
+(4, 'Dave', 'dave@mail.com', '$2y$10$W18YgQJt8ApVHaucaRiw9OV4Rgcgw4d.Ggl7nN15B6f5VJnwVWmYe', 2, '2017-03-21 18:24:25', '2017-03-21 18:24:25');
 
 --
 -- Indexes for dumped tables
 --
 
 --
-<<<<<<< HEAD
 -- Indexes for table `colours`
 --
 ALTER TABLE `colours`
   ADD PRIMARY KEY (`id`);
 
 --
-=======
->>>>>>> 7962c1c54c72a4d5e8ee19a1207367234007307b
 -- Indexes for table `recipes`
 --
 ALTER TABLE `recipes`
@@ -126,14 +110,11 @@ ALTER TABLE `users`
 --
 
 --
-<<<<<<< HEAD
 -- AUTO_INCREMENT for table `colours`
 --
 ALTER TABLE `colours`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
-=======
->>>>>>> 7962c1c54c72a4d5e8ee19a1207367234007307b
 -- AUTO_INCREMENT for table `recipes`
 --
 ALTER TABLE `recipes`
@@ -142,11 +123,7 @@ ALTER TABLE `recipes`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-<<<<<<< HEAD
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-=======
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
->>>>>>> 7962c1c54c72a4d5e8ee19a1207367234007307b
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
