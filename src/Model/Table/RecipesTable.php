@@ -10,6 +10,7 @@ use Cake\Validation\Validator;
  * Recipes Model
  *
  * @property \Cake\ORM\Association\BelongsTo $Users
+ * @property \Cake\ORM\Association\BelongsTo $Steps
  * @property \Cake\ORM\Association\HasMany $Steps
  * @property \Cake\ORM\Association\BelongsToMany $Ingredients
  *
@@ -46,6 +47,10 @@ class RecipesTable extends Table
             'foreignKey' => 'user_id',
             'joinType' => 'INNER'
         ]);
+        $this->belongsTo('Steps', [
+            'foreignKey' => 'steps_id',
+            'joinType' => 'INNER'
+        ]);
         $this->hasMany('Steps', [
             'foreignKey' => 'recipe_id'
         ]);
@@ -76,11 +81,6 @@ class RecipesTable extends Table
             ->requirePresence('description', 'create')
             ->notEmpty('description');
 
-        $validator
-            ->integer('steps')
-            ->requirePresence('steps', 'create')
-            ->notEmpty('steps');
-
         return $validator;
     }
 
@@ -94,6 +94,7 @@ class RecipesTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['user_id'], 'Users'));
+        $rules->add($rules->existsIn(['steps_id'], 'Steps'));
 
         return $rules;
     }

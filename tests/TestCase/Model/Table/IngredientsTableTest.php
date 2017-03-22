@@ -28,6 +28,7 @@ class IngredientsTableTest extends TestCase
         'app.recipes',
         'app.users',
         'app.colours',
+        'app.steps',
         'app.recipes_ingredients'
     ];
 

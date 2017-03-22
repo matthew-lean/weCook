@@ -12,9 +12,10 @@ use Cake\ORM\Entity;
  * @property string $description
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified
+ * @property int $steps_id
  *
- * @property \App\Model\Entity\Step[] $steps
  * @property \App\Model\Entity\User $user
+ * @property \App\Model\Entity\Step[] $steps
  * @property \App\Model\Entity\Ingredient[] $ingredients
  */
 class Recipe extends Entity

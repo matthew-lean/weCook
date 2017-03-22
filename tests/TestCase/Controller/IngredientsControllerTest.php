@@ -20,6 +20,7 @@ class IngredientsControllerTest extends IntegrationTestCase
         'app.recipes',
         'app.users',
         'app.colours',
+        'app.steps',
         'app.recipes_ingredients'
     ];
 
