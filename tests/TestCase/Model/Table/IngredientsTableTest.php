@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\RecipesTable;
+use App\Model\Table\IngredientsTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\RecipesTable Test Case
+ * App\Model\Table\IngredientsTable Test Case
  */
-class RecipesTableTest extends TestCase
+class IngredientsTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\RecipesTable
+     * @var \App\Model\Table\IngredientsTable
      */
-    public $Recipes;
+    public $Ingredients;
 
     /**
      * Fixtures
@@ -24,11 +24,10 @@ class RecipesTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
+        'app.ingredients',
         'app.recipes',
         'app.users',
         'app.colours',
-        'app.steps',
-        'app.ingredients',
         'app.recipes_ingredients'
     ];
 
@@ -40,8 +39,8 @@ class RecipesTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('Recipes') ? [] : ['className' => 'App\Model\Table\RecipesTable'];
-        $this->Recipes = TableRegistry::get('Recipes', $config);
+        $config = TableRegistry::exists('Ingredients') ? [] : ['className' => 'App\Model\Table\IngredientsTable'];
+        $this->Ingredients = TableRegistry::get('Ingredients', $config);
     }
 
     /**
@@ -51,7 +50,7 @@ class RecipesTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Recipes);
+        unset($this->Ingredients);
 
         parent::tearDown();
     }
@@ -72,16 +71,6 @@ class RecipesTableTest extends TestCase
      * @return void
      */
     public function testValidationDefault()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
-
-    /**
-     * Test buildRules method
-     *
-     * @return void
-     */
-    public function testBuildRules()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }

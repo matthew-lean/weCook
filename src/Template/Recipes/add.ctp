@@ -9,6 +9,10 @@
         <li><?= $this->Html->link(__('List Recipes'), ['action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Steps'), ['controller' => 'Steps', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Step'), ['controller' => 'Steps', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Ingredients'), ['controller' => 'Ingredients', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Ingredient'), ['controller' => 'Ingredients', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="recipes form large-9 medium-8 columns content">
@@ -16,10 +20,10 @@
     <fieldset>
         <legend><?= __('Add Recipe') ?></legend>
         <?php
-        echo $this->Form->input('user_id', array('type' => 'text','readonly' => 'readonly'));
             echo $this->Form->control('user_id', ['options' => $users]);
             echo $this->Form->control('name');
             echo $this->Form->control('description');
+            echo $this->Form->control('ingredients._ids', ['options' => $ingredients]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

@@ -4,20 +4,14 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Recipe Entity
+ * Ingredient Entity
  *
  * @property int $id
- * @property int $user_id
  * @property string $name
- * @property string $description
- * @property \Cake\I18n\Time $created
- * @property \Cake\I18n\Time $modified
  *
- * @property \App\Model\Entity\User $user
- * @property \App\Model\Entity\Step[] $steps
- * @property \App\Model\Entity\Ingredient[] $ingredients
+ * @property \App\Model\Entity\Recipe[] $recipes
  */
-class Recipe extends Entity
+class Ingredient extends Entity
 {
 
     /**

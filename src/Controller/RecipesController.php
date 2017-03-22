@@ -37,7 +37,7 @@ class RecipesController extends AppController
     public function view($id = null)
     {
         $recipe = $this->Recipes->get($id, [
-            'contain' => ['Users']
+            'contain' => ['Users', 'Ingredients', 'Steps']
         ]);
 
         $this->set('recipe', $recipe);
@@ -62,7 +62,8 @@ class RecipesController extends AppController
             $this->Flash->error(__('The recipe could not be saved. Please, try again.'));
         }
         $users = $this->Recipes->Users->find('list', ['limit' => 200]);
-        $this->set(compact('recipe', 'users'));
+        $ingredients = $this->Recipes->Ingredients->find('list', ['limit' => 200]);
+        $this->set(compact('recipe', 'users', 'ingredients'));
         $this->set('_serialize', ['recipe']);
     }
 
@@ -76,7 +77,7 @@ class RecipesController extends AppController
     public function edit($id = null)
     {
         $recipe = $this->Recipes->get($id, [
-            'contain' => []
+            'contain' => ['Ingredients']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $recipe = $this->Recipes->patchEntity($recipe, $this->request->getData());
@@ -88,7 +89,8 @@ class RecipesController extends AppController
             $this->Flash->error(__('The recipe could not be saved. Please, try again.'));
         }
         $users = $this->Recipes->Users->find('list', ['limit' => 200]);
-        $this->set(compact('recipe', 'users'));
+        $ingredients = $this->Recipes->Ingredients->find('list', ['limit' => 200]);
+        $this->set(compact('recipe', 'users', 'ingredients'));
         $this->set('_serialize', ['recipe']);
     }
 

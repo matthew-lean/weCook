@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\RecipesTable;
+use App\Model\Table\RecipesIngredientsTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\RecipesTable Test Case
+ * App\Model\Table\RecipesIngredientsTable Test Case
  */
-class RecipesTableTest extends TestCase
+class RecipesIngredientsTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\RecipesTable
+     * @var \App\Model\Table\RecipesIngredientsTable
      */
-    public $Recipes;
+    public $RecipesIngredients;
 
     /**
      * Fixtures
@@ -24,12 +24,11 @@ class RecipesTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
+        'app.recipes_ingredients',
         'app.recipes',
         'app.users',
         'app.colours',
-        'app.steps',
-        'app.ingredients',
-        'app.recipes_ingredients'
+        'app.ingredients'
     ];
 
     /**
@@ -40,8 +39,8 @@ class RecipesTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('Recipes') ? [] : ['className' => 'App\Model\Table\RecipesTable'];
-        $this->Recipes = TableRegistry::get('Recipes', $config);
+        $config = TableRegistry::exists('RecipesIngredients') ? [] : ['className' => 'App\Model\Table\RecipesIngredientsTable'];
+        $this->RecipesIngredients = TableRegistry::get('RecipesIngredients', $config);
     }
 
     /**
@@ -51,7 +50,7 @@ class RecipesTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Recipes);
+        unset($this->RecipesIngredients);
 
         parent::tearDown();
     }
