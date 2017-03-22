@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2017 at 10:10 AM
+-- Generation Time: Mar 22, 2017 at 10:42 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -29,14 +29,14 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `colours`;
 CREATE TABLE `colours` (
   `id` int(11) NOT NULL,
-  `name` varchar(32) NOT NULL
+  `colour_name` varchar(32) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `colours`
 --
 
-INSERT INTO `colours` (`id`, `name`) VALUES
+INSERT INTO `colours` (`id`, `colour_name`) VALUES
 (1, 'blue'),
 (2, 'red');
 
@@ -75,7 +75,8 @@ CREATE TABLE `recipes` (
   `name` varchar(50) NOT NULL,
   `description` varchar(255) NOT NULL,
   `created` datetime NOT NULL,
-  `modified` datetime NOT NULL
+  `modified` datetime NOT NULL,
+  `steps` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
