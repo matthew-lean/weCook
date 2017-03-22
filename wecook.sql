@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2017 at 06:27 PM
+-- Generation Time: Mar 22, 2017 at 10:10 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -43,6 +43,28 @@ INSERT INTO `colours` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `ingredients`
+--
+
+DROP TABLE IF EXISTS `ingredients`;
+CREATE TABLE `ingredients` (
+  `id` int(11) NOT NULL,
+  `name` varchar(32) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ingredients`
+--
+
+INSERT INTO `ingredients` (`id`, `name`) VALUES
+(1, 'milk'),
+(2, 'flour'),
+(3, 'eggs'),
+(4, 'butter');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `recipes`
 --
 
@@ -54,6 +76,33 @@ CREATE TABLE `recipes` (
   `description` varchar(255) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `recipes_ingredients`
+--
+
+DROP TABLE IF EXISTS `recipes_ingredients`;
+CREATE TABLE `recipes_ingredients` (
+  `id` int(11) NOT NULL,
+  `recipe_id` int(11) NOT NULL,
+  `ingredient_id` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `steps`
+--
+
+DROP TABLE IF EXISTS `steps`;
+CREATE TABLE `steps` (
+  `id` int(11) NOT NULL,
+  `recipe_id` int(11) NOT NULL,
+  `description` varchar(144) NOT NULL,
+  `position` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -94,9 +143,27 @@ ALTER TABLE `colours`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `ingredients`
+--
+ALTER TABLE `ingredients`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `recipes`
 --
 ALTER TABLE `recipes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `recipes_ingredients`
+--
+ALTER TABLE `recipes_ingredients`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `steps`
+--
+ALTER TABLE `steps`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -115,9 +182,24 @@ ALTER TABLE `users`
 ALTER TABLE `colours`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
+-- AUTO_INCREMENT for table `ingredients`
+--
+ALTER TABLE `ingredients`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT for table `recipes`
 --
 ALTER TABLE `recipes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `recipes_ingredients`
+--
+ALTER TABLE `recipes_ingredients`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `steps`
+--
+ALTER TABLE `steps`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `users`
