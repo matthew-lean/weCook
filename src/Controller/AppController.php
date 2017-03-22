@@ -87,5 +87,5 @@ class AppController extends Controller
         } else{
           $this->set('loggedIn', false);
         }
-        }
+    }
 }
