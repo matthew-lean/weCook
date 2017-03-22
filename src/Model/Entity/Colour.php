@@ -7,7 +7,9 @@ use Cake\ORM\Entity;
  * Colour Entity
  *
  * @property int $id
- * @property string $name
+ * @property string $colour_name
+ *
+ * @property \App\Model\Entity\User[] $users
  */
 class Colour extends Entity
 {

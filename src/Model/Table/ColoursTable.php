@@ -33,7 +33,7 @@ class ColoursTable extends Table
         parent::initialize($config);
 
         $this->setTable('colours');
-        $this->setDisplayField('name');
+        $this->setDisplayField('colour_name');
         $this->setPrimaryKey('id');
 
         $this->hasMany('Users', [
@@ -54,8 +54,8 @@ class ColoursTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->requirePresence('name', 'create')
-            ->notEmpty('name');
+            ->requirePresence('colour_name', 'create')
+            ->notEmpty('colour_name');
 
         return $validator;
     }

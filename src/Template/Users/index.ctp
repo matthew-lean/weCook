@@ -35,7 +35,7 @@
                 <td><?= h($user->name) ?></td>
                 <td><?= h($user->email) ?></td>
                 <td><?= h($user->password) ?></td>
-                <td><?= $this->Number->format($user->colour_id) ?></td>
+                <td><?= $user->has('colour') ? $this->Html->link($user->colour->colour_name, ['controller' => 'Colours', 'action' => 'view', $user->colour->id]) : '' ?></td>
                 <td><?= h($user->created) ?></td>
                 <td><?= h($user->modified) ?></td>
                 <td class="actions">

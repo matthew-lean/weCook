@@ -18,7 +18,10 @@ class UsersControllerTest extends IntegrationTestCase
     public $fixtures = [
         'app.users',
         'app.colours',
-        'app.recipes'
+        'app.recipes',
+        'app.steps',
+        'app.ingredients',
+        'app.recipes_ingredients'
     ];
 
     /**

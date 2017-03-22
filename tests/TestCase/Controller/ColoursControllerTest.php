@@ -16,7 +16,12 @@ class ColoursControllerTest extends IntegrationTestCase
      * @var array
      */
     public $fixtures = [
-        'app.colours'
+        'app.colours',
+        'app.users',
+        'app.recipes',
+        'app.steps',
+        'app.ingredients',
+        'app.recipes_ingredients'
     ];
 
     /**

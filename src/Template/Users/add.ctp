@@ -21,7 +21,7 @@
             echo $this->Form->control('name');
             echo $this->Form->control('email');
             echo $this->Form->control('password');
-            echo $this->Form->control('colour_id');
+            echo $this->Form->control('colour_id', ['options' => $colours]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

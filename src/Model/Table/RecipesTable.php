@@ -76,6 +76,11 @@ class RecipesTable extends Table
             ->requirePresence('description', 'create')
             ->notEmpty('description');
 
+        $validator
+            ->integer('steps')
+            ->requirePresence('steps', 'create')
+            ->notEmpty('steps');
+
         return $validator;
     }
 

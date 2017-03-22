@@ -38,6 +38,10 @@
             <td><?= $this->Number->format($recipe->id) ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Steps') ?></th>
+            <td><?= $this->Number->format($recipe->steps) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Created') ?></th>
             <td><?= h($recipe->created) ?></td>
         </tr>
