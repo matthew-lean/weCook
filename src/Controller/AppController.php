@@ -88,4 +88,8 @@ class AppController extends Controller
           $this->set('loggedIn', false);
         }
     }
+
+    public function profile(){
+    $this->set('current_user', $this->Auth->user());
+    }
 }

@@ -29,7 +29,7 @@
             echo $this->Form->control('user_id', ['options' => $users]);
             echo $this->Form->control('name');
             echo $this->Form->control('description');
-            echo $this->Form->control('steps_id');
+            echo $this->Form->control('steps_description');
             echo $this->Form->control('ingredients._ids', ['options' => $ingredients]);
         ?>
     </fieldset>
