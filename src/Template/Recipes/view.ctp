@@ -34,12 +34,12 @@
             <td><?= h($recipe->description) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($recipe->id) ?></td>
+            <th scope="row"><?= __('Steps Description') ?></th>
+            <td><?= h($recipe->steps_description) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Steps Description') ?></th>
-            <td><?= $this->Number->format($recipe->steps_description) ?></td>
+            <th scope="row"><?= __('Id') ?></th>
+            <td><?= $this->Number->format($recipe->id) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Created') ?></th>

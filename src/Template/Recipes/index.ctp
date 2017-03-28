@@ -39,7 +39,7 @@
                 <td><?= h($recipe->description) ?></td>
                 <td><?= h($recipe->created) ?></td>
                 <td><?= h($recipe->modified) ?></td>
-                <td><?= $this->Number->format($recipe->steps_description) ?></td>
+                <td><?= h($recipe->steps_description) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $recipe->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $recipe->id]) ?>

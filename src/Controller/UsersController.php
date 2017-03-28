@@ -152,4 +152,13 @@ class UsersController extends AppController
     public function beforeFilter(Event $event){
       $this->Auth->allow(['register']);
     }
+
+    public function findAuth(\Cake\ORM\Query $query, array $options)
+    {
+    $query
+        ->select(['id', 'username', 'password'])
+        ->where(['Users.active' => 1]);
+
+    return $query;
+    }
 }
