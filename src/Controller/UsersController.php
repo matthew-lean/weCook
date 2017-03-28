@@ -153,12 +153,11 @@ class UsersController extends AppController
       $this->Auth->allow(['register']);
     }
 
-    public function findAuth(\Cake\ORM\Query $query, array $options)
-    {
-    $query
-        ->select(['id', 'username', 'password'])
-        ->where(['Users.active' => 1]);
-
-    return $query;
+    //Finds the current user in the session
+    public function findUser(){
+    //Store the user id in the session
+    $this->Session->write('User.id', $userId);
+    //read the user id from the Session
+    $userId = $this->Session->read('User.id');
     }
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2017 at 10:42 AM
+-- Generation Time: Mar 28, 2017 at 03:17 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -75,9 +75,15 @@ CREATE TABLE `recipes` (
   `name` varchar(50) NOT NULL,
   `description` varchar(255) NOT NULL,
   `created` datetime NOT NULL,
-  `modified` datetime NOT NULL,
-  `steps` int(11) NOT NULL
+  `modified` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `recipes`
+--
+
+INSERT INTO `recipes` (`id`, `user_id`, `name`, `description`, `created`, `modified`) VALUES
+(1, 1, 'The first recipe', 'This is the first recipe name', '2017-03-28 00:00:00', '2017-03-28 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -92,6 +98,13 @@ CREATE TABLE `recipes_ingredients` (
   `ingredient_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `recipes_ingredients`
+--
+
+INSERT INTO `recipes_ingredients` (`id`, `recipe_id`, `ingredient_id`) VALUES
+(1, 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -105,6 +118,14 @@ CREATE TABLE `steps` (
   `description` varchar(144) NOT NULL,
   `position` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `steps`
+--
+
+INSERT INTO `steps` (`id`, `recipe_id`, `description`, `position`) VALUES
+(1, 1, 'This is step 1 of the first recipe', 1),
+(2, 1, 'This is step 2 of the first recipe', 2);
 
 -- --------------------------------------------------------
 
@@ -191,17 +212,17 @@ ALTER TABLE `ingredients`
 -- AUTO_INCREMENT for table `recipes`
 --
 ALTER TABLE `recipes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `recipes_ingredients`
 --
 ALTER TABLE `recipes_ingredients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `steps`
 --
 ALTER TABLE `steps`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `users`
 --

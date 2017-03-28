@@ -23,7 +23,6 @@ class RecipesFixture extends TestFixture
         'description' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'created' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
         'modified' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
-        'steps_description' => ['type' => 'string', 'length' => 11, 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
         ],
@@ -45,9 +44,8 @@ class RecipesFixture extends TestFixture
             'user_id' => 1,
             'name' => 'Lorem ipsum dolor sit amet',
             'description' => 'Lorem ipsum dolor sit amet',
-            'created' => '2017-03-27 13:10:49',
-            'modified' => '2017-03-27 13:10:49',
-            'steps_description' => 'Lorem ips'
+            'created' => '2017-03-28 15:01:16',
+            'modified' => '2017-03-28 15:01:16'
         ],
     ];
 }
