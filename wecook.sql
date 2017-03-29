@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2017 at 03:17 PM
+-- Generation Time: Mar 29, 2017 at 10:37 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -83,7 +83,8 @@ CREATE TABLE `recipes` (
 --
 
 INSERT INTO `recipes` (`id`, `user_id`, `name`, `description`, `created`, `modified`) VALUES
-(1, 1, 'The first recipe', 'This is the first recipe name', '2017-03-28 00:00:00', '2017-03-28 00:00:00');
+(1, 1, 'The first recipe', 'This is the first recipe name', '2017-03-28 00:00:00', '2017-03-28 15:21:57'),
+(2, 2, 'Recipe 2', 'Recipe 2 desc', '2017-03-29 08:52:25', '2017-03-29 08:52:25');
 
 -- --------------------------------------------------------
 
@@ -103,6 +104,32 @@ CREATE TABLE `recipes_ingredients` (
 --
 
 INSERT INTO `recipes_ingredients` (`id`, `recipe_id`, `ingredient_id`) VALUES
+(1, 1, 1),
+(2, 1, 2),
+(3, 1, 3),
+(4, 1, 4),
+(5, 2, 1),
+(6, 2, 3),
+(7, 2, 4);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `recipes_versions`
+--
+
+DROP TABLE IF EXISTS `recipes_versions`;
+CREATE TABLE `recipes_versions` (
+  `id` int(11) NOT NULL,
+  `recipe_id` int(11) NOT NULL,
+  `version_id` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `recipes_versions`
+--
+
+INSERT INTO `recipes_versions` (`id`, `recipe_id`, `version_id`) VALUES
 (1, 1, 1);
 
 -- --------------------------------------------------------
@@ -125,7 +152,12 @@ CREATE TABLE `steps` (
 
 INSERT INTO `steps` (`id`, `recipe_id`, `description`, `position`) VALUES
 (1, 1, 'This is step 1 of the first recipe', 1),
-(2, 1, 'This is step 2 of the first recipe', 2);
+(2, 1, 'This is step 2 of the first recipe', 2),
+(3, 1, 'test', 3),
+(4, 1, 'hello world', 4),
+(5, 1, 'sdrssdf', 3),
+(6, 1, 'fdgdfgfd', 3),
+(7, 2, 'sdfsdf', 4);
 
 -- --------------------------------------------------------
 
@@ -183,6 +215,12 @@ ALTER TABLE `recipes_ingredients`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `recipes_versions`
+--
+ALTER TABLE `recipes_versions`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `steps`
 --
 ALTER TABLE `steps`
@@ -212,17 +250,22 @@ ALTER TABLE `ingredients`
 -- AUTO_INCREMENT for table `recipes`
 --
 ALTER TABLE `recipes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `recipes_ingredients`
 --
 ALTER TABLE `recipes_ingredients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `recipes_versions`
+--
+ALTER TABLE `recipes_versions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `steps`
 --
 ALTER TABLE `steps`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `users`
 --
