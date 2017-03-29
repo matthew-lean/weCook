@@ -10,6 +10,7 @@ use Cake\Validation\Validator;
  * Recipes Model
  *
  * @property \Cake\ORM\Association\BelongsTo $Users
+ * @property \Cake\ORM\Association\HasMany $RecipesVersions
  * @property \Cake\ORM\Association\HasMany $Steps
  * @property \Cake\ORM\Association\BelongsToMany $Ingredients
  *
@@ -45,6 +46,9 @@ class RecipesTable extends Table
         $this->belongsTo('Users', [
             'foreignKey' => 'user_id',
             'joinType' => 'INNER'
+        ]);
+        $this->hasMany('RecipesVersions', [
+            'foreignKey' => 'recipe_id'
         ]);
         $this->hasMany('Steps', [
             'foreignKey' => 'recipe_id'

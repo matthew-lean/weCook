@@ -57,7 +57,7 @@ class StepsController extends AppController
             if ($this->Steps->save($step)) {
                 $this->Flash->success(__('The step has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller' => 'recipes', 'action' => 'view', $step->recipe_id]);
             }
             $this->Flash->error(__('The step could not be saved. Please, try again.'));
         }

@@ -44,8 +44,8 @@ class RecipesFixture extends TestFixture
             'user_id' => 1,
             'name' => 'Lorem ipsum dolor sit amet',
             'description' => 'Lorem ipsum dolor sit amet',
-            'created' => '2017-03-28 15:20:09',
-            'modified' => '2017-03-28 15:20:09'
+            'created' => '2017-03-29 09:19:57',
+            'modified' => '2017-03-29 09:19:57'
         ],
     ];
 }

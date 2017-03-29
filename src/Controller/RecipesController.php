@@ -36,12 +36,13 @@ class RecipesController extends AppController
      */
     public function view($id = null)
     {
+
+        $newStep = $this->Recipes->Steps->newEntity();
         $recipe = $this->Recipes->get($id, [
             'contain' => ['Users', 'Ingredients', 'Steps']
         ]);
 
-        $this->set('recipe', $recipe);
-        $this->set('_serialize', ['recipe']);
+        $this->set(compact('recipe', 'newStep'));
     }
 
     /**

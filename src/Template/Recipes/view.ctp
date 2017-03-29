@@ -47,29 +47,6 @@
         </tr>
     </table>
     <div class="related">
-        <h4><?= __('Related Ingredients') ?></h4>
-        <?php if (!empty($recipe->ingredients)): ?>
-        <table cellpadding="0" cellspacing="0">
-            <tr>
-                <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('Name') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-            <?php foreach ($recipe->ingredients as $ingredients): ?>
-            <tr>
-                <td><?= h($ingredients->id) ?></td>
-                <td><?= h($ingredients->name) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Ingredients', 'action' => 'view', $ingredients->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Ingredients', 'action' => 'edit', $ingredients->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Ingredients', 'action' => 'delete', $ingredients->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ingredients->id)]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
-        <?php endif; ?>
-    </div>
-    <div class="related">
         <h4><?= __('Related Steps') ?></h4>
         <?php if (!empty($recipe->steps)): ?>
         <table cellpadding="0" cellspacing="0">
@@ -96,4 +73,42 @@
         </table>
         <?php endif; ?>
     </div>
+    <div class="related">
+        <h4><?= __('Related Ingredients') ?></h4>
+        <?php if (!empty($recipe->ingredients)): ?>
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <th scope="col"><?= __('Id') ?></th>
+                <th scope="col"><?= __('Name') ?></th>
+                <th scope="col" class="actions"><?= __('Actions') ?></th>
+            </tr>
+            <?php foreach ($recipe->ingredients as $ingredients): ?>
+            <tr>
+                <td><?= h($ingredients->id) ?></td>
+                <td><?= h($ingredients->name) ?></td>
+                <td class="actions">
+                    <?= $this->Html->link(__('View'), ['controller' => 'Ingredients', 'action' => 'view', $ingredients->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'Ingredients', 'action' => 'edit', $ingredients->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Ingredients', 'action' => 'delete', $ingredients->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ingredients->id)]) ?>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+        <?php endif; ?>
+    </div>
+
+    <div>
+            <?= $this->Form->create($newStep,  ['url' => ['controller' => 'steps', 'action' => 'add']]) ?>
+            <fieldset>
+                <legend><?= __('Add Step') ?></legend>
+                <?php
+                    echo $this->Form->hidden('recipe_id', ['value' => $recipe->id]);
+                    echo $this->Form->control('description');
+                    echo $this->Form->control('position');
+                ?>
+            </fieldset>
+            <?= $this->Form->button(__('Submit')) ?>
+            <?= $this->Form->end() ?>
+    </div>
+
 </div>
