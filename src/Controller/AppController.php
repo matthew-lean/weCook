@@ -90,6 +90,6 @@ class AppController extends Controller
     }
 
     public function profile(){
-    $this->set('current_user', $this->Auth->user());
+      $this->set('current_user', $this->Auth->user());
     }
 }

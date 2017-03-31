@@ -27,6 +27,8 @@ class ColoursTableTest extends TestCase
         'app.colours',
         'app.users',
         'app.recipes',
+        'app.recipes_versions',
+        'app.versions',
         'app.steps',
         'app.ingredients',
         'app.recipes_ingredients'

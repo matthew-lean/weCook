@@ -70,8 +70,22 @@
                 </td>
             </tr>
             <?php endforeach; ?>
+            <?php endif; ?>
         </table>
-        <?php endif; ?>
+    </div>
+    <!-- Add recipe steps-->
+    <div>
+            <?= $this->Form->create($newStep,  ['url' => ['controller' => 'steps', 'action' => 'add']]) ?>
+            <fieldset>
+                <legend><?= __('Add Step') ?></legend>
+                <?php
+                    echo $this->Form->hidden('recipe_id', ['value' => $recipe->id]);
+                    echo $this->Form->control('description');
+                    echo $this->Form->control('position');
+                ?>
+            </fieldset>
+            <?= $this->Form->button(__('Submit')) ?>
+            <?= $this->Form->end() ?>
     </div>
     <div class="related">
         <h4><?= __('Related Ingredients') ?></h4>
@@ -95,20 +109,6 @@
             <?php endforeach; ?>
         </table>
         <?php endif; ?>
-    </div>
-
-    <div>
-            <?= $this->Form->create($newStep,  ['url' => ['controller' => 'steps', 'action' => 'add']]) ?>
-            <fieldset>
-                <legend><?= __('Add Step') ?></legend>
-                <?php
-                    echo $this->Form->hidden('recipe_id', ['value' => $recipe->id]);
-                    echo $this->Form->control('description');
-                    echo $this->Form->control('position');
-                ?>
-            </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
-            <?= $this->Form->end() ?>
     </div>
 
 </div>
