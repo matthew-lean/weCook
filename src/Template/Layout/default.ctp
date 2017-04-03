@@ -42,10 +42,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         </ul>
         <div class="top-bar-section">
             <ul class="right">
-              <!--Current User Button-->
-
               <!-- Logout/Login Buttons-->
               <?php if($loggedIn) : ?>
+                    <!--Current User -->
+                    <li><?= $this->Html->link('User', array('controller' => 'users', 'action' => 'view', $authUser['id'])) ?>  </li>
                     <li><?= $this->Html->link('Logout', ['controller' => 'users', 'action' => 'logout']); ?></li>
                 <?php else : ?>
                     <li><?= $this->Html->link('Register', ['controller' => 'users', 'action' => 'register']); ?></li>
