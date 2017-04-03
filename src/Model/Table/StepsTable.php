@@ -63,6 +63,9 @@ class StepsTable extends Table
             ->requirePresence('position', 'create')
             ->notEmpty('position');
 
+        // adds acceptable range
+        $validator->add('position', 'validValue', ['rule' => ['range', 0, 10]]); 
+
         return $validator;
     }
 

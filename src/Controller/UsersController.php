@@ -74,7 +74,7 @@ class UsersController extends AppController
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('New user created!'));
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'recipes']);
             }
             $this->Flash->error(__('Unable to register user :().'));
         }
@@ -136,7 +136,7 @@ class UsersController extends AppController
             $user = $this->Auth->identify();
             if ($user) {
                 $this->Auth->setUser($user);
-                return $this->redirect($this->Auth->redirectUrl());
+                return $this->redirect($this->Auth->redirectUrl('/recipes'));
             }
             $this->Flash->error(__('Invalid username or password, try again'));
         }

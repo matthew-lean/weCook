@@ -73,8 +73,9 @@
             <?php endif; ?>
         </table>
     </div>
+
     <!-- Add recipe steps-->
-    <div>
+    <div class="newStep">
             <?= $this->Form->create($newStep,  ['url' => ['controller' => 'steps', 'action' => 'add']]) ?>
             <fieldset>
                 <legend><?= __('Add Step') ?></legend>
@@ -87,6 +88,7 @@
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
     </div>
+
     <div class="related">
         <h4><?= __('Related Ingredients') ?></h4>
         <?php if (!empty($recipe->ingredients)): ?>

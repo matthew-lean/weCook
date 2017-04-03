@@ -20,7 +20,8 @@
     <fieldset>
         <legend><?= __('Add Recipe') ?></legend>
         <?php
-            echo $this->Form->control('user_id', ['options' => $users]);
+            //grabs the current user and hides the input
+            echo $this->Form->hidden('user_id', array('value'=>$authUser['id']));
             echo $this->Form->control('name');
             echo $this->Form->control('description');
             echo $this->Form->control('ingredients._ids', ['options' => $ingredients]);

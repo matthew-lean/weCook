@@ -80,7 +80,8 @@ class AppController extends Controller
         ) {
             $this->set('_serialize', true);
         }
-
+        //Current User Check
+        $this->set('authUser', $this->Auth->user());
         //Login Check
         if ($this->request->session()->read('Auth.User')){
           $this->set('loggedIn', true);
