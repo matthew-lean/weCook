@@ -15,6 +15,7 @@
         <li><?= $this->Html->link(__('New Ingredient'), ['controller' => 'Ingredients', 'action' => 'add']) ?></li>
     </ul>
 </nav>
+
 <div class="recipes form large-9 medium-8 columns content">
     <?= $this->Form->create($recipe) ?>
     <fieldset>
@@ -22,11 +23,18 @@
         <?php
             //grabs the current user and hides the input
             echo $this->Form->hidden('user_id', array('value'=>$authUser['id']));
-            echo $this->Form->control('name');
-            echo $this->Form->control('description');
+            echo $this->Form->control('name', ['label' => false, 'placeholder' => 'Name']);
+            echo $this->Form->control('description', ['label' => false, 'placeholder' => 'Description']);
             echo $this->Form->control('ingredients._ids', ['options' => $ingredients]);
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+
+    <!--this button adds a text field
+    <div id="demo">
+      <p id=''>Next</p>
+    </div>
+    -->
+
+    <?= $this->Form->button(__('Submit'), ['id' => 'test']) ?>
     <?= $this->Form->end() ?>
 </div>

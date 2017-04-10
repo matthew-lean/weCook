@@ -1,0 +1,116 @@
+@import "http://fonts.googleapis.com/css?family=Open+Sans:400";
+
+body {
+  background-color: #eceef1;
+  margin: 0;
+  position: relative;
+}
+
+.site_container {
+  max-width: 910px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 50px 0 0 0;
+}
+.white-logo {
+  fill: #fff;
+}
+a:link {
+  cursor: pointer;
+  text-decoration: none;
+  transition: all ease .2s;
+  color: #036aed;
+}
+
+a:visited {
+  cursor: pointer;
+  text-decoration: none;
+  transition: all ease .2s;
+  color: #036aed;
+  text-align: center;
+  padding: 0 20px 0 20px;
+}
+
+a:hover {
+  color: #000;
+  cursor: pointer;
+  transition: all ease .2s;
+}
+
+a:active {
+  color: #000;
+  cursor: pointer;
+  transition: all ease .2s;
+}
+
+p {
+  color: #737f8d;
+  font-family: Open Sans;
+  letter-spacing: .01em;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.85em;
+  line-height: 1.7;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: Open Sans;
+  font-size: 1.5em;
+  font-weight: 100;
+  margin: 0 auto;
+}
+
+h2 {
+  font-family: Open Sans;
+  font-size: 1.2em;
+  font-weight: 400;
+  margin: 0 auto;
+}
+
+h3 {
+  font-family: Open Sans;
+  font-size: 1em !important;
+  font-weight: 400;
+  margin: 0 auto;
+}
+
+header{
+  background-color: #036aed;
+}
+
+header.row{
+  margin:0 auto
+}
+
+header img{
+  width: 250px;
+  height: auto;
+}
+
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea{
+  width: 100%;
+  font-family: inherit;
+  color: rgb(130, 139, 152)!important;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  display: block;
+  font-family: inherit;
+  font-size: 0.875rem;
+  height: 2.3125rem;
+  margin: 0 0 1rem 0;
+  padding: 0.5rem;
+  background: rgb(255, 255, 255) !important;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(236, 238, 241) !important;
+  border-image: initial;
+  border-radius: 3px;
+  transition: all 0.1s ease-in;
+  box-shadow:none !important;
+}
+input[type="text"]:focus{
+  background: #fafafa;
+  border-color: #036aed !important;
+  outline: none;
+}

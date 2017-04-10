@@ -53,8 +53,8 @@
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Recipe Id') ?></th>
-                <th scope="col"><?= __('Description') ?></th>
                 <th scope="col"><?= __('Position') ?></th>
+                <th scope="col"><?= __('Description') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($recipe->steps as $steps): ?>
