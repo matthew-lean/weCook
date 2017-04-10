@@ -28,6 +28,17 @@
             echo $this->Form->control('ingredients._ids', ['options' => $ingredients]);
         ?>
     </fieldset>
+    <!-- Add recipe steps-->
+    <?= $this->Form->create($newStep,  ['url' => ['controller' => 'steps', 'action' => 'add']]) ?>
+    <fieldset>
+        <legend><?= __('Add Step') ?></legend>
+        <?php
+            echo $this->Form->hidden('recipe_id', ['value' => $recipe->id]);
+            echo $this->Form->control('description', ['label' => false, 'placeholder' => 'Description']);
+            echo $this->Form->control('position', ['label' => false, 'placeholder' => 'Position']);
+        ?>
+    </fieldset>
+
 
     <!--this button adds a text field
     <div id="demo">

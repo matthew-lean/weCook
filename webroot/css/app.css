@@ -100,7 +100,7 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   height: 2.3125rem;
   margin: 0 0 1rem 0;
   padding: 0.5rem;
-  background: rgb(255, 255, 255) !important;
+  background: #fafafa !important;
   border-width: 1px;
   border-style: solid;
   border-color: rgb(236, 238, 241) !important;
@@ -110,7 +110,7 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   box-shadow:none !important;
 }
 input[type="text"]:focus{
-  background: #fafafa;
+  background: #fff !important;
   border-color: #036aed !important;
   outline: none;
 }

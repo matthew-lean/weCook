@@ -61,8 +61,8 @@
             <tr>
                 <td><?= h($steps->id) ?></td>
                 <td><?= h($steps->recipe_id) ?></td>
-                <td><?= h($steps->description) ?></td>
                 <td><?= h($steps->position) ?></td>
+                <td><?= h($steps->description) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Steps', 'action' => 'view', $steps->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Steps', 'action' => 'edit', $steps->id]) ?>
@@ -81,8 +81,10 @@
                 <legend><?= __('Add Step') ?></legend>
                 <?php
                     echo $this->Form->hidden('recipe_id', ['value' => $recipe->id]);
-                    echo $this->Form->control('description');
-                    echo $this->Form->control('position');
+                    echo $this->Form->control('description', ['label' => false, 'placeholder' => 'Description']);
+                    echo $this->Form->control('position', ['label' => false, 'placeholder' => 'Position']);
+                    echo $this->Form->control('description', ['label' => false, 'placeholder' => 'Description']);
+                    echo $this->Form->control('position', ['label' => false, 'placeholder' => 'Position']);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

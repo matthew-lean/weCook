@@ -64,7 +64,7 @@ class StepsTable extends Table
             ->notEmpty('position');
 
         // adds acceptable range
-        $validator->add('position', 'validValue', ['rule' => ['range', 0, 10]]); 
+        $validator->add('position', 'validValue', ['rule' => ['range', 0, 5]]); 
 
         return $validator;
     }
