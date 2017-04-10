@@ -75,6 +75,7 @@
     </div>
 
     <!-- Add recipe steps-->
+    <div class="related">
     <div class="newStep">
             <?= $this->Form->create($newStep,  ['url' => ['controller' => 'steps', 'action' => 'add']]) ?>
             <fieldset>
@@ -89,6 +90,7 @@
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
+    </div>
     </div>
 
     <div class="related">
