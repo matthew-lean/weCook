@@ -52,8 +52,12 @@ class RecipesController extends AppController
      */
     public function add()
     {
-        $recipe = $this->Recipes->newEntity();
+        //steps add
         $newStep = $this->Recipes->Steps->newEntity();
+        
+
+        $this->set(compact('recipe', 'newStep'));
+        $recipe = $this->Recipes->newEntity();
         if ($this->request->is('post')) {
             $recipe = $this->Recipes->patchEntity($recipe, $this->request->getData());
             if ($this->Recipes->save($recipe)) {
