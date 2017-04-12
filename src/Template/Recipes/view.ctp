@@ -75,22 +75,20 @@
     </div>
 
     <!-- Add recipe steps-->
-    <div class="related">
     <div class="newStep">
             <?= $this->Form->create($newStep,  ['url' => ['controller' => 'steps', 'action' => 'add']]) ?>
             <fieldset>
                 <legend><?= __('Add Step') ?></legend>
                 <?php
                     echo $this->Form->hidden('recipe_id', ['value' => $recipe->id]);
-                    echo $this->Form->control('description', ['label' => false, 'placeholder' => 'Description']);
-                    echo $this->Form->control('position', ['label' => false, 'placeholder' => 'Position']);
-                    echo $this->Form->control('description', ['label' => false, 'placeholder' => 'Description']);
-                    echo $this->Form->control('position', ['label' => false, 'placeholder' => 'Position']);
+                    echo $this->Form->control('description', ['label' => false, 'placeholder' => 'Step 1']);
+                    echo $this->Form->hidden('position', ['label' => false, 'value' => '1']);
+                    echo $this->Form->control('description', ['label' => false, 'placeholder' => 'Step 2']);
+                    echo $this->Form->hidden('position', ['label' => false, 'value' => '2']);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
-    </div>
     </div>
 
     <div class="related">

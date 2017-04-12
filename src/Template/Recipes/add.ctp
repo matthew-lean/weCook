@@ -24,18 +24,18 @@
             //grabs the current user and hides the input
             echo $this->Form->hidden('user_id', array('value'=>$authUser['id']));
             echo $this->Form->control('name', ['label' => false, 'placeholder' => 'Name']);
-            echo $this->Form->control('description', ['label' => false, 'placeholder' => 'Description']);
+            echo $this->Form->control('Recipes._description', ['label' => false, 'placeholder' => 'Description']);
             echo $this->Form->control('ingredients._ids', ['options' => $ingredients]);
-        ?>
+          ?>
     </fieldset>
-    <!-- Add recipe steps-->
+
     <?= $this->Form->create($newStep,  ['url' => ['controller' => 'steps', 'action' => 'add']]) ?>
     <fieldset>
-        <legend><?= __('Add Step') ?></legend>
-        <?php
+            <legend><?= __('Add Steps') ?></legend>
+            <?php
             echo $this->Form->hidden('recipe_id', ['value' => $recipe->id]);
-            echo $this->Form->control('description', ['label' => false, 'placeholder' => 'Description']);
-            echo $this->Form->control('position', ['label' => false, 'placeholder' => 'Position']);
+            echo $this->Form->control('description', ['label' => false, 'placeholder' => 'Step 1']);
+            echo $this->Form->hidden('position', ['label' => false, 'value' => '1']);
         ?>
     </fieldset>
 

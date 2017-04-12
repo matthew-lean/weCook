@@ -42,6 +42,7 @@ class StepsController extends AppController
 
         $this->set('step', $step);
         $this->set('_serialize', ['step']);
+        pr($this->data);
     }
 
     /**
