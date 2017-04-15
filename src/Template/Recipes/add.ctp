@@ -26,19 +26,13 @@
             echo $this->Form->control('name', ['label' => false, 'placeholder' => 'Name']);
             echo $this->Form->control('description', ['label' => false, 'placeholder' => 'Description']);
             echo $this->Form->control('ingredients._ids', ['options' => $ingredients]);
+            echo $this->Form->input('Steps.0.Step');
+
+            // Testing New Ingredient Input
+            //echo $this->Form->input('link', array('label' => false, "class" => " form-control input-medium", "placeholder" => __('ingredients'), 'id' => 'search'));
+            // echo $this->Form->button(null, array('class' => 'btn btn-primary icon-search icon-white','onclick' => "location.href='/weCook/'+document.getElementById('search').value;"));
           ?>
     </fieldset>
-
-    <?= $this->Form->create($newStep,  ['url' => ['controller' => 'steps', 'action' => 'add']]) ?>
-    <fieldset>
-            <legend><?= __('Add Steps') ?></legend>
-            <?php
-            echo $this->Form->hidden('recipe_id', ['value' => $recipe->id]);
-            echo $this->Form->control('Steps._description', ['label' => false, 'placeholder' => 'Step 1']);
-            echo $this->Form->hidden('Steps._position', ['label' => false, 'value' => '1']);
-        ?>
-    </fieldset>
-
 
     <!--this button adds a text field
     <div id="demo">

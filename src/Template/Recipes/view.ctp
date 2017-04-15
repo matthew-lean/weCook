@@ -83,8 +83,6 @@
                     echo $this->Form->hidden('recipe_id', ['value' => $recipe->id]);
                     echo $this->Form->control('description', ['label' => false, 'placeholder' => 'Step 1']);
                     echo $this->Form->hidden('position', ['label' => false, 'value' => '1']);
-                    echo $this->Form->control('description', ['label' => false, 'placeholder' => 'Step 2']);
-                    echo $this->Form->hidden('position', ['label' => false, 'value' => '2']);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

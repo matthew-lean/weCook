@@ -45,6 +45,8 @@ class RecipesController extends AppController
         $this->set(compact('recipe', 'newStep'));
     }
 
+
+
     /**
      * Add method
      *
@@ -54,8 +56,7 @@ class RecipesController extends AppController
     {
         //steps add
         $newStep = $this->Recipes->Steps->newEntity();
-        
-
+      
         $this->set(compact('recipe', 'newStep'));
         $recipe = $this->Recipes->newEntity();
         if ($this->request->is('post')) {
