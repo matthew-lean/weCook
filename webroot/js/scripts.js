@@ -5,10 +5,10 @@ $(document).ready(function(){
   //$('#ingredients-ids').hide();
   //$('#test').hide();
 
-  $('#demo').click(function() {
+  $('#more').click(function() {
     //$('#name').slideUp();
     //$('#description').slideDown();
-    $( "#demo" ).append( "<input type='text'>" );
+    $( "#input" ).append( "<input type='text'>" );
   });
 
 });

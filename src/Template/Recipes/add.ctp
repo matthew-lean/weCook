@@ -27,10 +27,19 @@
             echo $this->Form->hidden('user_id', array('value'=>$authUser['id']));
             echo $this->Form->control('name', ['label' => false, 'placeholder' => 'Recipe Title']);
             echo $this->Form->control('description', ['label' => false, 'placeholder' => 'Recipe Description']);
+            ?>
+            <!--this button adds a text field-->
+            <div id="demo">
+              <p>Method</p>
+              <div id="more"><button type="button">+</button></div>
+              <p id='input'></p>
+            </div>
+            <?php
             echo $this->Form->control("steps.0.description", ['label' => "Method", 'placeholder' => 'Step 1']);
             echo $this->Form->hidden("steps.0.position", ['label' => false, 'value' => '1']);
             echo $this->Form->control("steps.1.description", ['label' => false, 'placeholder' => 'Step 2']);
             echo $this->Form->hidden("steps.1.position", ['label' => false, 'value' => '2']);
+
             //Ingredients can wait
             //echo $this->Form->control("Recipes.Ingredients.0.description", ['label' => false, 'placeholder' => 'Recipe Description']);
             //echo $this->Form->control("Recipes.Ingredients.1.description", ['label' => false, 'placeholder' => 'Recipe Description']);
