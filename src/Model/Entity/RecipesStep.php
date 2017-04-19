@@ -8,10 +8,10 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property int $recipe_id
- * @property string $description
- * @property int $position
+ * @property int $step_id
  *
  * @property \App\Model\Entity\Recipe $recipe
+ * @property \App\Model\Entity\Step $step
  */
 class RecipesStep extends Entity
 {

@@ -36,16 +36,13 @@ class RecipesController extends AppController
      */
     public function view($id = null)
     {
-
-        $newStep = $this->Recipes->Steps->newEntity();
         $recipe = $this->Recipes->get($id, [
             'contain' => ['Users', 'Ingredients', 'Steps']
         ]);
 
-        $this->set(compact('recipe', 'newStep'));
+        $this->set('recipe', $recipe);
+        $this->set('_serialize', ['recipe']);
     }
-
-
 
     /**
      * Add method
@@ -54,24 +51,23 @@ class RecipesController extends AppController
      */
     public function add()
     {
-        //steps add
-        $newStep = $this->Recipes->Steps->newEntity();
-      
-        $this->set(compact('recipe', 'newStep'));
-        $recipe = $this->Recipes->newEntity();
+        $recipe = $this->Recipes->newEntity($this->request->data, [
+        'associated' => ['Steps']
+        ]);
         if ($this->request->is('post')) {
             $recipe = $this->Recipes->patchEntity($recipe, $this->request->getData());
-            if ($this->Recipes->save($recipe)) {
-                $this->Flash->success(__('The recipe has been saved.'));
-
+            if ($this->Recipes->save($recipe, ['associated' => ['Steps']])) {
+                $this->Flash->success(__('The recipe has been saved!'));
+                //should probably redirect this to the current recipe after this..
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The recipe could not be saved. Please, try again.'));
+            $this->Flash->error(__('The recipe could not be saved... Please, try again.'));
         }
         $users = $this->Recipes->Users->find('list', ['limit' => 200]);
         $ingredients = $this->Recipes->Ingredients->find('list', ['limit' => 200]);
         $this->set(compact('recipe', 'users', 'ingredients'));
         $this->set('_serialize', ['recipe']);
+        $this->set('recipe', $recipe);
     }
 
     /**

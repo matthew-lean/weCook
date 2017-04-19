@@ -42,7 +42,6 @@ class StepsController extends AppController
 
         $this->set('step', $step);
         $this->set('_serialize', ['step']);
-        pr($this->data);
     }
 
     /**
@@ -57,12 +56,10 @@ class StepsController extends AppController
             $step = $this->Steps->patchEntity($step, $this->request->getData());
             if ($this->Steps->save($step)) {
                 $this->Flash->success(__('The step has been saved.'));
-                //Return to the steps recipe page
-                return $this->redirect(['controller' => 'recipes', 'action' => 'view', $step->recipe_id]);
+
+                return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The step could not be saved. Please, try again.'));
-            //Return to the steps recipe page
-            return $this->redirect(['controller' => 'recipes', 'action' => 'view', $step->recipe_id]);
         }
         $recipes = $this->Steps->Recipes->find('list', ['limit' => 200]);
         $this->set(compact('step', 'recipes'));
@@ -85,7 +82,8 @@ class StepsController extends AppController
             $step = $this->Steps->patchEntity($step, $this->request->getData());
             if ($this->Steps->save($step)) {
                 $this->Flash->success(__('The step has been saved.'));
-                return $this->redirect(['controller' => 'recipes', 'action' => 'view', $step->recipe_id]);
+
+                return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The step could not be saved. Please, try again.'));
         }
@@ -107,12 +105,8 @@ class StepsController extends AppController
         $step = $this->Steps->get($id);
         if ($this->Steps->delete($step)) {
             $this->Flash->success(__('The step has been deleted.'));
-            //Return to the steps recipe page
-            return $this->redirect(['controller' => 'recipes', 'action' => 'view', $step->recipe_id]);
         } else {
             $this->Flash->error(__('The step could not be deleted. Please, try again.'));
-            //Return to the steps recipe page
-            return $this->redirect(['controller' => 'recipes', 'action' => 'view', $step->recipe_id]);
         }
 
         return $this->redirect(['action' => 'index']);

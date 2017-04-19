@@ -9,37 +9,34 @@
         <li><?= $this->Html->link(__('List Recipes'), ['action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Recipes Versions'), ['controller' => 'RecipesVersions', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Recipes Version'), ['controller' => 'RecipesVersions', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Steps'), ['controller' => 'Steps', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Step'), ['controller' => 'Steps', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Ingredients'), ['controller' => 'Ingredients', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Ingredient'), ['controller' => 'Ingredients', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-
 <div class="recipes form large-9 medium-8 columns content">
     <?= $this->Form->create($recipe) ?>
     <fieldset>
         <legend><?= __('Add Recipe') ?></legend>
         <?php
+            echo $this->Form->create($recipe);
             //grabs the current user and hides the input
             echo $this->Form->hidden('user_id', array('value'=>$authUser['id']));
-            echo $this->Form->control('name', ['label' => false, 'placeholder' => 'Name']);
-            echo $this->Form->control('description', ['label' => false, 'placeholder' => 'Description']);
-            echo $this->Form->control('ingredients._ids', ['options' => $ingredients]);
-            echo $this->Form->input('Steps.0.Step');
+            echo $this->Form->control('name', ['label' => false, 'placeholder' => 'Recipe Title']);
+            echo $this->Form->control('description', ['label' => false, 'placeholder' => 'Recipe Description']);
+            echo $this->Form->control("steps.0.description", ['label' => "Method", 'placeholder' => 'Step 1']);
+            echo $this->Form->hidden("steps.0.position", ['label' => false, 'value' => '1']);
+            echo $this->Form->control("steps.1.description", ['label' => false, 'placeholder' => 'Step 2']);
+            echo $this->Form->hidden("steps.1.position", ['label' => false, 'value' => '2']);
 
-            // Testing New Ingredient Input
-            //echo $this->Form->input('link', array('label' => false, "class" => " form-control input-medium", "placeholder" => __('ingredients'), 'id' => 'search'));
-            // echo $this->Form->button(null, array('class' => 'btn btn-primary icon-search icon-white','onclick' => "location.href='/weCook/'+document.getElementById('search').value;"));
-          ?>
+            //Ingredients can wait
+            //echo $this->Form->control("Recipes.Ingredients.0.description", ['label' => false, 'placeholder' => 'Recipe Description']);
+            //echo $this->Form->control("Recipes.Ingredients.1.description", ['label' => false, 'placeholder' => 'Recipe Description']);
+        ?>
     </fieldset>
-
-    <!--this button adds a text field
-    <div id="demo">
-      <p id=''>Next</p>
-    </div>
-    -->
-
-    <?= $this->Form->button(__('Submit'), ['id' => 'test']) ?>
+    <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
 </div>
