@@ -31,7 +31,6 @@
             echo $this->Form->hidden("steps.0.position", ['label' => false, 'value' => '1']);
             echo $this->Form->control("steps.1.description", ['label' => false, 'placeholder' => 'Step 2']);
             echo $this->Form->hidden("steps.1.position", ['label' => false, 'value' => '2']);
-
             //Ingredients can wait
             //echo $this->Form->control("Recipes.Ingredients.0.description", ['label' => false, 'placeholder' => 'Recipe Description']);
             //echo $this->Form->control("Recipes.Ingredients.1.description", ['label' => false, 'placeholder' => 'Recipe Description']);

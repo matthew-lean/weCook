@@ -58,8 +58,8 @@ class RecipesController extends AppController
             $recipe = $this->Recipes->patchEntity($recipe, $this->request->getData());
             if ($this->Recipes->save($recipe, ['associated' => ['Steps']])) {
                 $this->Flash->success(__('The recipe has been saved!'));
-                //should probably redirect this to the current recipe after this..
-                return $this->redirect(['action' => 'index']);
+                //redirect to the newly created recipe
+                return $this->redirect(['action' => 'view',$recipe->id]);
             }
             $this->Flash->error(__('The recipe could not be saved... Please, try again.'));
         }
