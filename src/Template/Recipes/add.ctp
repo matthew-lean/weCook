@@ -27,7 +27,11 @@
             echo $this->Form->hidden('user_id', array('value'=>$authUser['id']));
             echo $this->Form->control('name', ['label' => false, 'placeholder' => 'Recipe Title']);
             echo $this->Form->control('description', ['label' => false, 'placeholder' => 'Recipe Description']);
+
             ?>
+            <div id="info"></div>
+              <?php echo $this->Form->input("steps.i.description"); ?>
+              <a href = 'add/' id='addInfo'></a>
             <!--this button adds a text field-->
             <div id="demo">
               <p>Method</p>

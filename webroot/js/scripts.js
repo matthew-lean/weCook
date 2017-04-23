@@ -5,7 +5,7 @@ $(document).ready(function(){
   //$('#ingredients-ids').hide();
   //$('#test').hide();
 
-  $('#more').click(function() {
+  $('button').click(function() {
     //$('#name').slideUp();
     //$('#description').slideDown();
     $( "#input" ).append( "<input type='text'>" );
