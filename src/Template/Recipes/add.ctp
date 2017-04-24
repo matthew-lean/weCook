@@ -63,8 +63,7 @@
             <div class="ingredients">
               <?php
               //Ingredients
-              echo $this->Form->hidden("recipes_ingredients._ids", ['label' => 'Ingredients', 'placeholder' => 'Ingredient']);
-              echo $this->Form->control("ingredients.name", ['label' => 'Ingredients', 'placeholder' => 'Ingredient']);
+              echo $this->Form->control("ingredients.0.name", ['label' => 'Ingredients', 'placeholder' => 'Ingredient']);
               ?>
             </div>
     </fieldset>
