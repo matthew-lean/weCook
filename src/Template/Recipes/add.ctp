@@ -31,36 +31,38 @@
             <?php
             // Steps Add Section
             ?>
-            <div id="add">
-              <div id="stepAdd"><button type="button">+</button></div>
-              <!--<div id="stepRemove"><button type="button">-</button></div>-->
-            </div>
+            <div class="method">
+              <div id="add">
+                <!--<div id="stepAdd"><button type="button">+</button></div>-->
+                <!--<div id="stepRemove"><button type="button">-</button></div>-->
+              </div>
 
-            <?php
-            echo $this->Form->control("steps.0.description", ['label' => "Method", 'placeholder' => 'Step 1']);
-            echo $this->Form->hidden("steps.0.position", ['label' => false, 'value' => '1']);
-            ?>
-
-            <div class="toAdd">
               <?php
-              echo $this->Form->control("steps.1.description", ['label' => false, 'placeholder' => 'Step 2']);
-              echo $this->Form->hidden("steps.1.position", ['label' => false, 'value' => '2']);
+              echo $this->Form->control("steps.0.description", ['label' => "Method", 'placeholder' => 'Step 1']);
+              echo $this->Form->hidden("steps.0.position", ['label' => false, 'value' => '1']);
               ?>
-            </div>
-            <div class="toAdd">
-                <?php echo $this->Form->control("steps.2.description", ['label' => false, 'placeholder' => 'Step 3']);
-                echo $this->Form->hidden("steps.2.position", ['label' => false, 'value' => '3']);
+
+              <div class="toAdd">
+                <?php
+                echo $this->Form->control("steps.1.description", ['label' => false, 'placeholder' => 'Step 2']);
+                echo $this->Form->hidden("steps.1.position", ['label' => false, 'value' => '2']);
                 ?>
-            </div>
-            <div class="toAdd">
-                <?php echo $this->Form->control("steps.3.description", ['label' => false, 'placeholder' => 'Step 4']);
-                echo $this->Form->hidden("steps.3.position", ['label' => false, 'value' => '4']);
-                ?>
-            </div>
-            <div class="toAdd">
-                <?php echo $this->Form->control("steps.4.description", ['label' => false, 'placeholder' => 'Step 5']);
-                echo $this->Form->hidden("steps.4.position", ['label' => false, 'value' => '5']);
-                ?>
+              </div>
+              <div class="toAdd">
+                  <?php echo $this->Form->control("steps.2.description", ['label' => false, 'placeholder' => 'Step 3']);
+                  echo $this->Form->hidden("steps.2.position", ['label' => false, 'value' => '3']);
+                  ?>
+              </div>
+              <div class="toAdd">
+                  <?php echo $this->Form->control("steps.3.description", ['label' => false, 'placeholder' => 'Step 4']);
+                  echo $this->Form->hidden("steps.3.position", ['label' => false, 'value' => '4']);
+                  ?>
+              </div>
+              <div class="toAdd">
+                  <?php echo $this->Form->control("steps.4.description", ['label' => false, 'placeholder' => 'Step 5']);
+                  echo $this->Form->hidden("steps.4.position", ['label' => false, 'value' => '5']);
+                  ?>
+              </div>
             </div>
             <?php
             //Ingredients can wait

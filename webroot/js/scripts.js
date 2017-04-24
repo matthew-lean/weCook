@@ -11,11 +11,11 @@ $(document).ready(function(){
     //$( "#input" ).append( "<input type='text'>" );
   });
 
-  $('.toAdd').hide();
-  var count = 0;
-  $('#stepAdd').on('click',function(){
-    $('.toAdd:eq('+count+')').show();
-    count++;
-  });
+  //$('.toAdd').hide();
+  //var count = 0;
+  //$('#stepAdd').on('click',function(){
+  //  $('.toAdd:eq('+count+')').show();
+  //  count++;
+  //});
 
 });
