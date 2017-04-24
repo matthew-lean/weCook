@@ -28,20 +28,16 @@
             echo $this->Form->control('name', ['label' => false, 'placeholder' => 'Recipe Title']);
             echo $this->Form->control('description', ['label' => false, 'placeholder' => 'Recipe Description']);
             ?>
-            <?php
-            // Steps Add Section
-            ?>
             <div class="method">
               <div id="add">
                 <!--<div id="stepAdd"><button type="button">+</button></div>-->
                 <!--<div id="stepRemove"><button type="button">-</button></div>-->
               </div>
-
               <?php
+              //Steps Add Section
               echo $this->Form->control("steps.0.description", ['label' => "Method", 'placeholder' => 'Step 1']);
               echo $this->Form->hidden("steps.0.position", ['label' => false, 'value' => '1']);
               ?>
-
               <div class="toAdd">
                 <?php
                 echo $this->Form->control("steps.1.description", ['label' => false, 'placeholder' => 'Step 2']);
@@ -64,11 +60,13 @@
                   ?>
               </div>
             </div>
-            <?php
-            //Ingredients can wait
-            //echo $this->Form->control("Recipes.Ingredients.0.description", ['label' => false, 'placeholder' => 'Recipe Description']);
-            //echo $this->Form->control("Recipes.Ingredients.1.description", ['label' => false, 'placeholder' => 'Recipe Description']);
-            ?>
+            <div class="ingredients">
+              <?php
+              //Ingredients
+              echo $this->Form->hidden("recipes_ingredients._ids", ['label' => 'Ingredients', 'placeholder' => 'Ingredient']);
+              echo $this->Form->control("ingredients.name", ['label' => 'Ingredients', 'placeholder' => 'Ingredient']);
+              ?>
+            </div>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>

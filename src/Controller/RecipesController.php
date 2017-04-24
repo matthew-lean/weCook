@@ -52,11 +52,11 @@ class RecipesController extends AppController
     public function add()
     {
         $recipe = $this->Recipes->newEntity($this->request->data, [
-        'associated' => ['Steps']
+        'associated' => ['Steps','Ingredients']
         ]);
         if ($this->request->is('post')) {
             $recipe = $this->Recipes->patchEntity($recipe, $this->request->getData());
-            if ($this->Recipes->save($recipe, ['associated' => ['Steps']])) {
+            if ($this->Recipes->save($recipe, ['associated' => ['Steps','Ingredients','recipes_ingredients']])) {
                 $this->Flash->success(__('The recipe has been saved!'));
                 //redirect to the newly created recipe
                 return $this->redirect(['action' => 'view',$recipe->id]);

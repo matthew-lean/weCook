@@ -55,7 +55,7 @@ class RecipesTable extends Table
         ]);
         $this->belongsToMany('Ingredients', [
             'foreignKey' => 'recipe_id',
-            'targetForeignKey' => 'ingredient_id',
+            
             'joinTable' => 'recipes_ingredients'
         ]);
     }
