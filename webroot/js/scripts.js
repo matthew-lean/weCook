@@ -6,9 +6,16 @@ $(document).ready(function(){
   //$('#test').hide();
 
   $('button').click(function() {
-    //$('#name').slideUp();
+    //$('steps[0][description]').slideUp();
     //$('#description').slideDown();
-    $( "#input" ).append( "<input type='text'>" );
+    //$( "#input" ).append( "<input type='text'>" );
+  });
+
+  $('.toAdd').hide();
+  var count = 0;
+  $('#stepAdd').on('click',function(){
+    $('.toAdd:eq('+count+')').show();
+    count++;
   });
 
 });

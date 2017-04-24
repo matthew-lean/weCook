@@ -61,7 +61,7 @@ class RecipesController extends AppController
                 //redirect to the newly created recipe
                 return $this->redirect(['action' => 'view',$recipe->id]);
             }
-            $this->Flash->error(__('The recipe could not be saved... Please, try again.'));
+            $this->Flash->error(__('The recipe could not be saved... :( Please, try again.'));
         }
         $users = $this->Recipes->Users->find('list', ['limit' => 200]);
         $ingredients = $this->Recipes->Ingredients->find('list', ['limit' => 200]);
