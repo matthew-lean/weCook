@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2017 at 10:37 AM
+-- Generation Time: Apr 25, 2017 at 05:19 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -38,7 +38,11 @@ CREATE TABLE `colours` (
 
 INSERT INTO `colours` (`id`, `colour_name`) VALUES
 (1, 'blue'),
-(2, 'red');
+(2, 'red'),
+(3, 'green'),
+(4, 'orange'),
+(5, 'yellow'),
+(6, 'pink');
 
 -- --------------------------------------------------------
 
@@ -60,7 +64,9 @@ INSERT INTO `ingredients` (`id`, `name`) VALUES
 (1, 'milk'),
 (2, 'flour'),
 (3, 'eggs'),
-(4, 'butter');
+(4, 'butter'),
+(5, 'ff'),
+(6, 'new');
 
 -- --------------------------------------------------------
 
@@ -84,7 +90,10 @@ CREATE TABLE `recipes` (
 
 INSERT INTO `recipes` (`id`, `user_id`, `name`, `description`, `created`, `modified`) VALUES
 (1, 1, 'The first recipe', 'This is the first recipe name', '2017-03-28 00:00:00', '2017-03-28 15:21:57'),
-(2, 2, 'Recipe 2', 'Recipe 2 desc', '2017-03-29 08:52:25', '2017-03-29 08:52:25');
+(2, 2, 'Recipe 2', 'Recipe 2 desc', '2017-03-29 08:52:25', '2017-03-29 08:52:25'),
+(14, 1, 'Third Recipe Test', 'Description to the third recipe ', '2017-04-10 21:57:14', '2017-04-10 21:57:14'),
+(83, 1, 't', 'r', '2017-04-24 19:05:52', '2017-04-24 19:05:52'),
+(84, 1, 't', 'd', '2017-04-25 14:28:38', '2017-04-25 14:28:38');
 
 -- --------------------------------------------------------
 
@@ -110,7 +119,12 @@ INSERT INTO `recipes_ingredients` (`id`, `recipe_id`, `ingredient_id`) VALUES
 (4, 1, 4),
 (5, 2, 1),
 (6, 2, 3),
-(7, 2, 4);
+(7, 2, 4),
+(26, 14, 2),
+(25, 14, 1),
+(46, 83, 5),
+(27, 14, 3),
+(47, 84, 6);
 
 -- --------------------------------------------------------
 
@@ -151,13 +165,113 @@ CREATE TABLE `steps` (
 --
 
 INSERT INTO `steps` (`id`, `recipe_id`, `description`, `position`) VALUES
-(1, 1, 'This is step 1 of the first recipe', 1),
+(1, 34, 'This is step 1 of the first recipe', 0),
 (2, 1, 'This is step 2 of the first recipe', 2),
-(3, 1, 'test', 3),
-(4, 1, 'hello world', 4),
-(5, 1, 'sdrssdf', 3),
-(6, 1, 'fdgdfgfd', 3),
-(7, 2, 'sdfsdf', 4);
+(3, 1, 'test', 1),
+(4, 1, 'hello world', 3),
+(5, 1, 'step 5', 5),
+(22, 7, 'test desc 2 ', 0),
+(15, 2, 'test2', 0),
+(23, 7, 'test desc', 0),
+(12, 5, '1', 0),
+(21, 7, 'test desc ', 0),
+(26, 8, 'testrr', 0),
+(28, 14, 'Test Description ', 1),
+(31, 14, 'step 2', 2),
+(54, 32, 'step', 0),
+(55, 61, 'c', 1),
+(56, 61, 'd', 2),
+(57, 62, 'step one ', 1),
+(58, 62, 'step two', 2),
+(59, 63, '3', 1),
+(60, 63, '4', 2),
+(61, 64, '3', 1),
+(62, 64, '4', 2),
+(63, 65, 'test', 1),
+(64, 65, 'test', 2),
+(65, 66, 'test', 1),
+(66, 66, 'test', 2),
+(67, 67, 'test', 1),
+(68, 67, 'test', 2),
+(69, 68, 'st1', 1),
+(70, 68, 'st2', 2),
+(71, 69, 'step 1', 1),
+(72, 69, 'stpe 2', 2),
+(73, 70, '3', 1),
+(74, 70, 't', 2),
+(75, 70, '3', 3),
+(76, 70, '4', 4),
+(77, 70, '5', 5),
+(78, 71, 'fgfg', 1),
+(79, 71, 'fgfg', 2),
+(80, 71, '3', 3),
+(81, 71, '4', 4),
+(82, 71, '5', 5),
+(83, 72, '1', 1),
+(84, 72, '2', 2),
+(85, 72, '3', 3),
+(86, 72, '4', 4),
+(87, 72, '5', 5),
+(88, 73, '3', 1),
+(89, 73, '4', 2),
+(90, 73, '5', 3),
+(91, 73, '6', 4),
+(92, 73, '7', 5),
+(93, 74, '1', 1),
+(94, 74, '2', 2),
+(95, 74, '3', 3),
+(96, 74, '4', 4),
+(97, 74, '5', 5),
+(98, 75, '1', 1),
+(99, 75, '2', 2),
+(100, 75, '3', 3),
+(101, 75, '4', 4),
+(102, 75, '5', 5),
+(103, 76, '1', 1),
+(104, 76, '2', 2),
+(105, 76, '3', 3),
+(106, 76, '4', 4),
+(107, 76, '5', 5),
+(108, 77, '1', 1),
+(109, 77, '2', 2),
+(110, 77, '3', 3),
+(111, 77, '4', 4),
+(112, 77, '5', 5),
+(113, 78, '1', 1),
+(114, 78, '2', 2),
+(115, 78, '3', 3),
+(116, 78, '4', 4),
+(117, 78, '5', 5),
+(118, 79, '1', 1),
+(119, 79, '2', 2),
+(120, 79, '3', 3),
+(121, 79, '4', 4),
+(122, 79, '5', 5),
+(123, 80, '1', 1),
+(124, 80, '2', 2),
+(125, 80, '3', 3),
+(126, 80, '4', 4),
+(127, 80, '5', 5),
+(128, 81, 'q', 1),
+(129, 81, '2', 2),
+(130, 81, 'r', 3),
+(131, 81, 'g', 4),
+(132, 81, 'fc', 5),
+(133, 82, 'g', 1),
+(134, 82, 'f', 2),
+(135, 82, 'f', 3),
+(136, 82, 'd', 4),
+(137, 82, 's', 5),
+(138, 83, 'd', 1),
+(139, 83, '3', 2),
+(140, 83, 'r', 3),
+(141, 83, '5', 4),
+(142, 83, 'e', 5),
+(143, 84, '1', 1),
+(144, 84, '2', 2),
+(145, 84, '3', 3),
+(146, 84, '4', 4),
+(147, 84, '5', 5);
 
 -- --------------------------------------------------------
 
@@ -240,22 +354,22 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `colours`
 --
 ALTER TABLE `colours`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `ingredients`
 --
 ALTER TABLE `ingredients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `recipes`
 --
 ALTER TABLE `recipes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 --
 -- AUTO_INCREMENT for table `recipes_ingredients`
 --
 ALTER TABLE `recipes_ingredients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 --
 -- AUTO_INCREMENT for table `recipes_versions`
 --
@@ -265,7 +379,7 @@ ALTER TABLE `recipes_versions`
 -- AUTO_INCREMENT for table `steps`
 --
 ALTER TABLE `steps`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=148;
 --
 -- AUTO_INCREMENT for table `users`
 --
