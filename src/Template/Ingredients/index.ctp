@@ -17,6 +17,7 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('user_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -25,6 +26,7 @@
             <?php foreach ($ingredients as $ingredient): ?>
             <tr>
                 <td><?= $this->Number->format($ingredient->id) ?></td>
+                <td><?= $this->Number->format($ingredient->user_id) ?></td>
                 <td><?= h($ingredient->name) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $ingredient->id]) ?>

@@ -27,6 +27,8 @@ class UsersTableTest extends TestCase
         'app.users',
         'app.colours',
         'app.recipes',
+        'app.recipes_versions',
+        'app.versions',
         'app.steps',
         'app.ingredients',
         'app.recipes_ingredients'

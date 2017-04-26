@@ -25,6 +25,10 @@
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($ingredient->id) ?></td>
         </tr>
+        <tr>
+            <th scope="row"><?= __('User Id') ?></th>
+            <td><?= $this->Number->format($ingredient->user_id) ?></td>
+        </tr>
     </table>
     <div class="related">
         <h4><?= __('Related Recipes') ?></h4>
@@ -37,7 +41,6 @@
                 <th scope="col"><?= __('Description') ?></th>
                 <th scope="col"><?= __('Created') ?></th>
                 <th scope="col"><?= __('Modified') ?></th>
-                <th scope="col"><?= __('Steps Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($ingredient->recipes as $recipes): ?>
@@ -48,7 +51,6 @@
                 <td><?= h($recipes->description) ?></td>
                 <td><?= h($recipes->created) ?></td>
                 <td><?= h($recipes->modified) ?></td>
-                <td><?= h($recipes->steps_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Recipes', 'action' => 'view', $recipes->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Recipes', 'action' => 'edit', $recipes->id]) ?>

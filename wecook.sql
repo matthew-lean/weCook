@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2017 at 05:19 PM
+-- Generation Time: Apr 26, 2017 at 09:35 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -53,6 +53,7 @@ INSERT INTO `colours` (`id`, `colour_name`) VALUES
 DROP TABLE IF EXISTS `ingredients`;
 CREATE TABLE `ingredients` (
   `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `name` varchar(32) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -60,13 +61,15 @@ CREATE TABLE `ingredients` (
 -- Dumping data for table `ingredients`
 --
 
-INSERT INTO `ingredients` (`id`, `name`) VALUES
-(1, 'milk'),
-(2, 'flour'),
-(3, 'eggs'),
-(4, 'butter'),
-(5, 'ff'),
-(6, 'new');
+INSERT INTO `ingredients` (`id`, `user_id`, `name`) VALUES
+(1, 1, 'milk'),
+(2, 1, 'flour'),
+(3, 1, 'eggs'),
+(4, 1, 'butter'),
+(5, 2, 'ff'),
+(6, 3, 'new'),
+(7, 2, 'tester ingredient'),
+(8, 1, 'gooo');
 
 -- --------------------------------------------------------
 
@@ -91,9 +94,7 @@ CREATE TABLE `recipes` (
 INSERT INTO `recipes` (`id`, `user_id`, `name`, `description`, `created`, `modified`) VALUES
 (1, 1, 'The first recipe', 'This is the first recipe name', '2017-03-28 00:00:00', '2017-03-28 15:21:57'),
 (2, 2, 'Recipe 2', 'Recipe 2 desc', '2017-03-29 08:52:25', '2017-03-29 08:52:25'),
-(14, 1, 'Third Recipe Test', 'Description to the third recipe ', '2017-04-10 21:57:14', '2017-04-10 21:57:14'),
-(83, 1, 't', 'r', '2017-04-24 19:05:52', '2017-04-24 19:05:52'),
-(84, 1, 't', 'd', '2017-04-25 14:28:38', '2017-04-25 14:28:38');
+(14, 1, 'Third Recipe Test', 'Description to the third recipe ', '2017-04-10 21:57:14', '2017-04-10 21:57:14');
 
 -- --------------------------------------------------------
 
@@ -122,9 +123,7 @@ INSERT INTO `recipes_ingredients` (`id`, `recipe_id`, `ingredient_id`) VALUES
 (7, 2, 4),
 (26, 14, 2),
 (25, 14, 1),
-(46, 83, 5),
-(27, 14, 3),
-(47, 84, 6);
+(27, 14, 3);
 
 -- --------------------------------------------------------
 
@@ -271,7 +270,52 @@ INSERT INTO `steps` (`id`, `recipe_id`, `description`, `position`) VALUES
 (144, 84, '2', 2),
 (145, 84, '3', 3),
 (146, 84, '4', 4),
-(147, 84, '5', 5);
+(147, 84, '5', 5),
+(148, 85, '1', 1),
+(149, 85, '2', 2),
+(150, 85, '3', 3),
+(151, 85, '4', 4),
+(152, 85, '5', 5),
+(153, 86, '1', 1),
+(154, 86, '2', 2),
+(155, 86, '3', 3),
+(156, 86, '4', 4),
+(157, 86, '5', 5),
+(158, 87, '1', 1),
+(159, 87, '2', 2),
+(160, 87, '3', 3),
+(161, 87, '4', 4),
+(162, 87, '5', 5),
+(163, 88, '1', 1),
+(164, 88, '2', 2),
+(165, 88, '3', 3),
+(166, 88, '4', 4),
+(167, 88, '5', 5),
+(168, 89, '1', 1),
+(169, 89, '2', 2),
+(170, 89, '3', 3),
+(171, 89, '4', 4),
+(172, 89, '5', 5),
+(173, 90, '1', 1),
+(174, 90, '2', 2),
+(175, 90, '3', 3),
+(176, 90, '4', 4),
+(177, 90, '5', 5),
+(178, 91, '1', 1),
+(179, 91, 'UU', 2),
+(180, 91, 'H', 3),
+(181, 91, 'I', 4),
+(182, 91, 'H', 5),
+(183, 92, '1', 1),
+(184, 92, 'UU', 2),
+(185, 92, 'H', 3),
+(186, 92, 'I', 4),
+(187, 92, 'H', 5),
+(188, 93, '1', 1),
+(189, 93, 'UU', 2),
+(190, 93, 'H', 3),
+(191, 93, 'I', 4),
+(192, 93, 'H', 5);
 
 -- --------------------------------------------------------
 
@@ -359,12 +403,12 @@ ALTER TABLE `colours`
 -- AUTO_INCREMENT for table `ingredients`
 --
 ALTER TABLE `ingredients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `recipes`
 --
 ALTER TABLE `recipes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 --
 -- AUTO_INCREMENT for table `recipes_ingredients`
 --
@@ -379,7 +423,7 @@ ALTER TABLE `recipes_versions`
 -- AUTO_INCREMENT for table `steps`
 --
 ALTER TABLE `steps`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=148;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=193;
 --
 -- AUTO_INCREMENT for table `users`
 --

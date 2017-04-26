@@ -12,6 +12,8 @@
         <li><?= $this->Html->link(__('New Recipe'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Recipes Versions'), ['controller' => 'RecipesVersions', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Recipes Version'), ['controller' => 'RecipesVersions', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Steps'), ['controller' => 'Steps', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Step'), ['controller' => 'Steps', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Ingredients'), ['controller' => 'Ingredients', 'action' => 'index']) ?> </li>
@@ -47,6 +49,31 @@
         </tr>
     </table>
     <div class="related">
+        <h4><?= __('Related Recipes Versions') ?></h4>
+        <?php if (!empty($recipe->recipes_versions)): ?>
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <th scope="col"><?= __('Id') ?></th>
+                <th scope="col"><?= __('Recipe Id') ?></th>
+                <th scope="col"><?= __('Version Id') ?></th>
+                <th scope="col" class="actions"><?= __('Actions') ?></th>
+            </tr>
+            <?php foreach ($recipe->recipes_versions as $recipesVersions): ?>
+            <tr>
+                <td><?= h($recipesVersions->id) ?></td>
+                <td><?= h($recipesVersions->recipe_id) ?></td>
+                <td><?= h($recipesVersions->version_id) ?></td>
+                <td class="actions">
+                    <?= $this->Html->link(__('View'), ['controller' => 'RecipesVersions', 'action' => 'view', $recipesVersions->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'RecipesVersions', 'action' => 'edit', $recipesVersions->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'RecipesVersions', 'action' => 'delete', $recipesVersions->id], ['confirm' => __('Are you sure you want to delete # {0}?', $recipesVersions->id)]) ?>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+        <?php endif; ?>
+    </div>
+    <div class="related">
         <h4><?= __('Related Steps') ?></h4>
         <?php if (!empty($recipe->steps)): ?>
         <table cellpadding="0" cellspacing="0">
@@ -70,25 +97,9 @@
                 </td>
             </tr>
             <?php endforeach; ?>
-            <?php endif; ?>
         </table>
+        <?php endif; ?>
     </div>
-
-    <!-- Add recipe steps-->
-    <div class="newStep">
-            <?= $this->Form->create($newStep,  ['url' => ['controller' => 'steps', 'action' => 'add']]) ?>
-            <fieldset>
-                <legend><?= __('Add Step') ?></legend>
-                <?php
-                    echo $this->Form->hidden('recipe_id', ['value' => $recipe->id]);
-                    echo $this->Form->control('description');
-                    echo $this->Form->control('position');
-                ?>
-            </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
-            <?= $this->Form->end() ?>
-    </div>
-
     <div class="related">
         <h4><?= __('Related Ingredients') ?></h4>
         <?php if (!empty($recipe->ingredients)): ?>
@@ -112,5 +123,4 @@
         </table>
         <?php endif; ?>
     </div>
-
 </div>

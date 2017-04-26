@@ -59,7 +59,6 @@
                 <th scope="col"><?= __('Description') ?></th>
                 <th scope="col"><?= __('Created') ?></th>
                 <th scope="col"><?= __('Modified') ?></th>
-                <th scope="col"><?= __('Steps') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($user->recipes as $recipes): ?>
@@ -70,7 +69,6 @@
                 <td><?= h($recipes->description) ?></td>
                 <td><?= h($recipes->created) ?></td>
                 <td><?= h($recipes->modified) ?></td>
-                <td><?= h($recipes->steps) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Recipes', 'action' => 'view', $recipes->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Recipes', 'action' => 'edit', $recipes->id]) ?>

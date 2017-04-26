@@ -15,6 +15,8 @@
         <li><?= $this->Html->link(__('List Recipes'), ['action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Recipes Versions'), ['controller' => 'RecipesVersions', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Recipes Version'), ['controller' => 'RecipesVersions', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Steps'), ['controller' => 'Steps', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Step'), ['controller' => 'Steps', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Ingredients'), ['controller' => 'Ingredients', 'action' => 'index']) ?></li>
@@ -29,7 +31,7 @@
             echo $this->Form->control('user_id', ['options' => $users]);
             echo $this->Form->control('name');
             echo $this->Form->control('description');
-            echo $this->Form->control('ingredients._ids', ['options' => $ingredients]);
+            // echo $this->Form->control('ingredients._ids', ['options' => $ingredients]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

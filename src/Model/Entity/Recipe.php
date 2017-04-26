@@ -14,6 +14,7 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\Time $modified
  *
  * @property \App\Model\Entity\User $user
+ * @property \App\Model\Entity\RecipesVersion[] $recipes_versions
  * @property \App\Model\Entity\Step[] $steps
  * @property \App\Model\Entity\Ingredient[] $ingredients
  */

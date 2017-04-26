@@ -28,6 +28,8 @@ class StepsTableTest extends TestCase
         'app.recipes',
         'app.users',
         'app.colours',
+        'app.recipes_versions',
+        'app.versions',
         'app.ingredients',
         'app.recipes_ingredients'
     ];

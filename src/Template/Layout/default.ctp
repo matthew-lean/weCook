@@ -26,8 +26,11 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </title>
     <?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css('cake.css') ?>
+    <?= $this->Html->css('app') ?>
+    <?= $this->Html->css('base') ?>
+    <?= $this->Html->css('cake') ?>
+    <?= $this->Html->script('jquery') ?>
+    <?= $this->Html->script('scripts') ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
@@ -45,7 +48,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
               <!-- Logout/Login Buttons-->
               <?php if($loggedIn) : ?>
                     <!--Current User -->
-                    <li><?= $this->Html->link('User', array('controller' => 'users', 'action' => 'view', $authUser['id'])) ?>  </li>
+                    <li><?= $this->Html->link('Profile', array('controller' => 'users', 'action' => 'view', $authUser['id'])) ?>  </li>
                     <li><?= $this->Html->link('Logout', ['controller' => 'users', 'action' => 'logout']); ?></li>
                 <?php else : ?>
                     <li><?= $this->Html->link('Register', ['controller' => 'users', 'action' => 'register']); ?></li>

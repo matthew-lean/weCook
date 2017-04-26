@@ -22,8 +22,9 @@
     <fieldset>
         <legend><?= __('Edit Ingredient') ?></legend>
         <?php
+            echo $this->Form->hidden('user_id', array('value'=>$authUser['id']));
             echo $this->Form->control('name');
-            echo $this->Form->control('recipes._ids', ['options' => $recipes]);
+            echo $this->Form->hidden('recipes._ids', ['options' => $recipes]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
