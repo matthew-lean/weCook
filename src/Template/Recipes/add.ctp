@@ -29,10 +29,6 @@
             echo $this->Form->control('description', ['label' => false, 'placeholder' => 'Recipe Description']);
             ?>
             <div class="method">
-              <div id="add">
-                <!--<div id="stepAdd"><button type="button">+</button></div>-->
-                <!--<div id="stepRemove"><button type="button">-</button></div>-->
-              </div>
               <?php
               //Steps Add Section
               echo $this->Form->control("steps.0.description", ['label' => "Method", 'placeholder' => 'Step 1']);
@@ -61,10 +57,20 @@
               </div>
             </div>
             <div class="ingredients">
-              <?php
-              //Ingredients
-              echo $this->Form->control("ingredients.0.name", ['label' => 'Ingredients', 'placeholder' => 'Ingredient']);
-              ?>
+              <div id="add">
+                <div id="IngredientAdd"><button type="button">+</button></div>
+                <!--<div id="stepRemove"><button type="button">-</button></div>-->
+              </div>
+
+              <?php echo $this->Form->control("ingredients.0.name", ['label' => 'Ingredients', 'placeholder' => 'Ingredient']);?>
+
+              <div class="Ingredient">
+                <?php echo $this->Form->control("ingredients.1.name", ['label' => false, 'placeholder' => 'Ingredient']);?>
+              </div>
+              <div class="Ingredient">
+                <?php echo $this->Form->control("ingredients.2.name", ['label' => false, 'placeholder' => 'Ingredient']);?>
+              </div>
+
             </div>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

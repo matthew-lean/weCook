@@ -18,6 +18,9 @@ class IngredientsController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['Users']
+        ];
         $ingredients = $this->paginate($this->Ingredients);
 
         $this->set(compact('ingredients'));
@@ -34,7 +37,7 @@ class IngredientsController extends AppController
     public function view($id = null)
     {
         $ingredient = $this->Ingredients->get($id, [
-            'contain' => ['Recipes']
+            'contain' => ['Users', 'Recipes']
         ]);
 
         $this->set('ingredient', $ingredient);
@@ -58,8 +61,9 @@ class IngredientsController extends AppController
             }
             $this->Flash->error(__('The ingredient could not be saved. Please, try again.'));
         }
+        $users = $this->Ingredients->Users->find('list', ['limit' => 200]);
         $recipes = $this->Ingredients->Recipes->find('list', ['limit' => 200]);
-        $this->set(compact('ingredient', 'recipes'));
+        $this->set(compact('ingredient', 'users', 'recipes'));
         $this->set('_serialize', ['ingredient']);
     }
 
@@ -84,8 +88,9 @@ class IngredientsController extends AppController
             }
             $this->Flash->error(__('The ingredient could not be saved. Please, try again.'));
         }
+        $users = $this->Ingredients->Users->find('list', ['limit' => 200]);
         $recipes = $this->Ingredients->Recipes->find('list', ['limit' => 200]);
-        $this->set(compact('ingredient', 'recipes'));
+        $this->set(compact('ingredient', 'users', 'recipes'));
         $this->set('_serialize', ['ingredient']);
     }
 
