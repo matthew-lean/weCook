@@ -7,10 +7,8 @@ use Cake\ORM\Entity;
  * Ingredient Entity
  *
  * @property int $id
- * @property int $user_id
  * @property string $name
  *
- * @property \App\Model\Entity\User $user
  * @property \App\Model\Entity\Recipe[] $recipes
  */
 class Ingredient extends Entity

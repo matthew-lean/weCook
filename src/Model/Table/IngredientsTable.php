@@ -9,7 +9,6 @@ use Cake\Validation\Validator;
 /**
  * Ingredients Model
  *
- * @property \Cake\ORM\Association\BelongsTo $Users
  * @property \Cake\ORM\Association\BelongsToMany $Recipes
  *
  * @method \App\Model\Entity\Ingredient get($primaryKey, $options = [])
@@ -37,10 +36,6 @@ class IngredientsTable extends Table
         $this->setDisplayField('name');
         $this->setPrimaryKey('id');
 
-        $this->belongsTo('Users', [
-            'foreignKey' => 'user_id',
-            'joinType' => 'INNER'
-        ]);
         $this->belongsToMany('Recipes', [
             'foreignKey' => 'ingredient_id',
             'targetForeignKey' => 'recipe_id',
@@ -65,19 +60,5 @@ class IngredientsTable extends Table
             ->notEmpty('name');
 
         return $validator;
-    }
-
-    /**
-     * Returns a rules checker object that will be used for validating
-     * application integrity.
-     *
-     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
-     * @return \Cake\ORM\RulesChecker
-     */
-    public function buildRules(RulesChecker $rules)
-    {
-        $rules->add($rules->existsIn(['user_id'], 'Users'));
-
-        return $rules;
     }
 }

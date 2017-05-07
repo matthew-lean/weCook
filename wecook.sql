@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 26, 2017 at 09:35 AM
+-- Generation Time: May 07, 2017 at 04:40 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -53,7 +53,6 @@ INSERT INTO `colours` (`id`, `colour_name`) VALUES
 DROP TABLE IF EXISTS `ingredients`;
 CREATE TABLE `ingredients` (
   `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
   `name` varchar(32) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -61,15 +60,13 @@ CREATE TABLE `ingredients` (
 -- Dumping data for table `ingredients`
 --
 
-INSERT INTO `ingredients` (`id`, `user_id`, `name`) VALUES
-(1, 1, 'milk'),
-(2, 1, 'flour'),
-(3, 1, 'eggs'),
-(4, 1, 'butter'),
-(5, 2, 'ff'),
-(6, 3, 'new'),
-(7, 2, 'tester ingredient'),
-(8, 1, 'gooo');
+INSERT INTO `ingredients` (`id`, `name`) VALUES
+(1, 'milk'),
+(2, 'flour'),
+(3, 'eggs'),
+(4, 'butter'),
+(10, 'sugar'),
+(11, 'potato');
 
 -- --------------------------------------------------------
 
@@ -94,7 +91,10 @@ CREATE TABLE `recipes` (
 INSERT INTO `recipes` (`id`, `user_id`, `name`, `description`, `created`, `modified`) VALUES
 (1, 1, 'The first recipe', 'This is the first recipe name', '2017-03-28 00:00:00', '2017-03-28 15:21:57'),
 (2, 2, 'Recipe 2', 'Recipe 2 desc', '2017-03-29 08:52:25', '2017-03-29 08:52:25'),
-(14, 1, 'Third Recipe Test', 'Description to the third recipe ', '2017-04-10 21:57:14', '2017-04-10 21:57:14');
+(14, 1, 'Third Recipe Test', 'Description to the third recipe ', '2017-04-10 21:57:14', '2017-04-10 21:57:14'),
+(101, 1, 'testtitle', 'testdesc', '2017-05-07 16:39:53', '2017-05-07 16:39:53'),
+(99, 1, 'title', 'desc', '2017-04-27 14:31:16', '2017-04-27 14:31:16'),
+(100, 1, 'Kyle', 'kyle', '2017-05-03 11:08:24', '2017-05-03 11:08:24');
 
 -- --------------------------------------------------------
 
@@ -123,7 +123,8 @@ INSERT INTO `recipes_ingredients` (`id`, `recipe_id`, `ingredient_id`) VALUES
 (7, 2, 4),
 (26, 14, 2),
 (25, 14, 1),
-(27, 14, 3);
+(27, 14, 3),
+(48, 101, 11);
 
 -- --------------------------------------------------------
 
@@ -315,7 +316,47 @@ INSERT INTO `steps` (`id`, `recipe_id`, `description`, `position`) VALUES
 (189, 93, 'UU', 2),
 (190, 93, 'H', 3),
 (191, 93, 'I', 4),
-(192, 93, 'H', 5);
+(192, 93, 'H', 5),
+(193, 94, '1', 1),
+(194, 94, '2', 2),
+(195, 94, '3', 3),
+(196, 94, '4', 4),
+(197, 94, '5', 5),
+(198, 95, '1', 1),
+(199, 95, '2', 2),
+(200, 95, '3', 3),
+(201, 95, '4', 4),
+(202, 95, '5', 5),
+(203, 96, '1', 1),
+(204, 96, '2', 2),
+(205, 96, '3', 3),
+(206, 96, '4', 4),
+(207, 96, '5', 5),
+(208, 97, '1', 1),
+(209, 97, '2', 2),
+(210, 97, '3', 3),
+(211, 97, '4', 4),
+(212, 97, '5', 5),
+(213, 98, '1', 1),
+(214, 98, '2', 2),
+(215, 98, '3', 3),
+(216, 98, '4', 4),
+(217, 98, '5', 5),
+(218, 99, '1', 1),
+(219, 99, '2', 2),
+(220, 99, '3', 3),
+(221, 99, '4', 4),
+(222, 99, '5', 5),
+(223, 100, 'one ', 1),
+(224, 100, 'two ', 2),
+(225, 100, 'three', 3),
+(226, 100, 'four', 4),
+(227, 100, 'five', 5),
+(228, 101, '1', 1),
+(229, 101, '2', 2),
+(230, 101, '3', 3),
+(231, 101, 'four', 4),
+(232, 101, '5', 5);
 
 -- --------------------------------------------------------
 
@@ -403,17 +444,17 @@ ALTER TABLE `colours`
 -- AUTO_INCREMENT for table `ingredients`
 --
 ALTER TABLE `ingredients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `recipes`
 --
 ALTER TABLE `recipes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 --
 -- AUTO_INCREMENT for table `recipes_ingredients`
 --
 ALTER TABLE `recipes_ingredients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 --
 -- AUTO_INCREMENT for table `recipes_versions`
 --
@@ -423,7 +464,7 @@ ALTER TABLE `recipes_versions`
 -- AUTO_INCREMENT for table `steps`
 --
 ALTER TABLE `steps`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=193;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=233;
 --
 -- AUTO_INCREMENT for table `users`
 --

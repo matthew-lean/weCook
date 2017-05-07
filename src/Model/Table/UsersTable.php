@@ -10,7 +10,6 @@ use Cake\Validation\Validator;
  * Users Model
  *
  * @property \Cake\ORM\Association\BelongsTo $Colours
- * @property \Cake\ORM\Association\HasMany $Ingredients
  * @property \Cake\ORM\Association\HasMany $Recipes
  *
  * @method \App\Model\Entity\User get($primaryKey, $options = [])
@@ -45,9 +44,6 @@ class UsersTable extends Table
         $this->belongsTo('Colours', [
             'foreignKey' => 'colour_id',
             'joinType' => 'INNER'
-        ]);
-        $this->hasMany('Ingredients', [
-            'foreignKey' => 'user_id'
         ]);
         $this->hasMany('Recipes', [
             'foreignKey' => 'user_id'

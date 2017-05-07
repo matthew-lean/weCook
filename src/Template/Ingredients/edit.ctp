@@ -13,8 +13,6 @@
             )
         ?></li>
         <li><?= $this->Html->link(__('List Ingredients'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Recipes'), ['controller' => 'Recipes', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Recipe'), ['controller' => 'Recipes', 'action' => 'add']) ?></li>
     </ul>
@@ -24,9 +22,8 @@
     <fieldset>
         <legend><?= __('Edit Ingredient') ?></legend>
         <?php
-            echo $this->Form->hidden('user_id', array('value'=>$authUser['id']));
             echo $this->Form->control('name');
-            echo $this->Form->hidden('recipes._ids', ['options' => $recipes]);
+            echo $this->Form->control('recipes._ids', ['options' => $recipes]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

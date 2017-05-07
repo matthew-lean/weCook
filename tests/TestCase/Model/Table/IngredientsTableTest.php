@@ -25,9 +25,9 @@ class IngredientsTableTest extends TestCase
      */
     public $fixtures = [
         'app.ingredients',
+        'app.recipes',
         'app.users',
         'app.colours',
-        'app.recipes',
         'app.recipes_versions',
         'app.versions',
         'app.steps',
@@ -74,16 +74,6 @@ class IngredientsTableTest extends TestCase
      * @return void
      */
     public function testValidationDefault()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
-
-    /**
-     * Test buildRules method
-     *
-     * @return void
-     */
-    public function testBuildRules()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }
