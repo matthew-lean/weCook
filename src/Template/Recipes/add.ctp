@@ -25,8 +25,8 @@
             echo $this->Form->create($recipe);
             //grabs the current user and hides the input
             echo $this->Form->hidden('user_id', array('value'=>$authUser['id']));
-            echo $this->Form->control('name', ['label' => false, 'placeholder' => 'Recipe Title']);
-            echo $this->Form->control('description', ['label' => false, 'placeholder' => 'Recipe Description']);
+            echo $this->Form->control('name', ['label' => false, 'placeholder' => 'Recipe Title','error' => false]);
+            echo $this->Form->control('description', ['label' => false, 'placeholder' => 'Recipe Description', 'error' => false]);
             ?>
             <div class="method">
               <?php
@@ -56,18 +56,16 @@
                   ?>
               </div>
             </div>
+
             <div class="ingredients">
-              <div id="add">
-                <div id="IngredientAdd"><button type="button">+</button></div>
-
-              </div>
-
-
               <div id="newStep">
                 <?php echo $this->Form->control("ingredients.0.name", ['label' => 'Ingredients', 'placeholder' => 'Ingredient', 'required' => false]);?>
               </div>
-
+              <div id="add">
+                <div id="IngredientAdd"><button type="button">+</button></div>
+              </div>
             </div>
+
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>

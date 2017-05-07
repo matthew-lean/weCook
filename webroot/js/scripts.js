@@ -20,8 +20,8 @@ $(document).ready(function(){
 
 
   $('#IngredientAdd').click(function() {
-
-    $('#newStep').append('<input type="text" name="steps[1][description]" placeholder="Step 2" maxlength="144" id="steps-1-description">');
+    // Add new step input field dynamically
+    $('#newStep').append('<input type="text" name="steps[1][description]" placeholder="Ingredient" maxlength="144" id="steps-1-description">');
     console.log($('#newStep').children().length);
   });
 });
