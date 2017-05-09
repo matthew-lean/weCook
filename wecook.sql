@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 07, 2017 at 04:40 PM
+-- Generation Time: May 09, 2017 at 11:29 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -66,7 +66,10 @@ INSERT INTO `ingredients` (`id`, `name`) VALUES
 (3, 'eggs'),
 (4, 'butter'),
 (10, 'sugar'),
-(11, 'potato');
+(13, 'one'),
+(14, 't'),
+(15, 'one'),
+(16, 'tea');
 
 -- --------------------------------------------------------
 
@@ -92,6 +95,9 @@ INSERT INTO `recipes` (`id`, `user_id`, `name`, `description`, `created`, `modif
 (1, 1, 'The first recipe', 'This is the first recipe name', '2017-03-28 00:00:00', '2017-03-28 15:21:57'),
 (2, 2, 'Recipe 2', 'Recipe 2 desc', '2017-03-29 08:52:25', '2017-03-29 08:52:25'),
 (14, 1, 'Third Recipe Test', 'Description to the third recipe ', '2017-04-10 21:57:14', '2017-04-10 21:57:14'),
+(105, 1, 't', 'd', '2017-05-09 11:28:03', '2017-05-09 11:28:03'),
+(103, 1, 't', 'd', '2017-05-09 10:14:57', '2017-05-09 10:14:57'),
+(104, 1, 't', 'd', '2017-05-09 10:55:00', '2017-05-09 10:55:00'),
 (101, 1, 'testtitle', 'testdesc', '2017-05-07 16:39:53', '2017-05-07 16:39:53'),
 (99, 1, 'title', 'desc', '2017-04-27 14:31:16', '2017-04-27 14:31:16'),
 (100, 1, 'Kyle', 'kyle', '2017-05-03 11:08:24', '2017-05-03 11:08:24');
@@ -123,8 +129,11 @@ INSERT INTO `recipes_ingredients` (`id`, `recipe_id`, `ingredient_id`) VALUES
 (7, 2, 4),
 (26, 14, 2),
 (25, 14, 1),
+(51, 103, 14),
 (27, 14, 3),
-(48, 101, 11);
+(50, 103, 13),
+(52, 104, 15),
+(53, 105, 16);
 
 -- --------------------------------------------------------
 
@@ -356,7 +365,20 @@ INSERT INTO `steps` (`id`, `recipe_id`, `description`, `position`) VALUES
 (229, 101, '2', 2),
 (230, 101, '3', 3),
 (231, 101, 'four', 4),
-(232, 101, '5', 5);
+(232, 101, '5', 5),
+(233, 102, '1', 1),
+(234, 102, 'two ', 2),
+(235, 102, '3', 3),
+(236, 102, '5', 4),
+(237, 102, '5', 5),
+(238, 103, '1', 1),
+(239, 103, '2', 2),
+(240, 103, '3', 3),
+(241, 103, '4', 4),
+(242, 103, 'd', 5),
+(243, 104, '1', 1),
+(244, 105, '1', 1),
+(245, 105, '2', 2);
 
 -- --------------------------------------------------------
 
@@ -444,17 +466,17 @@ ALTER TABLE `colours`
 -- AUTO_INCREMENT for table `ingredients`
 --
 ALTER TABLE `ingredients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `recipes`
 --
 ALTER TABLE `recipes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 --
 -- AUTO_INCREMENT for table `recipes_ingredients`
 --
 ALTER TABLE `recipes_ingredients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 --
 -- AUTO_INCREMENT for table `recipes_versions`
 --
@@ -464,7 +486,7 @@ ALTER TABLE `recipes_versions`
 -- AUTO_INCREMENT for table `steps`
 --
 ALTER TABLE `steps`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=233;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=246;
 --
 -- AUTO_INCREMENT for table `users`
 --
