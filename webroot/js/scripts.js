@@ -22,7 +22,7 @@ $(document).ready(function(){
 
   $('#IngredientAdd').click(function() {
     // Add new step input field
-    $('#newStep').append('<input type="text" name="steps['+ count++ +'][description]" placeholder="Ingredient" maxlength="144" id="steps-'+ (count-1) +'-description">');
+    $('#newStep').append('<input type="text" name="ingredients['+ count++ +'][name]" placeholder="Ingredient" maxlength="144" id="ingredients-'+ (count-1) +'-name">');
     // console log the amount of input boxes
     console.log($('#newStep').children().length);
   });
