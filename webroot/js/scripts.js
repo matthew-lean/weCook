@@ -20,19 +20,19 @@ $(document).ready(function(){
 
   var count = 1;
 
-  $('#IngredientAdd').click(function() {
+  $('#newStep').click(function() {
     // Add new step input field
-    $('#newStep').append('<input type="text" name="ingredients['+ count++ +'][name]" placeholder="Ingredient" maxlength="144" id="ingredients-'+ (count-1) +'-name">');
+    $('#StepAdd').append('<input type="text" name="steps['+ count++ +'][description]" placeholder="Step '+ (count) +'" maxlength="144" id="steps-'+ (count-1) +'-description" value=' + count + '> <input type="hidden" name="steps['+ (count-1) +'][position]" value=' + count + '>')
+    ;
     // console log the amount of input boxes
-    console.log($('#newStep').children().length);
+    console.log($('#IngredientAdd').children().length);
   });
 
-  // $('#IngredientAdd').click(function() {
-  //   var lastname = $('#newStep [name^=value]:last-child')[0].name;
-  //   var next = parseInt(lastname.match(/\d+/)[0]) + 1;
-  //   $('#newStep').append('<input type="text" name="steps[' + next + ']" value="more more text">');
-  //   // console log the amount of input boxes
-  //   console.log($('#newStep').children().length);
-  // });
+  $('#newIngredient').click(function() {
+    // Add new step input field
+    $('#IngredientAdd').append('<input type="text" name="ingredients['+ count++ +'][name]" placeholder="Ingredient" maxlength="144" id="ingredients-'+ (count-1) +'-name">');
+    // console log the amount of input boxes
+    console.log($('#IngredientAdd').children().length);
+  });
 
 });

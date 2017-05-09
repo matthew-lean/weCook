@@ -28,7 +28,7 @@
             echo $this->Form->control('name', ['label' => false, 'placeholder' => 'Recipe Title','error' => false]);
             echo $this->Form->control('description', ['label' => false, 'placeholder' => 'Recipe Description', 'error' => false]);
             ?>
-            <div class="method">
+            <!-- <div class="method">
               <?php
               //Steps Add Section
               echo $this->Form->control("steps.0.description", ['label' => "Method", 'placeholder' => 'Step 1', 'required' => false]);
@@ -55,14 +55,26 @@
                   echo $this->Form->hidden("steps.4.position", ['label' => false, 'value' => '5']);
                   ?>
               </div>
+            </div> -->
+
+            <div class="method">
+              <div id="StepAdd">
+                <?php
+                echo $this->Form->control("steps.0.description", ['label' => "Method", 'placeholder' => 'Step 1', 'required' => false]);
+                echo $this->Form->hidden("steps.0.position", ['label' => false, 'value' => '1', 'required' => false]);
+                ?>
+              </div>
+              <div id="add">
+                <div id="newStep"><button type="button">+</button></div>
+              </div>
             </div>
 
             <div class="ingredients">
-              <div id="newStep">
+              <div id="IngredientAdd">
                 <?php echo $this->Form->control("ingredients.0.name", ['label' => 'Ingredients', 'placeholder' => 'Ingredient', 'required' => false]);?>
               </div>
               <div id="add">
-                <div id="IngredientAdd"><button type="button">+</button></div>
+                <div id="newIngredient"><button type="button">+</button></div>
               </div>
             </div>
 
