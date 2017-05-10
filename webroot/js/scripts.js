@@ -36,8 +36,12 @@ $(document).ready(function(){
   $('#newIngredient').click(function() {
     // Add new Ingredient input field
     $('#IngredientAdd').append('<input type="text" name="ingredients['+ count++ +'][name]" placeholder="Ingredient" maxlength="144" id="ingredients-'+ (count-1) +'-name">');
-    // console log the amount of input boxes
-    //console.log($('#IngredientAdd').children().length);
+  });
+
+  $('#removeIngredient').click(function(){
+    $('#IngredientAdd').children().last().remove();
+    count--;
+    // remove the last input and the hidden input
   });
 
 });

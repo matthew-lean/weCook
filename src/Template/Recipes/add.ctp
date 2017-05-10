@@ -79,6 +79,9 @@
               <div id="add">
                 <div id="newIngredient"><button type="button">+</button></div>
               </div>
+              <div id="remove">
+                <div id="removeIngredient"><button type="button">-</button></div>
+              </div>
             </div>
 
     </fieldset>
