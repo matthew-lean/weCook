@@ -67,6 +67,9 @@
               <div id="add">
                 <div id="newStep"><button type="button">+</button></div>
               </div>
+              <div id="remove">
+                <div id="removeStep"><button type="button">-</button></div>
+              </div>
             </div>
 
             <div class="ingredients">
