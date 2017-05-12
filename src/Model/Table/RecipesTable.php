@@ -53,9 +53,12 @@ class RecipesTable extends Table
         $this->hasMany('Steps', [
             'foreignKey' => 'recipe_id'
         ]);
+        $this->hasMany('Versions', [
+            'foreignKey' => 'recipe_id'
+        ]);
         $this->belongsToMany('Ingredients', [
             'foreignKey' => 'recipe_id',
-            
+
             'joinTable' => 'recipes_ingredients'
         ]);
     }

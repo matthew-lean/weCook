@@ -15,7 +15,6 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\Time $modified
  *
  * @property \App\Model\Entity\Colour $colour
- * @property \App\Model\Entity\Ingredient[] $ingredients
  * @property \App\Model\Entity\Recipe[] $recipes
  */
 class User extends Entity

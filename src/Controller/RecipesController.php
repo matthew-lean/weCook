@@ -80,8 +80,11 @@ class RecipesController extends AppController
     public function edit($id = null)
     {
         $recipe = $this->Recipes->get($id, [
-            'contain' => ['Ingredients']
+            'contain' => ['Ingredients','Steps']
         ]);
+        if (!empty($this->request->data)) {
+          $recipe = implode(';', $this->request->data['TheModel']['opinions']);
+        }
         if ($this->request->is(['patch', 'post', 'put'])) {
             $recipe = $this->Recipes->patchEntity($recipe, $this->request->getData());
             if ($this->Recipes->save($recipe)) {
@@ -95,6 +98,7 @@ class RecipesController extends AppController
         $ingredients = $this->Recipes->Ingredients->find('list', ['limit' => 200]);
         $this->set(compact('recipe', 'users', 'ingredients'));
         $this->set('_serialize', ['recipe']);
+
     }
 
     public function version($id = null)

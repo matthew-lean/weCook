@@ -7,22 +7,20 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * Versions Model
+ * RecipesVersions Model
  *
  * @property \Cake\ORM\Association\BelongsTo $Recipes
  * @property \Cake\ORM\Association\BelongsTo $Versions
- * @property \Cake\ORM\Association\HasMany $Versions
- * @property \Cake\ORM\Association\BelongsToMany $Recipes
  *
- * @method \App\Model\Entity\Version get($primaryKey, $options = [])
- * @method \App\Model\Entity\Version newEntity($data = null, array $options = [])
- * @method \App\Model\Entity\Version[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\Version|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\Version patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\Version[] patchEntities($entities, array $data, array $options = [])
- * @method \App\Model\Entity\Version findOrCreate($search, callable $callback = null, $options = [])
+ * @method \App\Model\Entity\RecipesVersion get($primaryKey, $options = [])
+ * @method \App\Model\Entity\RecipesVersion newEntity($data = null, array $options = [])
+ * @method \App\Model\Entity\RecipesVersion[] newEntities(array $data, array $options = [])
+ * @method \App\Model\Entity\RecipesVersion|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\RecipesVersion patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \App\Model\Entity\RecipesVersion[] patchEntities($entities, array $data, array $options = [])
+ * @method \App\Model\Entity\RecipesVersion findOrCreate($search, callable $callback = null, $options = [])
  */
-class VersionsTable extends Table
+class RecipesVersionsTable extends Table
 {
 
     /**
@@ -35,7 +33,7 @@ class VersionsTable extends Table
     {
         parent::initialize($config);
 
-        $this->setTable('versions');
+        $this->setTable('recipes_versions');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
@@ -46,14 +44,6 @@ class VersionsTable extends Table
         $this->belongsTo('Versions', [
             'foreignKey' => 'version_id',
             'joinType' => 'INNER'
-        ]);
-        $this->hasMany('Versions', [
-            'foreignKey' => 'version_id'
-        ]);
-        $this->belongsToMany('Recipes', [
-            'foreignKey' => 'version_id',
-            'targetForeignKey' => 'recipe_id',
-            'joinTable' => 'recipes_versions'
         ]);
     }
 

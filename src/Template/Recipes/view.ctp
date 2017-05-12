@@ -3,7 +3,7 @@
   * @var \App\View\AppView $this
   */
 ?>
-
+<br>
 <div class="recipes view large-9 medium-8 columns content">
     <h3><?= h($recipe->name) ?></h3>
     <table class="vertical-table">
