@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2017 at 04:04 PM
+-- Generation Time: May 12, 2017 at 08:33 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -126,26 +126,6 @@ INSERT INTO `recipes_ingredients` (`id`, `recipe_id`, `ingredient_id`) VALUES
 (27, 14, 3),
 (55, 106, 18),
 (54, 106, 17);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `recipes_versions`
---
-
-DROP TABLE IF EXISTS `recipes_versions`;
-CREATE TABLE `recipes_versions` (
-  `id` int(11) NOT NULL,
-  `recipe_id` int(11) NOT NULL,
-  `version_id` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `recipes_versions`
---
-
-INSERT INTO `recipes_versions` (`id`, `recipe_id`, `version_id`) VALUES
-(1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -403,6 +383,26 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `colour_id`, `created`, 
 (3, 'Peter', 'peter@mail.com', '$2y$10$jwlvDYq1Si1S6nQqXBCXmefPfyPcUnrhFFxgXKEQJ7eC8b/sw.CP.', 1, '2017-03-21 17:57:53', '2017-03-21 17:57:53'),
 (4, 'Dave', 'dave@mail.com', '$2y$10$W18YgQJt8ApVHaucaRiw9OV4Rgcgw4d.Ggl7nN15B6f5VJnwVWmYe', 2, '2017-03-21 18:24:25', '2017-03-21 18:24:25');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `versions`
+--
+
+DROP TABLE IF EXISTS `versions`;
+CREATE TABLE `versions` (
+  `id` int(11) NOT NULL,
+  `recipe_id` int(11) NOT NULL,
+  `version_id` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `versions`
+--
+
+INSERT INTO `versions` (`id`, `recipe_id`, `version_id`) VALUES
+(1, 1, 1);
+
 --
 -- Indexes for dumped tables
 --
@@ -432,12 +432,6 @@ ALTER TABLE `recipes_ingredients`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `recipes_versions`
---
-ALTER TABLE `recipes_versions`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `steps`
 --
 ALTER TABLE `steps`
@@ -447,6 +441,12 @@ ALTER TABLE `steps`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `versions`
+--
+ALTER TABLE `versions`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -474,11 +474,6 @@ ALTER TABLE `recipes`
 ALTER TABLE `recipes_ingredients`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 --
--- AUTO_INCREMENT for table `recipes_versions`
---
-ALTER TABLE `recipes_versions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
 -- AUTO_INCREMENT for table `steps`
 --
 ALTER TABLE `steps`
@@ -487,6 +482,11 @@ ALTER TABLE `steps`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `versions`
+--
+ALTER TABLE `versions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
