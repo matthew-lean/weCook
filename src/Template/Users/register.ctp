@@ -1,8 +1,4 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li><?= $this->Html->link('Login', ['controller' => 'users', 'action' => 'Login']); ?></li>
-    </ul>
-</nav>
+<br>
 <div class="index-large-4 medium-4 large-offset-4 medium-offset-4">
     <?= $this->Form->create($user) ?>
     <fieldset>
@@ -14,6 +10,6 @@
             echo $this->Form->control('colour_id');
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Create Account')) ?>
     <?= $this->Form->end() ?>
 </div>

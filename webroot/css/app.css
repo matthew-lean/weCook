@@ -91,7 +91,7 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   height: 2.3125rem;
   margin: 0 0 1rem 0;
   padding: 0.5rem;
-  background: #fafafa !important;
+  background: #edeef2 !important;
   border-width: 1px;
   border-style: solid;
   border-color: rgb(236, 238, 241) !important;
@@ -100,8 +100,8 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   transition: all 0.1s ease-in;
   box-shadow:none !important;
 }
-input[type="text"]:focus{
-  background: #fff !important;
+input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="color"]:focus, textarea{
+  background: #edeef2 !important;
   border-color: #036aed !important;
   outline: none;
 }
@@ -185,10 +185,78 @@ input[type="text"]:focus{
     background-color: #fff;
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    margin:0;
+    padding: 0;
 }
 
 .content{
   padding: 0;
   margin: 0;
+}
+
+fieldset legend{
+  margin: 0;
+  background-color: none;
+  border:none;
+  padding: 1em 0 1em 0;
+  font-weight: 300;
+}
+label{
+  color: #5d6673;
+}
+.large-offset-4{
+    width: 910px;
+    max-width: 100%;
+    background-color: #fff;
+    border-radius: 4px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+button{
+    display: inline-block;
+    padding: 2px 30px;
+    height: 50px;
+    vertical-align: middle;
+    color: #fff;
+    text-decoration: none;
+    -webkit-transition: all .1s ease-in;
+    transition: all .1s ease-in;
+    white-space: nowrap;
+    background-color: #036aed;
+    border-radius: 3px;
+    margin-bottom: 30px;
+}
+button:hover, button:focus, .button:hover, .button:focus{
+  background-color:#0b66da;
+}
+.form button:hover, .form button:focus{
+  background-color:#0b66da;
+
+}
+#register-button{
+  margin-left: 4px;
+    display: inline-block;
+    padding: 2px 8px;
+    vertical-align: middle;
+    color: #fff;
+    text-decoration: none;
+    -webkit-transition: all .1s ease-in;
+    transition: all .1s ease-in;
+    white-space: nowrap;
+    background-color: #205bb3;
+    border-radius: 3px;
+}
+.large-offset-4{
+  margin-left: 0 !important;
+}
+fieldset{
+  margin-bottom: 30px;
+}
+.container{
+  width: 910px;
+}
+.panel{
+  background-color: #fff;
+  border:none;
 }

@@ -42,24 +42,15 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
+
 <body>
-
-<div class="sub-nav">
-  <ul class="right">
-    <?php if($loggedIn) : ?>
-          <!--Current User -->
-          <li><?= $this->Html->link('Profile', array('controller' => 'users', 'action' => 'view', $authUser['id'])) ?>  </li>
-          <li><?= $this->Html->link('Logout', ['controller' => 'users', 'action' => 'logout']); ?></li>
-      <?php else : ?>
-          <li><?= $this->Html->link('Register', ['controller' => 'users', 'action' => 'register']); ?></li>
-      <?php endif; ?>
-  </ul>
-</div>
-
     <?= $this->Flash->render() ?>
     <div class="container clearfix">
         <?= $this->fetch('content') ?>
     </div>
+
+    <i class="fa fa-sign-out" aria-hidden="true"></i>
+
     <footer>
     </footer>
 </body>

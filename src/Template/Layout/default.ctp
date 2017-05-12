@@ -29,12 +29,12 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->css('base') ?>
     <?= $this->Html->css('cake') ?>
 
-    <!--Bootstrap-->
     <?= $this->Html->script('jquery') ?>
     <?= $this->Html->script('tether') ?>
     <?= $this->Html->script('bootstrap') ?>
     <?= $this->Html->css('bootstrap') ?>
     <?= $this->Html->css('app') ?>
+    <?= $this->Html->css('/webroot/css/font-awesome.min'); ?>
 
     <?= $this->Html->script('scripts') ?>
 
@@ -44,11 +44,11 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 </head>
 <body>
         <div class="navbar">
-                <div class="site-container">
-            <ul>
+          <div class="site-container">
+            <ul class="left">
                 <li>
                     <a href="/weCook">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100px" height="50px" viewBox="0 0 381 85.9" style="enable-background:new 0 0 381 85.9" xml:space="preserve">
+                        <svg width="100px" height="50px" viewBox="0 0 381 85.9" style="enable-background:new 0 0 381 85.9" xml:space="preserve">
                             <g>
                               <path class="white-logo" d="M47,85l-9-28.8c-0.6-1.8-1.6-5.8-3.2-12h-0.4c-1.2,5.2-2.2,9.3-3.1,12.1L22,85h-8.6L0,35.8h7.8
                                 C11,48.1,13.4,57.5,15.1,64s2.6,10.8,2.8,13.1h0.4c0.3-1.7,0.9-3.9,1.6-6.6c0.7-2.7,1.4-4.9,1.9-6.4l9-28.2h8.1L47.6,64
@@ -83,9 +83,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                               </g>
                             </g>
                         </svg>
+                      </a>
                 </li>
                 <li>
-                    <a href="/about">About</a>
+                    <a href="about">About</a>
                 </li>
             </ul>
             <ul class="right">
