@@ -97,6 +97,26 @@ class RecipesController extends AppController
         $this->set('_serialize', ['recipe']);
     }
 
+    public function version($id = null)
+    {
+        $recipe = $this->Recipes->get($id, [
+            'contain' => ['Ingredients','Steps','version']
+        ]);
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $recipe = $this->Recipes->patchEntity($recipe, $this->request->getData());
+            if ($this->Recipes->save($recipe)) {
+                $this->Flash->success(__('This recipe version has been saved.'));
+
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('The recipe version could not be saved.'));
+        }
+        $users = $this->Recipes->Users->find('list', ['limit' => 200]);
+        $ingredients = $this->Recipes->Ingredients->find('list', ['limit' => 200]);
+        $this->set(compact('recipe', 'users', 'ingredients'));
+        $this->set('_serialize', ['recipe']);
+    }
+
     /**
      * Delete method
      *
