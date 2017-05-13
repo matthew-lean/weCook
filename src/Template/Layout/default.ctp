@@ -90,16 +90,14 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 </li>
             </ul>
             <ul class="right">
-              <div class="right">
               <!-- Logout/Login Buttons-->
               <?php if($loggedIn) : ?>
                     <!--Current User -->
-                    <li><?= $this->Html->link('Profile', array('controller' => 'users', 'action' => 'view', $authUser['id'])) ?>  </li>
+                    <li><?= $this->Html->link($authUser['name'], array('controller' => 'users', 'action' => 'view', $authUser['id'])) ?>  </li>
                     <li><?= $this->Html->link('Logout', ['controller' => 'users', 'action' => 'logout']); ?></li>
                 <?php else : ?>
                     <button><?= $this->Html->link('Register', ['controller' => 'users', 'action' => 'register']); ?></button>
                 <?php endif; ?>
-              </div>
             </ul>
             </div>
         </div>

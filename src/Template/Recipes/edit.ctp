@@ -27,10 +27,15 @@
             echo $this->Form->control('description', ['label' => false, 'placeholder' => 'Recipe Description', 'error' => false]);
             ?>
 
-            <?php
-            for($i = 0; $i < 10; $i++)
-              echo $this->Form->input('steps.'.$i, array('type'=>'text', 'placeholder' =>'steps'.$i.'description'));
-            ?>
+            <div class="method">
+              <p>Method</p>
+              <?php
+              for($i = 0; $i < 10; $i++)
+                echo $this->Form->input('steps.'.$i, ['type'=>'text', 'label' =>false]);
+                // echo $this->Form->control('steps.'$i.'description', ['label' => "Method", 'required' => false]);
+                // echo $this->Form->hidden('steps.'$i.'position', ['label' => false, 'value' => $i, 'required' => false]);
+              ?>
+            </div>
 
             <!-- <div class="method">
               <div id="StepAdd">
