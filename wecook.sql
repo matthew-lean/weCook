@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2017 at 08:33 PM
+-- Generation Time: May 13, 2017 at 09:56 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -66,9 +66,12 @@ INSERT INTO `ingredients` (`id`, `name`) VALUES
 (3, 'eggs'),
 (4, 'butter'),
 (10, 'sugar'),
+(20, 'flour'),
 (19, '2'),
 (18, 'i2'),
-(17, 'i');
+(17, 'i'),
+(21, 'flour'),
+(22, 'flour');
 
 -- --------------------------------------------------------
 
@@ -93,7 +96,7 @@ CREATE TABLE `recipes` (
 INSERT INTO `recipes` (`id`, `user_id`, `name`, `description`, `created`, `modified`) VALUES
 (1, 1, 'The first recipe', 'This is the first recipe name', '2017-03-28 00:00:00', '2017-03-28 15:21:57'),
 (2, 2, 'Recipe 2', 'Recipe 2 desc', '2017-03-29 08:52:25', '2017-03-29 08:52:25'),
-(14, 1, 'Third Recipe Test', 'Description to the third recipe ', '2017-04-10 21:57:14', '2017-04-10 21:57:14'),
+(14, 1, 'Third Recipe Test', 'Description to the third recipe ', '2017-04-10 21:57:14', '2017-05-13 21:51:20'),
 (106, 1, '1', 'd', '2017-05-10 09:44:48', '2017-05-10 09:44:48');
 
 -- --------------------------------------------------------
@@ -114,6 +117,35 @@ CREATE TABLE `recipes_ingredients` (
 --
 
 INSERT INTO `recipes_ingredients` (`id`, `recipe_id`, `ingredient_id`) VALUES
+(1, 1, 1),
+(2, 1, 2),
+(3, 1, 3),
+(4, 1, 4),
+(5, 2, 1),
+(6, 2, 3),
+(7, 2, 4),
+(59, 14, 22),
+(55, 106, 18),
+(54, 106, 17);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `recipes_versions`
+--
+
+DROP TABLE IF EXISTS `recipes_versions`;
+CREATE TABLE `recipes_versions` (
+  `id` int(11) NOT NULL,
+  `recipe_id` int(11) NOT NULL,
+  `version_id` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `recipes_versions`
+--
+
+INSERT INTO `recipes_versions` (`id`, `recipe_id`, `version_id`) VALUES
 (1, 1, 1),
 (2, 1, 2),
 (3, 1, 3),
@@ -383,26 +415,6 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `colour_id`, `created`, 
 (3, 'Peter', 'peter@mail.com', '$2y$10$jwlvDYq1Si1S6nQqXBCXmefPfyPcUnrhFFxgXKEQJ7eC8b/sw.CP.', 1, '2017-03-21 17:57:53', '2017-03-21 17:57:53'),
 (4, 'Dave', 'dave@mail.com', '$2y$10$W18YgQJt8ApVHaucaRiw9OV4Rgcgw4d.Ggl7nN15B6f5VJnwVWmYe', 2, '2017-03-21 18:24:25', '2017-03-21 18:24:25');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `versions`
---
-
-DROP TABLE IF EXISTS `versions`;
-CREATE TABLE `versions` (
-  `id` int(11) NOT NULL,
-  `recipe_id` int(11) NOT NULL,
-  `version_id` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `versions`
---
-
-INSERT INTO `versions` (`id`, `recipe_id`, `version_id`) VALUES
-(1, 1, 1);
-
 --
 -- Indexes for dumped tables
 --
@@ -432,6 +444,12 @@ ALTER TABLE `recipes_ingredients`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `recipes_versions`
+--
+ALTER TABLE `recipes_versions`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `steps`
 --
 ALTER TABLE `steps`
@@ -441,12 +459,6 @@ ALTER TABLE `steps`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `versions`
---
-ALTER TABLE `versions`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -462,7 +474,7 @@ ALTER TABLE `colours`
 -- AUTO_INCREMENT for table `ingredients`
 --
 ALTER TABLE `ingredients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `recipes`
 --
@@ -472,7 +484,12 @@ ALTER TABLE `recipes`
 -- AUTO_INCREMENT for table `recipes_ingredients`
 --
 ALTER TABLE `recipes_ingredients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+--
+-- AUTO_INCREMENT for table `recipes_versions`
+--
+ALTER TABLE `recipes_versions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 --
 -- AUTO_INCREMENT for table `steps`
 --
@@ -482,11 +499,6 @@ ALTER TABLE `steps`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `versions`
---
-ALTER TABLE `versions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
