@@ -57,6 +57,10 @@ class ColoursTable extends Table
             ->requirePresence('colour_name', 'create')
             ->notEmpty('colour_name');
 
+        $validator
+            ->requirePresence('hex', 'create')
+            ->notEmpty('hex');
+
         return $validator;
     }
 }

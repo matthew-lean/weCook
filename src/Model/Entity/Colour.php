@@ -8,6 +8,7 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $colour_name
+ * @property string $hex
  *
  * @property \App\Model\Entity\User[] $users
  */

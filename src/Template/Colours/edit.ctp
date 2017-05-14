@@ -23,6 +23,7 @@
         <legend><?= __('Edit Colour') ?></legend>
         <?php
             echo $this->Form->control('colour_name');
+            echo $this->Form->control('hex');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

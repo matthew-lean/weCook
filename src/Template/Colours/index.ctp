@@ -18,6 +18,7 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('colour_name') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('hex') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -26,6 +27,7 @@
             <tr>
                 <td><?= $this->Number->format($colour->id) ?></td>
                 <td><?= h($colour->colour_name) ?></td>
+                <td><?= h($colour->hex) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $colour->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $colour->id]) ?>

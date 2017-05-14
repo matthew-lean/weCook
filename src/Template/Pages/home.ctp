@@ -49,8 +49,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <?= $this->fetch('content') ?>
     </div>
 
-    <i class="fa fa-sign-out" aria-hidden="true"></i>
-
     <footer>
     </footer>
 </body>

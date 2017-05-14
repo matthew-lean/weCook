@@ -20,8 +20,8 @@ class ColoursControllerTest extends IntegrationTestCase
         'app.users',
         'app.recipes',
         'app.recipes_versions',
-        'app.versions',
         'app.steps',
+        'app.versions',
         'app.ingredients',
         'app.recipes_ingredients'
     ];

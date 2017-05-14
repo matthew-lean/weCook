@@ -34,7 +34,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->script('bootstrap') ?>
     <?= $this->Html->css('bootstrap') ?>
     <?= $this->Html->css('app') ?>
-    <?= $this->Html->css('/webroot/css/font-awesome.min'); ?>
+    <!-- Font Awesome -->
+    <?= $this->Html->css('/css/font-awesome/css/font-awesome.min'); ?>
+    <?= $this->Html->css('/css/font-awesome/css/font-awesome'); ?>
 
     <?= $this->Html->script('scripts') ?>
 
@@ -94,8 +96,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
               <?php if($loggedIn) : ?>
                     <!--Current User -->
                     <li><?= $this->Html->link($authUser['name'], array('controller' => 'users', 'action' => 'view', $authUser['id'])) ?>  </li>
-                    <li><?= $this->Html->link('Logout', ['controller' => 'users', 'action' => 'logout']); ?></li>
-                <?php else : ?>
+                    <li><?= $this->Html->link("<i class='fa fa-sign-out'></i>Logout", ['controller' => 'users', 'action' => 'logout'], ['escape' => false]); ?> </li>
+              <?php else : ?>
                     <button><?= $this->Html->link('Register', ['controller' => 'users', 'action' => 'register']); ?></button>
                 <?php endif; ?>
             </ul>
@@ -105,13 +107,19 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
           <div class="site-container">
             <ul class="left">
               <li><?= $this->Html->link(__('Recipes'), ['controller' => 'Recipes', 'action' => 'index']) ?> </li>
-              <li><?= $this->Html->link(__('Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>          </div>
+              <li><?= $this->Html->link(__('Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
+          </div>
         </div>
+
+<div class="site-container">
 
     <?= $this->Flash->render() ?>
     <div class="container clearfix">
         <?= $this->fetch('content') ?>
     </div>
+
+<br>
+
     <footer>
     </footer>
 </body>

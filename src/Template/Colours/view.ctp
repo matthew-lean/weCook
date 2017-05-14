@@ -22,6 +22,10 @@
             <td><?= h($colour->colour_name) ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Hex') ?></th>
+            <td><?= h($colour->hex) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($colour->id) ?></td>
         </tr>

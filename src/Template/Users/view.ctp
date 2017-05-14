@@ -3,7 +3,7 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<!-- <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit User'), ['action' => 'edit', $user->id]) ?> </li>
@@ -15,10 +15,13 @@
         <li><?= $this->Html->link(__('List Recipes'), ['controller' => 'Recipes', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Recipe'), ['controller' => 'Recipes', 'action' => 'add']) ?> </li>
     </ul>
-</nav>
+</nav> -->
+<br>
 <div class="users view large-9 medium-8 columns content">
-    <h3><?= h($user->name) ?></h3>
-    <table class="vertical-table">
+    <!-- <center><h3 style="color:<?php $this->Html->link($user->colour->hex, ['controller' => 'Colours', 'action' => 'view', $user->colour->hex])?>;"><?= h($user->name) ?></h3></center> -->
+    <center><h3 style="color:<?= ($user->colour_id )?>;"</h3><?= h($user->name) ?></center>
+
+    <!-- <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Name') ?></th>
             <td><?= h($user->name) ?></td>
@@ -47,7 +50,7 @@
             <th scope="row"><?= __('Modified') ?></th>
             <td><?= h($user->modified) ?></td>
         </tr>
-    </table>
+    </table> -->
     <div class="related">
         <h4><?= __('Related Recipes') ?></h4>
         <?php if (!empty($user->recipes)): ?>
