@@ -17,9 +17,14 @@
     </ul>
 </nav> -->
 <br>
+
+<!-- users colour is grabbed and used as the background to the header -->
+<div class="profile-header" style="background-color:#<?= ($user->colour->hex)?>!important">
+  <h1><?= h($user->name) ?></h1>
+</div>
+
 <div class="users view large-9 medium-8 columns content">
     <!-- <center><h3 style="color:<?php $this->Html->link($user->colour->hex, ['controller' => 'Colours', 'action' => 'view', $user->colour->hex])?>;"><?= h($user->name) ?></h3></center> -->
-    <center><h3 style="color:<?= ($user->colour_id )?>;"</h3><?= h($user->name) ?></center>
 
     <!-- <table class="vertical-table">
         <tr>
