@@ -95,7 +95,8 @@ class RecipesController extends AppController
         $ingredients = $this->Recipes->Ingredients->find('list', ['limit' => 200]);
         $this->set(compact('recipe', 'users', 'ingredients'));
         $this->set('_serialize', ['recipe']);
-
+        // add the edit as a new recipe
+        $this->set('recipe', $recipe);
     }
 
     /**

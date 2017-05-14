@@ -103,10 +103,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         </div>
         <div class="sub-nav">
           <div class="site-container">
-            <div class="content">
-                <p>weCook - make it your own</p>
-            </div>
-          </div>
+            <ul class="left">
+              <li><?= $this->Html->link(__('Recipes'), ['controller' => 'Recipes', 'action' => 'index']) ?> </li>
+              <li><?= $this->Html->link(__('Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>          </div>
         </div>
 
     <?= $this->Flash->render() ?>

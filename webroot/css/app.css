@@ -11,7 +11,7 @@ body {
 }
 
 .site-container {
-    max-width: 910px;
+    width: 910px;
     margin: 0 auto;
     box-sizing: border-box
 }
@@ -128,7 +128,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus
     background-color: #036aed;
 }
 
-.navbar ul {
+.navbar ul, .sub-nav ul {
     list-style-type: none;
     margin: 0;
     height: 60px;
@@ -137,12 +137,13 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus
     float: left
 }
 
-.navbar ul li {
+.navbar ul li, .sub-nav ul li {
     float: left;
     line-height: 60px;
     font-family: Open Sans;
     font-size: 14px;
     width: inherit;
+    margin: 0;
 }
 
 .navbar ul li a:link, a:visited {
@@ -151,13 +152,25 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus
     color: #fff;
     height: 60px;
 }
+.sub-nav ul li a:link, a:visited{
+  padding: 20px;
+  height: 60px;
+}
+
+.navar .right a:link, .navbar .right a:visited{
+  color:#fff;
+}
 
 .navbar ul li:hover {
     color: #fff;
     transition: all 10ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
     background-color: #0b66da
 }
-
+.sub-nav ul li:hover{
+  color: #000;
+  transition: all 10ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+  background-color: #eceeef
+}
 .navlogo {
     margin: 0;
     float: left;
@@ -180,7 +193,7 @@ a:link, a:visited{
 
 .sub-nav {
     width: 100%;
-    height: 50px;
+    height: 60px;
     display: block;
     background-color: #fff;
     display: flex;
