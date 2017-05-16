@@ -272,6 +272,7 @@ button:hover, button:focus, .button:hover, .button:focus{
 .form button[type="submit"]{
   width: 100%;
   text-transform: none;
+  margin-bottom: 30px;
 }
 #register-button{
   margin-left: 4px;

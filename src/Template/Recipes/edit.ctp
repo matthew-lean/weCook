@@ -43,7 +43,7 @@
               <p>Method</p>
               <?php
                 foreach($recipe->steps as  $key => $value) { ?>
-                  <?= $this->Form->input(sprintf('steps.%s.description',$key)); ?>
+                  <?= $this->Form->control(sprintf('steps.%s.description',$key)); ?>
                   <?= $this->Form->hidden(sprintf('steps.%s.position', $key, ['type'=>'text','label'=>false])); ?>
               <?php } ?>
 
