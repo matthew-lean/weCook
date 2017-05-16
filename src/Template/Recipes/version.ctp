@@ -3,7 +3,7 @@
   * @var \App\View\AppView $this
   */
 ?>
-<!-- <nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('List Recipes'), ['action' => 'index']) ?></li>
@@ -14,8 +14,7 @@
         <li><?= $this->Html->link(__('List Ingredients'), ['controller' => 'Ingredients', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Ingredient'), ['controller' => 'Ingredients', 'action' => 'add']) ?></li>
     </ul>
-</nav> -->
-<br>
+</nav>
 <div class="recipes form large-9 medium-8 columns content">
     <?= $this->Form->create($recipe) ?>
     <fieldset>
@@ -28,32 +27,14 @@
             echo $this->Form->control('description', ['label' => false, 'placeholder' => 'Recipe Description', 'error' => false]);
             ?>
 
-            <!-- <div class="method">
+            <div class="method">
               <p>Method</p>
-
               <?php
               for($i = 0; $i < 10; $i++)
                 echo $this->Form->input('steps.'.$i, ['type'=>'text', 'label' =>false]);
                 // echo $this->Form->control('steps.'$i.'description', ['label' => "Method", 'required' => false]);
                 // echo $this->Form->hidden('steps.'$i.'position', ['label' => false, 'value' => $i, 'required' => false]);
               ?>
-            </div> -->
-
-            <div class="method">
-              <p>Method</p>
-              <?php
-                foreach($recipe->steps as  $key => $value) { ?>
-                  <?= $this->Form->input(sprintf('steps.%s.description',$key)); ?>
-                  <?= $this->Form->hidden(sprintf('steps.%s.position', $key, ['type'=>'text','label'=>false])); ?>
-              <?php } ?>
-
-              <div id="add">
-                <div id="newStep"><button type="button">+</button></div>
-              </div>
-              <div id="remove">
-                <div id="removeStep"><button type="button">-</button></div>
-              </div>
-
             </div>
 
             <!-- <div class="method">

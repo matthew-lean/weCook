@@ -85,9 +85,9 @@ class RecipesController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $recipe = $this->Recipes->patchEntity($recipe, $this->request->getData());
             if ($this->Recipes->save($recipe)) {
-                $this->Flash->success(__('The recipe has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
+                $this->Flash->success(__('The recipe edit has been made.'));
+                //redirect to the edited recipe
+                return $this->redirect(['action' => 'view',$recipe->id]);
             }
             $this->Flash->error(__('The recipe could not be saved. Please, try again.'));
         }
@@ -98,6 +98,29 @@ class RecipesController extends AppController
         // add the edit as a new recipe
         $this->set('recipe', $recipe);
     }
+
+    // new fuction version to edit and save recipes
+    // public function version($id = null)
+    // {
+    //     $recipe = $this->Recipes->get($id, [
+    //         'contain' => ['Ingredients','Steps']
+    //     ]);
+    //     if ($this->request->is(['patch', 'post', 'put'])) {
+    //         $recipe = $this->Recipes->patchEntity($recipe, $this->request->getData());
+    //         if ($this->Recipes->save($recipe)) {
+    //             $this->Flash->success(__('The recipe version has been made.'));
+    //             //redirect to the edited recipe
+    //             return $this->redirect(['action' => 'view',$recipe->id]);
+    //         }
+    //         $this->Flash->error(__('The recipe version was not made..'));
+    //     }
+    //     $users = $this->Recipes->Users->find('list', ['limit' => 100]);
+    //     $ingredients = $this->Recipes->Ingredients->find('list', ['limit' => 100]);
+    //     $this->set(compact('recipe', 'users', 'ingredients'));
+    //     $this->set('_serialize', ['recipe']);
+    //     // add the edit as a new recipe
+    //     $this->set('recipe', $recipe);
+    // }
 
     /**
      * Delete method

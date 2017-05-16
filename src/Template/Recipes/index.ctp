@@ -3,7 +3,8 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<br>
+<!-- <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Recipe'), ['action' => 'add']) ?></li>
@@ -14,7 +15,7 @@
         <li><?= $this->Html->link(__('List Ingredients'), ['controller' => 'Ingredients', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Ingredient'), ['controller' => 'Ingredients', 'action' => 'add']) ?></li>
     </ul>
-</nav>
+</nav> -->
 <div class="recipes index large-9 medium-8 columns content">
     <h3><?= __('Recipes') ?></h3>
     <table cellpadding="0" cellspacing="0">
