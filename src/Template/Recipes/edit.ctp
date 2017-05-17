@@ -28,17 +28,7 @@
             echo $this->Form->control('description', ['label' => false, 'placeholder' => 'Recipe Description', 'error' => false]);
             ?>
 
-            <!-- <div class="method">
-              <p>Method</p>
-
-              <?php
-              for($i = 0; $i < 10; $i++)
-                echo $this->Form->input('steps.'.$i, ['type'=>'text', 'label' =>false]);
-                // echo $this->Form->control('steps.'$i.'description', ['label' => "Method", 'required' => false]);
-                // echo $this->Form->hidden('steps.'$i.'position', ['label' => false, 'value' => $i, 'required' => false]);
-              ?>
-            </div> -->
-
+            <!-- Method -->
             <div class="method">
               <p>Method</p>
               <?php
@@ -46,35 +36,21 @@
                   <?= $this->Form->control(sprintf('steps.%s.description',$key)); ?>
                   <?= $this->Form->hidden(sprintf('steps.%s.position', $key, ['type'=>'text','label'=>false])); ?>
               <?php } ?>
-
-              <div id="add">
-                <div id="newStep"><button type="button">+</button></div>
-              </div>
-              <div id="remove">
-                <div id="removeStep"><button type="button">-</button></div>
-              </div>
-
+                <!-- Add/Remove buttons -->
+                <div id="add">
+                  <div id="newStep"><button type="button">+</button></div>
+                </div>
+                <div id="remove">
+                  <div id="removeStep"><button type="button">-</button></div>
+                </div>
             </div>
 
-            <!-- <div class="method">
-              <div id="StepAdd">
-                <?php
-                echo $this->Form->control("steps.0.description", ['label' => "Method", 'placeholder' => 'Step 1', 'required' => false]);
-                echo $this->Form->hidden("steps.0.position", ['label' => false, 'value' => '1', 'required' => false]);
-                ?>
-              </div>
-              <div id="add">
-                <div id="newStep"><button type="button">+</button></div>
-              </div>
-              <div id="remove">
-                <div id="removeStep"><button type="button">-</button></div>
-              </div>
-            </div> -->
-
+            <!-- Ingredients -->
             <div class="ingredients">
               <div id="IngredientAdd">
                 <?php echo $this->Form->control("ingredients.0.name", ['label' => 'Ingredients', 'placeholder' => 'Ingredient', 'required' => false]);?>
               </div>
+              <!-- Add/Remove Buttons -->
               <div id="add">
                 <div id="newIngredient"><button type="button">+</button></div>
               </div>

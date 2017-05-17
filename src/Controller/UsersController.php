@@ -65,9 +65,9 @@ class UsersController extends AppController
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('New user created!'));
-                return $this->redirect(['action' => 'recipes']);
+                return $this->redirect(['controller'=>'recipes','action' => 'index']);
             }
-            $this->Flash->error(__('Unable to register user :().'));
+            $this->Flash->error(__('Unable to register user :('));
         }
         $colours = $this->Users->Colours->find('list', ['limit' => 200]);
         $this->set(compact('user', 'colours'));
@@ -115,17 +115,19 @@ class UsersController extends AppController
         }
         return $this->redirect(['action' => 'index']);
     }
+
   public function login()
     {
         if ($this->request->is('post')) {
             $user = $this->Auth->identify();
             if ($user) {
                 $this->Auth->setUser($user);
-                return $this->redirect($this->Auth->redirectUrl('/recipes'));
+                return $this->redirect(['controller'=>'recipes','action' => 'index']);
             }
             $this->Flash->error(__('Invalid username or password, try again'));
         }
     }
+
     public function logout(){
         $this->Flash->success('You are logged out');
         return $this->redirect($this->Auth->logout());
@@ -133,6 +135,7 @@ class UsersController extends AppController
     //Public pages which don't require user login
     public function beforeFilter(Event $event){
       $this->Auth->allow(['register']);
+      $this->Auth->allow(['about']);
     }
     //Finds the current user in the session
     public function findUser(){
