@@ -33,8 +33,8 @@
               <p>Method</p>
               <?php
                 foreach($recipe->steps as  $key => $value) { ?>
-                  <?= $this->Form->control(sprintf('steps.%s.description',$key)); ?>
-                  <?= $this->Form->hidden(sprintf('steps.%s.position', $key, ['type'=>'text','label'=>false])); ?>
+                  <?= $this->Form->control(sprintf('steps.%s.description',$key), ['type'=>'text','label'=>false, 'class'=>'yo']); ?>
+                  <?= $this->Form->hidden(sprintf('steps.%s.position', $key)); ?>
               <?php } ?>
                 <!-- Add/Remove buttons -->
                 <div id="add">
@@ -45,11 +45,14 @@
                 </div>
             </div>
 
+            <br>
             <!-- Ingredients -->
             <div class="ingredients">
-              <div id="IngredientAdd">
-                <?php echo $this->Form->control("ingredients.0.name", ['label' => 'Ingredients', 'placeholder' => 'Ingredient', 'required' => false]);?>
-              </div>
+              <p>Ingredients</p>
+              <?php
+                foreach($recipe->steps as  $key => $value) { ?>
+                  <?= $this->Form->control(sprintf('ingredients.%s.name',$key),['type'=>'text','label'=>false]); ?>
+              <?php } ?>
               <!-- Add/Remove Buttons -->
               <div id="add">
                 <div id="newIngredient"><button type="button">+</button></div>

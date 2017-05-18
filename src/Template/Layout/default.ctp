@@ -30,8 +30,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->css('cake') ?>
 
     <?= $this->Html->script('jquery') ?>
-    <?= $this->Html->script('tether') ?>
-    <?= $this->Html->script('bootstrap') ?>
+    <!-- remove bootstrap whilst tether isn't working  -->
+    <!-- <?= $this->Html->script('tether') ?>
+    <?= $this->Html->script('bootstrap') ?> -->
     <?= $this->Html->css('bootstrap') ?>
     <?= $this->Html->css('app') ?>
     <!-- Font Awesome -->
