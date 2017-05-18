@@ -20,13 +20,15 @@ $(document).ready(function(){
 
   var count = 1;
 
+  //Add recipe page buttons
+  //Add step
   $('#newStep').click(function() {
     // Add new step input field
     $('#StepAdd').append('<input type="text" class="yo" name="steps['+ count++ +'][description]" placeholder="Step '+ (count) +'" maxlength="144" id="steps-'+ (count-1) +'-description"> <input type="hidden" name="steps['+ (count-1) +'][position]" value=' + count + '>')
     ;
     console.log('Add Step');
   });
-
+  //Remove Step
   $('#removeStep').click(function(){
     // remove the last input and the hidden input
     $('#StepAdd').children().last().remove();
@@ -36,13 +38,42 @@ $(document).ready(function(){
   });
 
 
-  function stepcounter(){
-  // console log the amount of input boxes
-  console.log('go');
-  }
+    var stepItems = $('.stepinput').length;
+    function stepcounter(){
+    // console log the amount of step input boxes
+    console.log('Step inputs ' + stepItems);
+    }
+    //call function
+    stepcounter()
 
-  stepcounter()
+    var ingredientItems = $('.ingredientinput').length;
+    function ingredientcounter(){
+    // console log the amount of ingredient input boxes
+    console.log('Ingredient inputs ' + ingredientItems);
+    }
+    //call function
+    ingredientcounter()
 
+
+  //edit recipe page buttons
+  //Add step
+  $('#EditnewStep').click(function() {
+    // Add new step input field
+    var stepItems = $('.stepinput').length + 1;
+
+    $('#EditStepAdd').append('<input type="text" class="NeweditStep stepinput" name="steps['+ stepItems +'][description]" placeholder="Step '+ stepItems +'" maxlength="144" id="steps-'+ stepItems +'-description"> <input type="hidden" name="steps['+ stepItems +'][position]" value=' + stepItems + '>');
+    console.log('Add Edit Step');
+  });
+  //Remove Step
+  $('#editremoveStep').click(function(){
+    // remove the last input and the hidden input
+    var stepItems = $('.stepinput').length;
+
+    if (stepItems > 1) {
+      $('#EditStepAdd').children().last().remove();
+      $('#EditStepAdd').children().last().remove();
+    }
+  });
 
   $('#newIngredient').click(function() {
     // Add new Ingredient input field

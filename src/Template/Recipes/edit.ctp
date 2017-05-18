@@ -31,17 +31,19 @@
             <!-- Method -->
             <div class="method">
               <p>Method</p>
+              <div id="EditStepAdd">
               <?php
                 foreach($recipe->steps as  $key => $value) { ?>
-                  <?= $this->Form->control(sprintf('steps.%s.description',$key), ['type'=>'text','label'=>false, 'class'=>'yo']); ?>
+                  <?= $this->Form->control(sprintf('steps.%s.description',$key), ['type'=>'text','label'=>false, 'class'=>'stepinput']); ?>
                   <?= $this->Form->hidden(sprintf('steps.%s.position', $key)); ?>
               <?php } ?>
+              </div>
                 <!-- Add/Remove buttons -->
                 <div id="add">
-                  <div id="newStep"><button type="button">+</button></div>
+                  <div id="EditnewStep"><button type="button">+</button></div>
                 </div>
-                <div id="remove">
-                  <div id="removeStep"><button type="button">-</button></div>
+                <div id="editremoveStep">
+                  <div id="editremoveStep"><button type="button">-</button></div>
                 </div>
             </div>
 
@@ -51,8 +53,10 @@
               <p>Ingredients</p>
               <?php
                 foreach($recipe->steps as  $key => $value) { ?>
-                  <?= $this->Form->control(sprintf('ingredients.%s.name',$key),['type'=>'text','label'=>false]); ?>
+                  <?= $this->Form->control(sprintf('ingredients.%s.name',$key),['type'=>'text','label'=>false, 'class'=>'ingredientinput']); ?>
               <?php } ?>
+              <div id="IngredientAdd">
+              </div>
               <!-- Add/Remove Buttons -->
               <div id="add">
                 <div id="newIngredient"><button type="button">+</button></div>
