@@ -1,92 +1,62 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
-  // $('#name').hide();
-  //$('#description').hide();
-  //$('#ingredients-ids').hide();
-  //$('#test').hide();
+	//Add step
+	$('#newStep').click(function() {
+		// Add new step input field
+		var stepItems = $('.stepinput').length + 1;
+		// var stepItemsaddone = $('.stepinput').length + 2;
+		$('#StepAdd').append('<input type="text" class="stepinput" name="steps[' + stepItems + '][description]" placeholder="Step ' + (stepItems + 1) + '" maxlength="144" id="steps-' + stepItems + '-description"> <input type="hidden" name="steps[' + stepItems + '][position]" value=' + (stepItems + 1) + '>');
+		console.log('+ Add Step.. Total Steps = ' + (stepItems+1));
+	});
 
-  // $('button').click(function() {
-  //   $('steps[0][description]').slideUp();
-  //   $('#description').slideDown();
-  //   $( "#input" ).append( "<input type='text'>" );
-  // });
+	//Remove Step
+	$('#removeStep').click(function() {
+		// remove the last input and the hidden input
+		var stepItems = $('.stepinput').length;
+		if (stepItems > 0) {
+			$('#StepAdd').children().last().remove();
+			$('#StepAdd').children().last().remove();
+		console.log('- Remove Step.. Total Steps = ' + (stepItems));
+		}
+	});
 
-  // $('.Ingredient').hide();
-  // var count = 0;
-  // $('#IngredientAdd').on('click',function(){
-  //   $('.Ingredient:eq('+count+')').show();
-  //   count++;
-  // });
+	var stepItems = $('.stepinput').length;
 
-  var count = 1;
+	function stepcounter() {
+		// console log the amount of step input boxes
+		console.log('Step inputs ' + stepItems);
+	}
+	//call function
+	stepcounter()
 
-  //Add recipe page buttons
-  //Add step
-  $('#newStep').click(function() {
-    // Add new step input field
-    $('#StepAdd').append('<input type="text" class="yo" name="steps['+ count++ +'][description]" placeholder="Step '+ (count) +'" maxlength="144" id="steps-'+ (count-1) +'-description"> <input type="hidden" name="steps['+ (count-1) +'][position]" value=' + count + '>')
-    ;
-    console.log('Add Step');
-  });
-  //Remove Step
-  $('#removeStep').click(function(){
-    // remove the last input and the hidden input
-    $('#StepAdd').children().last().remove();
-    $('#StepAdd').children().last().remove();
-    count--;
-    console.log('Remove Step');
-  });
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+  //Add ingredient
+	$('#newIngredient').click(function() {
+    var ingredientItems = $('.ingredientinput').length + 1;
+		// Add new Ingredient input field
+		$('#IngredientAdd').append('<input type="text" class="ingredientinput" name="ingredients[' + ingredientItems + '][name]" placeholder="Ingredient" maxlength="144" id="ingredients-' + ingredientItems + '-name">');
+		console.log('+ Add Ingredient.. Total Ingredients = ' + (ingredientItems+1));
+	});
 
-    var stepItems = $('.stepinput').length;
-    function stepcounter(){
-    // console log the amount of step input boxes
-    console.log('Step inputs ' + stepItems);
-    }
-    //call function
-    stepcounter()
-
+  //Remove Ingredient
+	$('#removeIngredient').click(function() {
     var ingredientItems = $('.ingredientinput').length;
-    function ingredientcounter(){
-    // console log the amount of ingredient input boxes
-    console.log('Ingredient inputs ' + ingredientItems);
+		if (ingredientItems > 0) {
+        // remove the last input
+		    $('#IngredientAdd').children().last().remove();
+		// count--;
+		console.log('- Remove Ingredient.. Total Ingredients = ' + (ingredientItems));
     }
-    //call function
-    ingredientcounter()
+	});
 
+  var ingredientItems = $('.ingredientinput').length;
 
-  //edit recipe page buttons
-  //Add step
-  $('#EditnewStep').click(function() {
-    // Add new step input field
-    var stepItems = $('.stepinput').length + 1;
-
-    $('#EditStepAdd').append('<input type="text" class="NeweditStep stepinput" name="steps['+ stepItems +'][description]" placeholder="Step '+ stepItems +'" maxlength="144" id="steps-'+ stepItems +'-description"> <input type="hidden" name="steps['+ stepItems +'][position]" value=' + stepItems + '>');
-    console.log('Add Edit Step');
-  });
-  //Remove Step
-  $('#editremoveStep').click(function(){
-    // remove the last input and the hidden input
-    var stepItems = $('.stepinput').length;
-
-    if (stepItems > 1) {
-      $('#EditStepAdd').children().last().remove();
-      $('#EditStepAdd').children().last().remove();
-    }
-  });
-
-  $('#newIngredient').click(function() {
-    // Add new Ingredient input field
-    $('#IngredientAdd').append('<input type="text" name="ingredients['+ count++ +'][name]" placeholder="Ingredient" maxlength="144" id="ingredients-'+ (count-1) +'-name">');
-    console.log('Add Ingredient');
-  });
-
-  $('#removeIngredient').click(function(){
-    // remove the last input and the hidden input
-    $('#IngredientAdd').children().last().remove();
-    count--;
-    console.log('Remove Ingredient');
-    });
-
+	function ingredientcounter() {
+		// console log the amount of Ingredient input boxes
+		console.log('Ingredient inputs ' + ingredientItems);
+	}
+	//call function
+	ingredientcounter()
 
 });

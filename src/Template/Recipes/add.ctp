@@ -30,9 +30,10 @@
             ?>
 
             <div class="method">
+              <p>Method</p>
               <div id="StepAdd">
                 <?php
-                echo $this->Form->control("steps.0.description", ['label' => "Method", 'placeholder' => 'Step 1', 'required' => false]);
+                echo $this->Form->control("steps.0.description", ['label' => false, 'placeholder' => 'Step 1', 'required' => false]);
                 echo $this->Form->hidden("steps.0.position", ['label' => false, 'value' => '1', 'required' => false]);
                 ?>
               </div>
@@ -44,9 +45,12 @@
               </div>
             </div>
 
+            <br>
+            
             <div class="ingredients">
+              <p>Ingredients</p>
               <div id="IngredientAdd">
-                <?php echo $this->Form->control("ingredients.0.name", ['label' => 'Ingredients', 'placeholder' => 'Ingredient', 'required' => false]);?>
+                <?php echo $this->Form->control("ingredients.0.name", ['label' => false, 'placeholder' => 'Ingredient', 'required' => false]);?>
               </div>
               <div id="add">
                 <div id="newIngredient"><button type="button">+</button></div>
