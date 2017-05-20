@@ -33,7 +33,7 @@
               <p>Method</p>
               <div id="StepAdd">
                 <?php
-                echo $this->Form->control("steps.0.description", ['label' => false, 'placeholder' => 'Step 1', 'required' => false]);
+                echo $this->Form->control("steps.0.description", ['label' => false, 'class'=>'stepinput', 'placeholder' => 'Step 1', 'required' => false]);
                 echo $this->Form->hidden("steps.0.position", ['label' => false, 'value' => '1', 'required' => false]);
                 ?>
               </div>
@@ -46,7 +46,7 @@
             </div>
 
             <br>
-            
+
             <div class="ingredients">
               <p>Ingredients</p>
               <div id="IngredientAdd">

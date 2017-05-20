@@ -3,7 +3,7 @@ $(document).ready(function() {
 	//Add step
 	$('#newStep').click(function() {
 		// Add new step input field
-		var stepItems = $('.stepinput').length + 1;
+		var stepItems = $('.stepinput').length;
 		// var stepItemsaddone = $('.stepinput').length + 2;
 		$('#StepAdd').append('<input type="text" class="stepinput" name="steps[' + stepItems + '][description]" placeholder="Step ' + (stepItems + 1) + '" maxlength="144" id="steps-' + stepItems + '-description"> <input type="hidden" name="steps[' + stepItems + '][position]" value=' + (stepItems + 1) + '>');
 		console.log('+ Add Step.. Total Steps = ' + (stepItems+1));
@@ -13,10 +13,10 @@ $(document).ready(function() {
 	$('#removeStep').click(function() {
 		// remove the last input and the hidden input
 		var stepItems = $('.stepinput').length;
-		if (stepItems > 0) {
+		if (stepItems > 1) {
 			$('#StepAdd').children().last().remove();
 			$('#StepAdd').children().last().remove();
-		console.log('- Remove Step.. Total Steps = ' + (stepItems));
+		console.log('- Remove Step.. Total Steps = ' + (stepItems-1));
 		}
 	});
 

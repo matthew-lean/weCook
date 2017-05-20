@@ -42,7 +42,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->script('scripts') ?>
 
     <?= $this->fetch('meta') ?>
-    <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
 <body>
@@ -103,6 +102,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             </ul>
             </div>
         </div>
+
+        <?= $this->Flash->render() ?>
+
         <div class="sub-nav">
           <div class="site-container">
             <ul class="left">
@@ -117,7 +119,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
 <!-- <div class="site-container"> -->
 
-    <?= $this->Flash->render() ?>
     <div class="container clearfix">
         <?= $this->fetch('content') ?>
     </div>
