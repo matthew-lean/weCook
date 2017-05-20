@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2017 at 09:56 PM
+-- Generation Time: May 20, 2017 at 04:16 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -29,20 +29,21 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `colours`;
 CREATE TABLE `colours` (
   `id` int(11) NOT NULL,
-  `colour_name` varchar(32) NOT NULL
+  `colour_name` varchar(32) NOT NULL,
+  `hex` varchar(6) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `colours`
 --
 
-INSERT INTO `colours` (`id`, `colour_name`) VALUES
-(1, 'blue'),
-(2, 'red'),
-(3, 'green'),
-(4, 'orange'),
-(5, 'yellow'),
-(6, 'pink');
+INSERT INTO `colours` (`id`, `colour_name`, `hex`) VALUES
+(1, 'blue', '036aed'),
+(2, 'red', 'ff3a2f'),
+(3, 'green', '4cd964'),
+(4, 'orange', 'ff9500'),
+(5, 'yellow', 'ffcc00'),
+(6, 'pink', 'ff2d55');
 
 -- --------------------------------------------------------
 
@@ -71,7 +72,53 @@ INSERT INTO `ingredients` (`id`, `name`) VALUES
 (18, 'i2'),
 (17, 'i'),
 (21, 'flour'),
-(22, 'flour');
+(22, 'flour'),
+(23, 'milk'),
+(24, 'bread'),
+(25, 'egg'),
+(26, 'i2'),
+(27, 'Ingredient One '),
+(28, 'Ingredient Two'),
+(29, 'Ingredient 3'),
+(30, 'Ingredient Two'),
+(31, 'Ingredient 3'),
+(32, 'Ingredient One '),
+(33, 'one'),
+(34, 'a'),
+(35, '1'),
+(36, '2'),
+(37, '1'),
+(38, 'i'),
+(39, 'i1'),
+(40, 'i2'),
+(41, 'i1'),
+(42, 'i2'),
+(43, 'i3'),
+(44, 'i2'),
+(45, 'i1'),
+(46, 'i3'),
+(47, 'one1'),
+(48, 'two2'),
+(49, 'two2'),
+(50, 'one1'),
+(51, 'one1'),
+(52, 'two2'),
+(53, 'a'),
+(54, 'b'),
+(55, 'c'),
+(56, 'c'),
+(57, 'b'),
+(58, 'a'),
+(59, 'd'),
+(60, 'a'),
+(61, 'b'),
+(62, 'c'),
+(63, '1'),
+(64, '2'),
+(65, '2'),
+(66, '1'),
+(67, 'egg'),
+(68, 'bread');
 
 -- --------------------------------------------------------
 
@@ -86,18 +133,19 @@ CREATE TABLE `recipes` (
   `name` varchar(50) NOT NULL,
   `description` varchar(255) NOT NULL,
   `created` datetime NOT NULL,
-  `modified` datetime NOT NULL
+  `modified` datetime NOT NULL,
+  `original_id` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `recipes`
 --
 
-INSERT INTO `recipes` (`id`, `user_id`, `name`, `description`, `created`, `modified`) VALUES
-(1, 1, 'The first recipe', 'This is the first recipe name', '2017-03-28 00:00:00', '2017-03-28 15:21:57'),
-(2, 2, 'Recipe 2', 'Recipe 2 desc', '2017-03-29 08:52:25', '2017-03-29 08:52:25'),
-(14, 1, 'Third Recipe Test', 'Description to the third recipe ', '2017-04-10 21:57:14', '2017-05-13 21:51:20'),
-(106, 1, '1', 'd', '2017-05-10 09:44:48', '2017-05-10 09:44:48');
+INSERT INTO `recipes` (`id`, `user_id`, `name`, `description`, `created`, `modified`, `original_id`) VALUES
+(1, 1, 'The first recipe', 'This is the first recipe name', '2017-03-28 00:00:00', '2017-03-28 15:21:57', NULL),
+(2, 1, 'Recipe 2', 'Recipe 2 desc', '2017-03-29 08:52:25', '2017-05-15 10:42:07', NULL),
+(14, 1, 'Third Recipe Test', 'Description to the third recipe ', '2017-04-10 21:57:14', '2017-05-20 16:11:17', NULL),
+(106, 1, '1', 'd', '2017-05-10 09:44:48', '2017-05-15 11:09:50', NULL);
 
 -- --------------------------------------------------------
 
@@ -121,12 +169,11 @@ INSERT INTO `recipes_ingredients` (`id`, `recipe_id`, `ingredient_id`) VALUES
 (2, 1, 2),
 (3, 1, 3),
 (4, 1, 4),
-(5, 2, 1),
-(6, 2, 3),
-(7, 2, 4),
-(59, 14, 22),
-(55, 106, 18),
-(54, 106, 17);
+(61, 2, 24),
+(60, 2, 23),
+(104, 14, 67),
+(105, 14, 68),
+(63, 106, 26);
 
 -- --------------------------------------------------------
 
@@ -386,7 +433,56 @@ INSERT INTO `steps` (`id`, `recipe_id`, `description`, `position`) VALUES
 (246, 106, '1', 1),
 (247, 106, '2', 2),
 (248, 106, '3', 3),
-(249, 107, '1', 1);
+(249, 107, '1', 1),
+(250, 108, 'Step One ', 1),
+(251, 108, 'Step Two ', 2),
+(252, 108, '3', 3),
+(253, 108, 'Step One ', 1),
+(254, 108, 'Step Two ', 2),
+(255, 108, '3', 3),
+(256, 108, '4', 4),
+(257, 109, '1', 1),
+(258, 109, '2', 1),
+(259, 109, 'three', 2),
+(260, 110, 'method', 1),
+(261, 110, 'a', 1),
+(262, 111, 'one', 1),
+(263, 111, 'two', 1),
+(264, 111, 'three', 2),
+(265, 111, 'four', 3),
+(266, 112, '1', 1),
+(267, 112, '2', 1),
+(268, 113, '1', 1),
+(269, 113, '2', 2),
+(270, 113, '3', 3),
+(271, 114, 'one', 1),
+(272, 114, 'two', 2),
+(273, 115, 'one', 1),
+(274, 115, 'two ', 2),
+(275, 115, 'three', 3),
+(279, 116, 'one', 1),
+(277, 114, 'two', 2),
+(278, 114, '3', 3),
+(280, 116, 'two', 2),
+(281, 116, 'three', 3),
+(282, 116, 'one', 1),
+(283, 116, 'two', 2),
+(284, 116, 'three', 3),
+(285, 116, 'four', 4),
+(286, 116, 'one', 1),
+(287, 117, '1', 1),
+(288, 117, '2', 2),
+(292, 117, '2', 2),
+(291, 117, '1', 1),
+(293, 117, '3', 3),
+(294, 117, '4', 4),
+(295, 118, 'one', 1),
+(296, 118, 'two ', 2),
+(297, 118, 'three', 3),
+(302, 14, 'Test Description ', 1),
+(300, 118, 'three', 3),
+(301, 118, '4', 4),
+(303, 14, 'step 2', 2);
 
 -- --------------------------------------------------------
 
@@ -413,7 +509,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `colour_id`, `created`, 
 (1, 'matt', 'mttlean@gmail.com', '$2y$10$Q65/gUFq8L49EEeFiipRneVePypfjNZfSdMnYCsMj0DsKHzTpdh4W', 1, '2017-03-19 22:51:01', '2017-03-19 22:53:10'),
 (2, 'John', 'john@mail.com', '$2y$10$e2tfHLLVeU.m1oc38mXsJ.ciCbEQZPBdoxGA7hXztOMHK3PnFhi2q', 2, '2017-03-21 15:10:09', '2017-03-21 16:16:22'),
 (3, 'Peter', 'peter@mail.com', '$2y$10$jwlvDYq1Si1S6nQqXBCXmefPfyPcUnrhFFxgXKEQJ7eC8b/sw.CP.', 1, '2017-03-21 17:57:53', '2017-03-21 17:57:53'),
-(4, 'Dave', 'dave@mail.com', '$2y$10$W18YgQJt8ApVHaucaRiw9OV4Rgcgw4d.Ggl7nN15B6f5VJnwVWmYe', 2, '2017-03-21 18:24:25', '2017-03-21 18:24:25');
+(4, 'Dave', 'dave@mail.com', '$2y$10$W18YgQJt8ApVHaucaRiw9OV4Rgcgw4d.Ggl7nN15B6f5VJnwVWmYe', 2, '2017-03-21 18:24:25', '2017-03-21 18:24:25'),
+(7, 'alex', 'alex@alex.com', '$2y$10$DhBCXiSfl9y3ep6ab6PfweHMtpnRIm8w8siECAF/rdI7Ivc/TVypm', 3, '2017-05-17 10:09:18', '2017-05-17 10:09:18');
 
 --
 -- Indexes for dumped tables
@@ -474,17 +571,17 @@ ALTER TABLE `colours`
 -- AUTO_INCREMENT for table `ingredients`
 --
 ALTER TABLE `ingredients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 --
 -- AUTO_INCREMENT for table `recipes`
 --
 ALTER TABLE `recipes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
 --
 -- AUTO_INCREMENT for table `recipes_ingredients`
 --
 ALTER TABLE `recipes_ingredients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 --
 -- AUTO_INCREMENT for table `recipes_versions`
 --
@@ -494,12 +591,12 @@ ALTER TABLE `recipes_versions`
 -- AUTO_INCREMENT for table `steps`
 --
 ALTER TABLE `steps`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=250;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=304;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
