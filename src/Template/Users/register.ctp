@@ -1,5 +1,5 @@
 <br>
-<div class="index-large-4 medium-4 large-offset-4 medium-offset-4">
+<div class="register default">
     <?= $this->Form->create($user) ?>
     <fieldset>
         <legend><?= __('Add User') ?></legend>
@@ -9,6 +9,12 @@
             echo $this->Form->control('password');
             echo $this->Form->control('colour_id');
         ?>
+        <div class="col blue"></div>
+        <div class="col red"></div>
+        <div class="col green"></div>
+        <div class="col orange"></div>
+        <div class="col yellow"></div>
+        <div class="col pink"></div>
     </fieldset>
     <?= $this->Form->button(__('Create Account')) ?>
     <?= $this->Form->end() ?>
