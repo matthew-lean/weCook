@@ -52,7 +52,7 @@ class RecipesController extends AppController
     public function add()
     {
         $recipe = $this->Recipes->newEntity($this->request->data, [
-        'associated' => ['Steps','Ingredients']
+        'associated' => ['Steps','Ingredients','Users']
         ]);
         if ($this->request->is('post')) {
             $recipe = $this->Recipes->patchEntity($recipe, $this->request->getData());
@@ -103,12 +103,15 @@ class RecipesController extends AppController
     public function version($id = null)
     {
         $recipe = $this->Recipes->get($id, [
-            'contain' => ['Ingredients','Steps']
+            'contain' => ['Ingredients','Steps','Users']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $recipe = $this->Recipes->patchEntity($recipe, $this->request->getData());
-            if ($this->Recipes->save($recipe)) {
-                $this->Flash->success(__('VERSION CREATED'));
+            $recipe = $this->Recipes->newEntity($this->request->data, [
+            'associated' => ['Steps','Ingredients','Users']
+            ]);
+            if ($this->Recipes->save($recipe, ['associated' => ['Steps','Ingredients']])) {
+                $this->Flash->success(__('A version has been created'));
                 //redirect to the edited recipe
                 return $this->redirect(['action' => 'view',$recipe->id]);
             }
