@@ -24,13 +24,11 @@
             <div class="method">
               <p>Method</p>
               <div id="StepAdd">
-              <!-- <?php
+              <?php
                 foreach($recipe->steps as  $key => $value) { ?>
                   <?= $this->Form->control(sprintf('steps.%s.description',$key), ['type'=>'text','class'=>'stepinput','label'=>false, 'class'=>'stepinput']); ?>
                   <?= $this->Form->hidden(sprintf('steps.%s.position', $key)); ?>
-              <?php } ?> -->
-
-    
+              <?php } ?>
               </div>
                 <!-- Add/Remove buttons -->
                 <div id="add">
