@@ -307,6 +307,9 @@ button:hover, button:focus, .button:hover, .button:focus{
   text-transform: none;
   margin-bottom: 30px;
 }
+label {
+    color: #036aed;
+}
 
 /* Profile Page Style */
 .profile-header{
