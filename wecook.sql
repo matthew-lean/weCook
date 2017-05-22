@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 20, 2017 at 04:16 PM
+-- Generation Time: May 22, 2017 at 05:27 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -118,7 +118,30 @@ INSERT INTO `ingredients` (`id`, `name`) VALUES
 (65, '2'),
 (66, '1'),
 (67, 'egg'),
-(68, 'bread');
+(68, 'bread'),
+(69, 'eggs'),
+(70, 'flour'),
+(71, 'chocolate/fudge bits'),
+(72, 'chocolate/fudge bits'),
+(73, 'flour'),
+(74, 'eggs'),
+(75, 'eggs'),
+(76, 'flour'),
+(77, 'chocolate/fudge bits'),
+(78, 'chocolate/fudge bits'),
+(79, 'flour'),
+(80, 'eggs'),
+(81, 'butter'),
+(82, 'chocolate bits '),
+(83, 'flour'),
+(84, 'eggs'),
+(85, 'Cocoa powder'),
+(86, 'chocolate/toffee bits'),
+(87, 'flour'),
+(88, 'eggs'),
+(89, 'egg'),
+(90, 'milk'),
+(91, 'flour');
 
 -- --------------------------------------------------------
 
@@ -142,10 +165,7 @@ CREATE TABLE `recipes` (
 --
 
 INSERT INTO `recipes` (`id`, `user_id`, `name`, `description`, `created`, `modified`, `original_id`) VALUES
-(1, 1, 'The first recipe', 'This is the first recipe name', '2017-03-28 00:00:00', '2017-03-28 15:21:57', NULL),
-(2, 1, 'Recipe 2', 'Recipe 2 desc', '2017-03-29 08:52:25', '2017-05-15 10:42:07', NULL),
-(14, 1, 'Third Recipe Test', 'Description to the third recipe ', '2017-04-10 21:57:14', '2017-05-20 16:11:17', NULL),
-(106, 1, '1', 'd', '2017-05-10 09:44:48', '2017-05-15 11:09:50', NULL);
+(122, 1, 'Cookies ', 'a simple cookie recipe ', '2017-05-21 16:19:15', '2017-05-21 16:19:15', NULL);
 
 -- --------------------------------------------------------
 
@@ -165,15 +185,9 @@ CREATE TABLE `recipes_ingredients` (
 --
 
 INSERT INTO `recipes_ingredients` (`id`, `recipe_id`, `ingredient_id`) VALUES
-(1, 1, 1),
-(2, 1, 2),
-(3, 1, 3),
-(4, 1, 4),
-(61, 2, 24),
-(60, 2, 23),
-(104, 14, 67),
-(105, 14, 68),
-(63, 106, 26);
+(128, 122, 91),
+(127, 122, 90),
+(126, 122, 89);
 
 -- --------------------------------------------------------
 
@@ -430,9 +444,6 @@ INSERT INTO `steps` (`id`, `recipe_id`, `description`, `position`) VALUES
 (243, 104, '1', 1),
 (244, 105, '1', 1),
 (245, 105, '2', 2),
-(246, 106, '1', 1),
-(247, 106, '2', 2),
-(248, 106, '3', 3),
 (249, 107, '1', 1),
 (250, 108, 'Step One ', 1),
 (251, 108, 'Step Two ', 2),
@@ -482,7 +493,15 @@ INSERT INTO `steps` (`id`, `recipe_id`, `description`, `position`) VALUES
 (302, 14, 'Test Description ', 1),
 (300, 118, 'three', 3),
 (301, 118, '4', 4),
-(303, 14, 'step 2', 2);
+(303, 14, 'step 2', 2),
+(304, 106, 'Mix in all the dry and wet ingredients', 1),
+(305, 106, 'Add the chocolate and fudge bits', 2),
+(306, 106, 'Cook in the oven for 12mins, leave to cool then enjoy! ', 3),
+(316, 122, 'cook in the oven for 12 mins', 2),
+(315, 122, 'mix all the ingredients in a bowl ', 1),
+(314, 121, 'add toffee', 2),
+(313, 121, 'get the cookies ', 1),
+(317, 122, 'enjoy! :) ', 3);
 
 -- --------------------------------------------------------
 
@@ -508,9 +527,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `colour_id`, `created`, `modified`) VALUES
 (1, 'matt', 'mttlean@gmail.com', '$2y$10$Q65/gUFq8L49EEeFiipRneVePypfjNZfSdMnYCsMj0DsKHzTpdh4W', 1, '2017-03-19 22:51:01', '2017-03-19 22:53:10'),
 (2, 'John', 'john@mail.com', '$2y$10$e2tfHLLVeU.m1oc38mXsJ.ciCbEQZPBdoxGA7hXztOMHK3PnFhi2q', 2, '2017-03-21 15:10:09', '2017-03-21 16:16:22'),
-(3, 'Peter', 'peter@mail.com', '$2y$10$jwlvDYq1Si1S6nQqXBCXmefPfyPcUnrhFFxgXKEQJ7eC8b/sw.CP.', 1, '2017-03-21 17:57:53', '2017-03-21 17:57:53'),
-(4, 'Dave', 'dave@mail.com', '$2y$10$W18YgQJt8ApVHaucaRiw9OV4Rgcgw4d.Ggl7nN15B6f5VJnwVWmYe', 2, '2017-03-21 18:24:25', '2017-03-21 18:24:25'),
-(7, 'alex', 'alex@alex.com', '$2y$10$DhBCXiSfl9y3ep6ab6PfweHMtpnRIm8w8siECAF/rdI7Ivc/TVypm', 3, '2017-05-17 10:09:18', '2017-05-17 10:09:18');
+(10, 'shaun', 'shaun@mail.com', '$2y$10$ftoOepD3p7kQlX23PDP.tuH60NoxuCLshfUBHbuktdgP1jIu/SFDO', 6, '2017-05-22 14:29:09', '2017-05-22 14:29:09');
 
 --
 -- Indexes for dumped tables
@@ -571,17 +588,17 @@ ALTER TABLE `colours`
 -- AUTO_INCREMENT for table `ingredients`
 --
 ALTER TABLE `ingredients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 --
 -- AUTO_INCREMENT for table `recipes`
 --
 ALTER TABLE `recipes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
 --
 -- AUTO_INCREMENT for table `recipes_ingredients`
 --
 ALTER TABLE `recipes_ingredients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
 --
 -- AUTO_INCREMENT for table `recipes_versions`
 --
@@ -591,12 +608,12 @@ ALTER TABLE `recipes_versions`
 -- AUTO_INCREMENT for table `steps`
 --
 ALTER TABLE `steps`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=304;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=318;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

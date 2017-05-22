@@ -95,8 +95,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
               <!-- Logout/Login Buttons-->
               <?php if($loggedIn) : ?>
                     <!--Current User -->
-                    <li><?= $this->Html->link($authUser['name'], array('controller' => 'users', 'action' => 'view', $authUser['id']))  ?>  </li>
-                    <li><?= $this->Html->link("<i class='fa fa-sign-out'></i>Logout", ['controller' => 'users', 'action' => 'logout'], ['escape' => false]); ?> </li>
+                    <li><i class="fa fa-user-o" aria-hidden="true"></i><?= $this->Html->link($authUser['name'], array('controller' => 'users', 'action' => 'view', $authUser['id']))?>  </li>
+                    <li><?= $this->Html->link("<i class='fa fa-sign-out'></i> Logout", ['controller' => 'users', 'action' => 'logout'], ['escape' => false]); ?> </li>
               <?php else : ?>
                     <button><?= $this->Html->link('Register', ['controller' => 'users', 'action' => 'register']); ?></button>
                 <?php endif; ?>

@@ -65,7 +65,7 @@ class UsersController extends AppController
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('New user created!'));
-                return $this->redirect(['controller'=>'recipes','action' => 'index']);
+                return $this->redirect(['controller'=>'users','action' => 'login']);
             }
             $this->Flash->error(__('Unable to register user :('));
         }
