@@ -10,6 +10,7 @@ use Cake\Validation\Validator;
  * Recipes Model
  *
  * @property \Cake\ORM\Association\BelongsTo $Users
+ * @property \Cake\ORM\Association\BelongsTo $Originals
  * @property \Cake\ORM\Association\HasMany $RecipesVersions
  * @property \Cake\ORM\Association\HasMany $Steps
  * @property \Cake\ORM\Association\BelongsToMany $Ingredients
@@ -47,18 +48,18 @@ class RecipesTable extends Table
             'foreignKey' => 'user_id',
             'joinType' => 'INNER'
         ]);
+        $this->belongsTo('Originals', [
+            'foreignKey' => 'original_id'
+        ]);
         $this->hasMany('RecipesVersions', [
             'foreignKey' => 'recipe_id'
         ]);
         $this->hasMany('Steps', [
             'foreignKey' => 'recipe_id'
         ]);
-        $this->hasMany('Versions', [
-            'foreignKey' => 'recipe_id'
-        ]);
         $this->belongsToMany('Ingredients', [
             'foreignKey' => 'recipe_id',
-
+            'targetForeignKey' => 'ingredient_id',
             'joinTable' => 'recipes_ingredients'
         ]);
     }
@@ -83,6 +84,16 @@ class RecipesTable extends Table
             ->requirePresence('description', 'create')
             ->notEmpty('description');
 
+        $validator
+            ->integer('cooktime')
+            ->requirePresence('cooktime', 'create')
+            ->notEmpty('cooktime');
+
+        $validator
+            ->integer('preptime')
+            ->requirePresence('preptime', 'create')
+            ->notEmpty('preptime');
+
         return $validator;
     }
 
@@ -96,6 +107,7 @@ class RecipesTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['user_id'], 'Users'));
+        $rules->add($rules->existsIn(['original_id'], 'Originals'));
 
         return $rules;
     }

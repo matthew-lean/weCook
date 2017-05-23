@@ -12,9 +12,11 @@
             <h1><?= h($recipe->name) ?></h1>
             <p><?= h($recipe->description) ?></p>
             <h3><?= $recipe->has('user') ? $this->Html->link($recipe->user->name, ['controller' => 'Users', 'action' => 'view', $recipe->user->id]) : '' ?></h3>
+            <p><?= h($recipe->cooktime)?></p>
+            <p><?= h($recipe->preptime)?></p>
     </div>
 
-    <div class="related ingredients">
+    <div class="ingredients">
           <!-- <h4><?= __('Ingredients') ?></h4> -->
           <?php if (!empty($recipe->ingredients)): ?>
 
@@ -29,14 +31,10 @@
 
     <br><br>
 
-    <div class="related method">
+    <div class="method">
         <h2><?= __('Method') ?></h2>
         <?php if (!empty($recipe->steps)): ?>
         <table cellpadding="0" cellspacing="0">
-            <tr>
-                <th scope="col"><?= __('Position') ?></th>
-                <th scope="col"><?= __('Description') ?></th>
-            </tr>
             <?php foreach ($recipe->steps as $steps): ?>
             <tr>
                 <td><?= h($steps->position) ?></td>

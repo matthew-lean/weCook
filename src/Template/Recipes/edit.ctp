@@ -12,9 +12,15 @@
             echo $this->Form->create($recipe);
             //grabs the current user and hides the input
             echo $this->Form->hidden('user_id', array('value'=>$authUser['id']));
-            echo $this->Form->control('name', ['label' => false, 'placeholder' => 'Recipe Title','error' => false]);
-            echo $this->Form->control('description', ['label' => false, 'placeholder' => 'Recipe Description', 'error' => false]);
+            echo $this->Form->control('name', ['label' => 'Recipe Title','required' => false,'error' => false]);
+            echo $this->Form->control('description', ['label' => 'Recipe Description','required' => false, 'error' => false]);
             ?>
+              <div class="cooktime">
+              <?php echo $this->Form->control('cooktime', ['label' => 'Cook time','placeholder'=>'mins','class'=>'timeinput','required' => false, 'error' => false]);?>
+              </div>
+              <div class="preptime">
+              <?php echo $this->Form->control('preptime', ['label' => 'Prep time','placeholder'=>'mins','class'=>'timeinput','required' => false, 'error' => false]);?>
+              </div>
 
             <!-- Method -->
             <div class="method">

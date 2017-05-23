@@ -1,8 +1,6 @@
 <?php
 namespace App\Controller;
-
 use App\Controller\AppController;
-
 /**
  * Recipes Controller
  *
@@ -10,7 +8,6 @@ use App\Controller\AppController;
  */
 class RecipesController extends AppController
 {
-
     /**
      * Index method
      *
@@ -22,11 +19,9 @@ class RecipesController extends AppController
             'contain' => ['Users']
         ];
         $recipes = $this->paginate($this->Recipes);
-
         $this->set(compact('recipes'));
         $this->set('_serialize', ['recipes']);
     }
-
     /**
      * View method
      *
@@ -39,11 +34,9 @@ class RecipesController extends AppController
         $recipe = $this->Recipes->get($id, [
             'contain' => ['Users', 'Ingredients', 'Steps']
         ]);
-
         $this->set('recipe', $recipe);
         $this->set('_serialize', ['recipe']);
     }
-
     /**
      * Add method
      *
@@ -69,7 +62,6 @@ class RecipesController extends AppController
         $this->set('_serialize', ['recipe']);
         $this->set('recipe', $recipe);
     }
-
     /**
      * Edit method
      *
@@ -98,7 +90,6 @@ class RecipesController extends AppController
         // // add the edit as a new recipe
         // $this->set('recipe', $recipe);
     }
-
     // new fuction version to edit and save recipes
     public function version($id = null)
     {
@@ -124,7 +115,6 @@ class RecipesController extends AppController
         // add the edit as a new recipe
         $this->set('recipe', $recipe);
     }
-
     /**
      * Delete method
      *
@@ -141,7 +131,6 @@ class RecipesController extends AppController
         } else {
             $this->Flash->error(__('The recipe could not be deleted. Please, try again.'));
         }
-
         return $this->redirect(['action' => 'index']);
     }
 }

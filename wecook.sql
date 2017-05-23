@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2017 at 05:27 PM
+-- Generation Time: May 23, 2017 at 07:46 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -141,7 +141,10 @@ INSERT INTO `ingredients` (`id`, `name`) VALUES
 (88, 'eggs'),
 (89, 'egg'),
 (90, 'milk'),
-(91, 'flour');
+(91, 'flour'),
+(92, 'Chocolate '),
+(93, 'flour'),
+(94, 'eggs');
 
 -- --------------------------------------------------------
 
@@ -157,15 +160,18 @@ CREATE TABLE `recipes` (
   `description` varchar(255) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
-  `original_id` int(11) DEFAULT NULL
+  `original_id` int(11) DEFAULT NULL,
+  `cooktime` smallint(6) NOT NULL,
+  `preptime` smallint(6) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `recipes`
 --
 
-INSERT INTO `recipes` (`id`, `user_id`, `name`, `description`, `created`, `modified`, `original_id`) VALUES
-(122, 1, 'Cookies ', 'a simple cookie recipe ', '2017-05-21 16:19:15', '2017-05-21 16:19:15', NULL);
+INSERT INTO `recipes` (`id`, `user_id`, `name`, `description`, `created`, `modified`, `original_id`, `cooktime`, `preptime`) VALUES
+(123, 1, 'Brownies', 'Simple brownie recipe ', '2017-05-22 17:32:47', '2017-05-22 17:32:47', NULL, 0, 0),
+(122, 1, 'Cookies ', 'a simple cookie recipe ', '2017-05-21 16:19:15', '2017-05-21 16:19:15', NULL, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -185,6 +191,9 @@ CREATE TABLE `recipes_ingredients` (
 --
 
 INSERT INTO `recipes_ingredients` (`id`, `recipe_id`, `ingredient_id`) VALUES
+(131, 123, 94),
+(130, 123, 93),
+(129, 123, 92),
 (128, 122, 91),
 (127, 122, 90),
 (126, 122, 89);
@@ -501,7 +510,10 @@ INSERT INTO `steps` (`id`, `recipe_id`, `description`, `position`) VALUES
 (315, 122, 'mix all the ingredients in a bowl ', 1),
 (314, 121, 'add toffee', 2),
 (313, 121, 'get the cookies ', 1),
-(317, 122, 'enjoy! :) ', 3);
+(317, 122, 'enjoy! :) ', 3),
+(318, 123, 'Mix the ingredients together ', 1),
+(319, 123, 'Cook the brownies ', 2),
+(320, 123, 'Enjoy! ', 3);
 
 -- --------------------------------------------------------
 
@@ -588,17 +600,17 @@ ALTER TABLE `colours`
 -- AUTO_INCREMENT for table `ingredients`
 --
 ALTER TABLE `ingredients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
 --
 -- AUTO_INCREMENT for table `recipes`
 --
 ALTER TABLE `recipes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
 --
 -- AUTO_INCREMENT for table `recipes_ingredients`
 --
 ALTER TABLE `recipes_ingredients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
 --
 -- AUTO_INCREMENT for table `recipes_versions`
 --
@@ -608,7 +620,7 @@ ALTER TABLE `recipes_versions`
 -- AUTO_INCREMENT for table `steps`
 --
 ALTER TABLE `steps`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=318;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=321;
 --
 -- AUTO_INCREMENT for table `users`
 --

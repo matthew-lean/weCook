@@ -28,8 +28,8 @@ class RecipesTableTest extends TestCase
         'app.users',
         'app.colours',
         'app.recipes_versions',
-        'app.versions',
         'app.steps',
+        'app.versions',
         'app.ingredients',
         'app.recipes_ingredients'
     ];
