@@ -9,11 +9,15 @@
             <h1><?= h($recipe->name) ?></h1>
             <p><?= h($recipe->description) ?></p>
             <h3><?= $recipe->has('user') ? $this->Html->link($recipe->user->name, ['controller' => 'Users', 'action' => 'view', $recipe->user->id]) : '' ?></h3>
-            <div class="cooktime">
-              <p><?= h($recipe->cooktime)?></p>
-            </div>
-            <div class="preptime">
-              <p><?= h($recipe->preptime)?></p>
+            <div class='time'>
+              <div class="cooktime">
+                <p>Cooktime</p>
+                <p><?= h($recipe->cooktime)?> mins</p>
+              </div>
+              <div class="preptime">
+                <p>Preptime</p>
+                <p><?= h($recipe->preptime)?> mins</p>
+              </div>
             </div>
             <div class="parent_id">
               <p><?= h($recipe->parent_id)?></p>
@@ -21,9 +25,8 @@
     </div>
 
     <div class="ingredients">
-          <!-- <h4><?= __('Ingredients') ?></h4> -->
+          <h2><?= __('Ingredients') ?></h2>
           <?php if (!empty($recipe->ingredients)): ?>
-
               <?php foreach ($recipe->ingredients as $ingredients): ?>
               <div class="ingredients">
                   <div class="bubble"><?= h($ingredients->name) ?></div>

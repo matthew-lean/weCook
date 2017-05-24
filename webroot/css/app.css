@@ -329,12 +329,19 @@ label {
 }
 
 /*Recipe Page*/
+.time{
+  margin-top: 15px;
+  min-height: 75px;
+}
 .timeinput{
     width: 90px!important;
 }
-.cooktime{
+.view .cooktime, .view .preptime{
   float: left;
   margin-right: 30px;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: #eceef1;
 }
 .method{
   margin-top: 30px;
