@@ -120,11 +120,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
 <!-- <div class="site-container"> -->
 
-    <div class="container clearfix">
+    <div class="clearfix">
         <?= $this->fetch('content') ?>
     </div>
-
-<br>
 
     <footer>
     </footer>

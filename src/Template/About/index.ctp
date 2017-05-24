@@ -3,7 +3,6 @@
   * @var \App\View\AppView $this
   */
 ?>
-<br>
 
 <div class="site-container">
     <h1>weCook</h1>
