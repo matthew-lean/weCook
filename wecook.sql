@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2017 at 09:16 AM
+-- Generation Time: May 24, 2017 at 12:14 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -144,7 +144,35 @@ INSERT INTO `ingredients` (`id`, `name`) VALUES
 (91, 'flour'),
 (92, 'Chocolate '),
 (93, 'flour'),
-(94, 'eggs');
+(94, 'eggs'),
+(95, 'flour'),
+(96, 'eggs'),
+(97, 'butter'),
+(98, 'sugar'),
+(99, 'eggs'),
+(100, 'flour'),
+(101, 'Chocolate '),
+(102, 'butter'),
+(103, 'sugar'),
+(104, 'eggs'),
+(105, 'flour'),
+(106, 'butter'),
+(107, 'flour'),
+(108, 'eggs'),
+(109, 'sugar'),
+(110, 'ingredient'),
+(111, '1'),
+(112, 'sugar'),
+(113, 'eggs'),
+(114, 'flour'),
+(115, 'butter'),
+(116, 'one'),
+(117, 'two'),
+(118, 'two'),
+(119, 'one'),
+(120, 'one'),
+(121, 'two'),
+(122, 'green');
 
 -- --------------------------------------------------------
 
@@ -170,7 +198,12 @@ CREATE TABLE `recipes` (
 --
 
 INSERT INTO `recipes` (`id`, `user_id`, `name`, `description`, `created`, `modified`, `parent_id`, `cooktime`, `preptime`) VALUES
-(123, 1, 'Brownies', 'Simple brownie recipe ', '2017-05-22 17:32:47', '2017-05-22 17:32:47', NULL, 0, 0);
+(123, 1, 'Brownies', 'Simple brownie recipe ', '2017-05-22 17:32:47', '2017-05-24 09:55:32', NULL, 15, 10),
+(124, 1, 'Cookies', 'cookie recipe ', '2017-05-24 09:22:41', '2017-05-24 09:22:41', NULL, 12, 5),
+(125, 1, 'Cookies', 'cookie recipe ', '2017-05-24 09:56:18', '2017-05-24 09:56:18', NULL, 12, 5),
+(126, 1, 'Cookies version?', 'cookie recipe ', '2017-05-24 11:09:02', '2017-05-24 11:09:02', 125, 12, 5),
+(129, 1, 'Cookies version version ?', 'cookie recipe ', '2017-05-24 11:17:33', '2017-05-24 11:17:33', 126, 12, 5),
+(131, 2, 'title', 'desc', '2017-05-24 11:40:21', '2017-05-24 11:40:21', NULL, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -190,9 +223,26 @@ CREATE TABLE `recipes_ingredients` (
 --
 
 INSERT INTO `recipes_ingredients` (`id`, `recipe_id`, `ingredient_id`) VALUES
-(131, 123, 94),
-(130, 123, 93),
-(129, 123, 92);
+(138, 123, 101),
+(137, 123, 100),
+(136, 123, 99),
+(134, 124, 97),
+(139, 125, 102),
+(135, 124, 98),
+(142, 125, 105),
+(141, 125, 104),
+(133, 124, 96),
+(159, 131, 122),
+(132, 124, 95),
+(140, 125, 103),
+(152, 129, 115),
+(151, 129, 114),
+(150, 129, 113),
+(149, 129, 112),
+(146, 126, 109),
+(145, 126, 108),
+(144, 126, 107),
+(143, 126, 106);
 
 -- --------------------------------------------------------
 
@@ -509,7 +559,41 @@ INSERT INTO `steps` (`id`, `recipe_id`, `description`, `position`) VALUES
 (317, 122, 'enjoy! :) ', 3),
 (318, 123, 'Mix the ingredients together ', 1),
 (319, 123, 'Cook the brownies ', 2),
-(320, 123, 'Enjoy! ', 3);
+(320, 123, 'Enjoy! ', 3),
+(321, 124, 'Mix all the ingredients together in a mixing bowl', 1),
+(322, 124, 'Place on tray and put in oven for 12 mins', 2),
+(323, 124, 'Remove from tray and let cool', 3),
+(324, 124, 'Enjoy :)', 4),
+(325, 123, 'Mix the ingredients together ', 1),
+(326, 123, 'Cook the brownies ', 2),
+(327, 123, 'Enjoy! ', 3),
+(328, 125, 'Mix all the ingredients together in a mixing bowl', 1),
+(329, 125, 'Place on tray and put in oven for 12 mins', 2),
+(330, 125, 'Remove from tray and let cool', 3),
+(331, 125, 'Enjoy !', 4),
+(332, 126, 'Mix all the ingredients together in a mixing bowl', 1),
+(333, 126, 'Place on tray and put in oven for 12 mins', 2),
+(334, 126, 'Remove from tray and let cool', 3),
+(335, 126, 'Enjoy !', 4),
+(336, 127, 'one', 1),
+(337, 128, '1', 1),
+(338, 129, 'Mix all the ingredients together in a mixing bowl', 1),
+(339, 129, 'Place on tray and put in oven for 12 mins', 2),
+(340, 129, 'Remove from tray and let cool', 3),
+(341, 129, 'Enjoy !', 4),
+(342, 130, '1', 1),
+(343, 130, '2', 2),
+(344, 130, '3', 3),
+(345, 130, '1', 1),
+(346, 130, '2', 2),
+(347, 130, 'three', 3),
+(348, 130, '1', 1),
+(349, 130, '2', 2),
+(350, 130, 'three', 3),
+(351, 130, '1', 1),
+(352, 130, '2', 2),
+(353, 130, 'three', 3),
+(354, 131, '1', 1);
 
 -- --------------------------------------------------------
 
@@ -596,17 +680,17 @@ ALTER TABLE `colours`
 -- AUTO_INCREMENT for table `ingredients`
 --
 ALTER TABLE `ingredients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
 --
 -- AUTO_INCREMENT for table `recipes`
 --
 ALTER TABLE `recipes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
 --
 -- AUTO_INCREMENT for table `recipes_ingredients`
 --
 ALTER TABLE `recipes_ingredients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
 --
 -- AUTO_INCREMENT for table `recipes_versions`
 --
@@ -616,7 +700,7 @@ ALTER TABLE `recipes_versions`
 -- AUTO_INCREMENT for table `steps`
 --
 ALTER TABLE `steps`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=321;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=355;
 --
 -- AUTO_INCREMENT for table `users`
 --
