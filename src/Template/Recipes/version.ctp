@@ -9,13 +9,15 @@
     <fieldset>
         <legend><?= __('Creating a version of ') ?>
           <h1><?= h($recipe->name)?></h1>
-          <p style="color:#<?= ($recipe->user_id)?>!important"> originally by <?= h($recipe->user->name)?> </p>
+          <p style="color:#<?= ($recipe->user->colour->hex)?>!important;">originally made by <?= $recipe->has('user') ? $this->Html->link($recipe->user->name, ['controller' => 'Users', 'action' => 'view', $recipe->user->id]) : '' ?></p>
+
         </legend>
         <?php
             echo $this->Form->create($recipe);
             //grabs the current user and hides the input
             echo $this->Form->hidden('user_id', array('value'=>$authUser['id']));
-            echo $this->Form->control('parent_id', ['options' => $parentRecipes, 'empty' => true]);
+            //parent recipe id
+            echo $this->Form->hidden('parent_id', ['value' => $recipe['id'], 'empty' => true]);
             echo $this->Form->control('name', ['label' => 'Recipe Title','required' => false,'error' => false]);
             echo $this->Form->control('description', ['label' => 'Recipe Description','required' => false, 'error' => false]);
             ?>

@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller;
 use App\Controller\AppController;
+use Cake\Log\Log;
 /**
  * Recipes Controller
  *
@@ -32,7 +33,7 @@ class RecipesController extends AppController
     public function view($id = null)
     {
         $recipe = $this->Recipes->get($id, [
-            'contain' => ['Users', 'Ingredients', 'Steps']
+            'contain' => ['Users','Users.Colours', 'Ingredients', 'Steps']
         ]);
         $this->set('recipe', $recipe);
         $this->set('_serialize', ['recipe']);
@@ -45,10 +46,14 @@ class RecipesController extends AppController
     public function add()
     {
         $recipe = $this->Recipes->newEntity($this->request->data, [
-        'associated' => ['Steps','Ingredients','Users']
+        'associated' => ['Users.Colours','Steps','Ingredients','Users']
         ]);
         if ($this->request->is('post')) {
             $recipe = $this->Recipes->patchEntity($recipe, $this->request->getData());
+
+            // sets the post id to equal the parent id ?
+            $parent_id = $recipe->id;
+
             if ($this->Recipes->save($recipe, ['associated' => ['Steps','Ingredients']])) {
                 $this->Flash->success(__('The recipe has been saved!'));
                 //redirect to the newly created recipe
@@ -71,9 +76,12 @@ class RecipesController extends AppController
      */
     public function edit($id = null)
     {
+        //Log the form data
+        Log::write('debug', $this->request->getData());
         $recipe = $this->Recipes->get($id, [
-            'contain' => ['Ingredients','Steps']
+            'contain' => ['Users.Colours','Ingredients','Steps']
         ]);
+
         if ($this->request->is(['patch', 'post', 'put'])) {
             $recipe = $this->Recipes->patchEntity($recipe, $this->request->getData());
             if ($this->Recipes->save($recipe)) {
@@ -90,11 +98,12 @@ class RecipesController extends AppController
         // // add the edit as a new recipe
         // $this->set('recipe', $recipe);
     }
+
     // new fuction version to edit and save recipes
     public function version($id = null)
     {
         $recipe = $this->Recipes->get($id, [
-            'contain' => ['Ingredients','Steps','Users']
+            'contain' => ['Users.Colours','Ingredients','Steps','Users']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $recipe = $this->Recipes->patchEntity($recipe, $this->request->getData());
@@ -112,7 +121,6 @@ class RecipesController extends AppController
         $ingredients = $this->Recipes->Ingredients->find('list', ['limit' => 100]);
         $this->set(compact('recipe', 'users', 'ingredients', 'colours'));
         $this->set('_serialize', ['recipe']);
-        // add the edit as a new recipe
         $this->set('recipe', $recipe);
     }
     /**

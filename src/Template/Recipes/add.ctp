@@ -15,7 +15,8 @@
               echo $this->Form->create($recipe);
               //grabs the current user and hides the input
               echo $this->Form->hidden('user_id', array('value'=>$authUser['id']));
-              echo $this->Form->hidden('parent_id', array('value'=>$recipe['id']));
+              // parent recipe id
+              echo $this->Form->hidden('parent_id', ['value' => $recipe['id'], 'empty' => true]);
               echo $this->Form->control('name', ['label' => 'Recipe Title','required' => false,'error' => false]);
               echo $this->Form->control('description', ['label' => 'Recipe Description','required' => false, 'error' => false]);
               ?>

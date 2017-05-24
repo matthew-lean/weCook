@@ -8,7 +8,8 @@
     <div class="info">
             <h1><?= h($recipe->name) ?></h1>
             <p><?= h($recipe->description) ?></p>
-            <h3><?= $recipe->has('user') ? $this->Html->link($recipe->user->name, ['controller' => 'Users', 'action' => 'view', $recipe->user->id]) : '' ?></h3>
+            <!-- User colour now dynamically added -->
+            <h3 style="color:#<?= ($recipe->user->colour->hex)?>;" ><?= $recipe->has('user') ? $this->Html->link($recipe->user->name, ['controller' => 'Users', 'action' => 'view', $recipe->user->id]) : '' ?></h3>
             <div class='time'>
               <div class="cooktime">
                 <p>Cooktime</p>
