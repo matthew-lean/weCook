@@ -10,7 +10,8 @@ use Cake\Validation\Validator;
  * Recipes Model
  *
  * @property \Cake\ORM\Association\BelongsTo $Users
- * @property \Cake\ORM\Association\BelongsTo $Originals
+ * @property \Cake\ORM\Association\BelongsTo $ParentRecipes
+ * @property \Cake\ORM\Association\HasMany $ChildRecipes
  * @property \Cake\ORM\Association\HasMany $RecipesVersions
  * @property \Cake\ORM\Association\HasMany $Steps
  * @property \Cake\ORM\Association\BelongsToMany $Ingredients
@@ -48,8 +49,13 @@ class RecipesTable extends Table
             'foreignKey' => 'user_id',
             'joinType' => 'INNER'
         ]);
-        $this->belongsTo('Originals', [
-            'foreignKey' => 'original_id'
+        $this->belongsTo('ParentRecipes', [
+            'className' => 'Recipes',
+            'foreignKey' => 'parent_id'
+        ]);
+        $this->hasMany('ChildRecipes', [
+            'className' => 'Recipes',
+            'foreignKey' => 'parent_id'
         ]);
         $this->hasMany('RecipesVersions', [
             'foreignKey' => 'recipe_id'
@@ -107,7 +113,7 @@ class RecipesTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['user_id'], 'Users'));
-        $rules->add($rules->existsIn(['original_id'], 'Originals'));
+        $rules->add($rules->existsIn(['parent_id'], 'ParentRecipes'));
 
         return $rules;
     }

@@ -3,8 +3,6 @@
   * @var \App\View\AppView $this
   */
 ?>
-<br>
-
 <div class="recipes view large-9 medium-8 columns content">
 
     <div class="info">
@@ -16,6 +14,9 @@
             </div>
             <div class="preptime">
               <p><?= h($recipe->preptime)?></p>
+            </div>
+            <div class="parent_id">
+              <p><?= h($recipe->parent_id)?></p>
             </div>
     </div>
 

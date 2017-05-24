@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2017 at 08:41 AM
+-- Generation Time: May 24, 2017 at 09:16 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -160,7 +160,7 @@ CREATE TABLE `recipes` (
   `description` varchar(255) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
-  `original_id` int(11) DEFAULT NULL,
+  `parent_id` int(11) DEFAULT NULL,
   `cooktime` smallint(6) NOT NULL,
   `preptime` smallint(6) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -169,9 +169,8 @@ CREATE TABLE `recipes` (
 -- Dumping data for table `recipes`
 --
 
-INSERT INTO `recipes` (`id`, `user_id`, `name`, `description`, `created`, `modified`, `original_id`, `cooktime`, `preptime`) VALUES
-(123, 1, 'Brownies', 'Simple brownie recipe ', '2017-05-22 17:32:47', '2017-05-22 17:32:47', NULL, 0, 0),
-(122, 1, 'Cookies ', 'a simple cookie recipe ', '2017-05-21 16:19:15', '2017-05-21 16:19:15', NULL, 0, 0);
+INSERT INTO `recipes` (`id`, `user_id`, `name`, `description`, `created`, `modified`, `parent_id`, `cooktime`, `preptime`) VALUES
+(123, 1, 'Brownies', 'Simple brownie recipe ', '2017-05-22 17:32:47', '2017-05-22 17:32:47', NULL, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -193,10 +192,7 @@ CREATE TABLE `recipes_ingredients` (
 INSERT INTO `recipes_ingredients` (`id`, `recipe_id`, `ingredient_id`) VALUES
 (131, 123, 94),
 (130, 123, 93),
-(129, 123, 92),
-(128, 122, 91),
-(127, 122, 90),
-(126, 122, 89);
+(129, 123, 92);
 
 -- --------------------------------------------------------
 
