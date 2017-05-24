@@ -41,8 +41,6 @@
               </div>
             </div>
 
-            <br>
-
             <div class="ingredients">
               <p>Ingredients</p>
               <div id="IngredientAdd">

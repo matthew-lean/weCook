@@ -6,14 +6,17 @@
 <br>
 
 <div class="recipes view large-9 medium-8 columns content">
-    <br>
 
-    <div class="recipe-info">
+    <div class="info">
             <h1><?= h($recipe->name) ?></h1>
             <p><?= h($recipe->description) ?></p>
             <h3><?= $recipe->has('user') ? $this->Html->link($recipe->user->name, ['controller' => 'Users', 'action' => 'view', $recipe->user->id]) : '' ?></h3>
-            <p><?= h($recipe->cooktime)?></p>
-            <p><?= h($recipe->preptime)?></p>
+            <div class="cooktime">
+              <p><?= h($recipe->cooktime)?></p>
+            </div>
+            <div class="preptime">
+              <p><?= h($recipe->preptime)?></p>
+            </div>
     </div>
 
     <div class="ingredients">
