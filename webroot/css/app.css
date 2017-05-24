@@ -343,8 +343,15 @@ label {
   border-radius: 3px;
   background-color: #eceef1;
 }
+.form .cooktime ,.form .preptime{
+  float: left;
+  margin-right: 30px;
+}
 .method{
   margin-top: 30px;
+}
+.form .method .title, .form .ingredients .title{
+  margin-bottom: 10px;
 }
 .ingredients{
   margin-top: 100px;

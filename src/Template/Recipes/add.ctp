@@ -10,7 +10,8 @@
         <legend><?= __('Add Recipe') ?></legend>
         <?php
             ?>
-            <div class="info"><?php
+            <div class="info">
+              <?php
               echo $this->Form->create($recipe);
               //grabs the current user and hides the input
               echo $this->Form->hidden('user_id', array('value'=>$authUser['id']));
@@ -18,16 +19,20 @@
               echo $this->Form->control('name', ['label' => 'Recipe Title','required' => false,'error' => false]);
               echo $this->Form->control('description', ['label' => 'Recipe Description','required' => false, 'error' => false]);
               ?>
-              <div class="cooktime">
-              <?php echo $this->Form->control('cooktime', ['label' => 'Cook time','placeholder'=>'mins','class'=>'timeinput','required' => false, 'error' => false]);?>
-              </div>
-              <div class="preptime">
-              <?php echo $this->Form->control('preptime', ['label' => 'Prep time','placeholder'=>'mins','class'=>'timeinput','required' => false, 'error' => false]);?>
+              <div class="time">
+                <div class="cooktime">
+                <?php echo $this->Form->control('cooktime', ['label' => 'Cook time','placeholder'=>'mins','class'=>'timeinput','required' => false, 'error' => false]);?>
+                </div>
+                <div class="preptime">
+                <?php echo $this->Form->control('preptime', ['label' => 'Prep time','placeholder'=>'mins','class'=>'timeinput','required' => false, 'error' => false]);?>
+                </div>
               </div>
             </div>
 
             <div class="method">
-              <p>Method</p>
+              <div class="title">
+                <p>Method</p>
+              </div>
               <div id="StepAdd">
                 <?php
                 echo $this->Form->control("steps.0.description", ['label' => false, 'class'=>'stepinput', 'placeholder' => 'Step 1', 'required' => false]);

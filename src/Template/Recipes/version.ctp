@@ -19,16 +19,20 @@
             echo $this->Form->control('name', ['label' => 'Recipe Title','required' => false,'error' => false]);
             echo $this->Form->control('description', ['label' => 'Recipe Description','required' => false, 'error' => false]);
             ?>
+            <div class="time">
               <div class="cooktime">
               <?php echo $this->Form->control('cooktime', ['label' => 'Cook time','placeholder'=>'mins','class'=>'timeinput','required' => false, 'error' => false]);?>
               </div>
               <div class="preptime">
               <?php echo $this->Form->control('preptime', ['label' => 'Prep time','placeholder'=>'mins','class'=>'timeinput','required' => false, 'error' => false]);?>
               </div>
+            </div>
 
             <!-- Method -->
             <div class="method">
-              <p>Method</p>
+              <div class="title">
+                <p>Method</p>
+              </div>
               <div id="StepAdd">
               <?php
                 foreach($recipe->steps as  $key => $value) { ?>
@@ -47,7 +51,9 @@
 
             <!-- Ingredients -->
             <div class="ingredients">
-              <p>Ingredients</p>
+              <div class="title">
+                <p>Ingredients</p>
+              </div>
               <div id="IngredientAdd">
               <?php
                 foreach($recipe->ingredients as  $key => $value) { ?>
