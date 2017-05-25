@@ -4,7 +4,7 @@
       <fieldset>
           <legend><?= __('Add User') ?></legend>
           <?php
-              echo $this->Form->control('name');
+              echo $this->Form->control('name', ['label' => 'Username','error' => false]);;
               echo $this->Form->control('email');
               echo $this->Form->control('password');
               // echo $this->Form->control('colour_id');
@@ -16,7 +16,6 @@
               <div class="col yellow"><input type="radio" name="colour_id" value="5" id="colour-id-5"></div>
               <div class="col pink"><input type="radio" name="colour_id" value="6" id="colour-id-6"></div>
               <?
-
           ?>
       </fieldset>
       <?= $this->Form->button(__('Create Account')) ?>

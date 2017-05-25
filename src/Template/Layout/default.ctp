@@ -98,6 +98,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                     <li><i class="fa fa-user-o" aria-hidden="true"></i><?= $this->Html->link($authUser['name'], array('controller' => 'users', 'action' => 'view', $authUser['id']))?>  </li>
                     <li><?= $this->Html->link("<i class='fa fa-sign-out'></i> Logout", ['controller' => 'users', 'action' => 'logout'], ['escape' => false]); ?> </li>
               <?php else : ?>
+                    <li><?= $this->Html->link("Login", ['controller' => 'users', 'action' => 'login'], ['escape' => false]); ?> </li>
                     <button><?= $this->Html->link('Register', ['controller' => 'users', 'action' => 'register']); ?></button>
                 <?php endif; ?>
             </ul>

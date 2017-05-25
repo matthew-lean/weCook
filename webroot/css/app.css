@@ -15,6 +15,11 @@ body {
     margin: 0 auto;
     box-sizing: border-box
 }
+.home-container{
+    width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
 
 .white-logo {
   fill: #fff;
@@ -104,6 +109,10 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus
   background: #edeef2 !important;
   border-color: #036aed !important;
   outline: none;
+}
+
+.default{
+  margin-top: 30px;
 }
 
 .method #add, .method #remove , .ingredients #add, .ingredients #remove{
@@ -302,7 +311,7 @@ button:hover, button:focus, .button:hover, .button:focus{
 .form button:hover, .form button:focus{
   background-color:#0b66da;
 }
-.form button, html button[type="button"], .form button[type="reset"], .form button[type="submit"]{
+.form button, html button[type="button"], .form button[type="reset"], .form button[type="submit"],button[type="submit"]{
   width: 100%;
   text-transform: none;
 }
@@ -386,16 +395,14 @@ fieldset legend{
     max-width: 100%;
     background-color: #fff;
     border-radius: 4px;
-    padding-right: 30px;
-    padding-left: 30px;
-    paddin
+    padding: 30px 200px;
 }
 .col{
   width: 50px;
   height: 50px;
   background-color: #f2f2f2;
   float: left;
-  margin:10px;
+  margin:17px;
 }
 .blue{
   background-color: #036aed;
@@ -423,6 +430,8 @@ fieldset legend{
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url(../img/1.jpg);
+    border-radius: 3px;
+    margin-top: 30px;
 }
 .page-head .container {
     height: 100%;
@@ -445,31 +454,26 @@ fieldset legend{
 }
 .page-head .content {
     text-align: center;
-    padding: 125px 0;
+    padding: 75px 0;
     position: relative;
     z-index: 2;
     width: 100%;
+    min-height: 300px;
 }
 .page-head .content h1{
-  font-size: 4em;
+  font-size: 3em;
   font-weight: 600;
   color: #fff;
 }
 .page-head .content p{
   color: #fff;
-  font-size: 1.2em;
   margin: 10px 0 0 0;
 }
 .page-head .content button{
-  background-color: rgba(3, 106, 237, 0);
-  border: 3px solid #fff;
-  transition: .3s ease;
+  transition: all 10ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
   margin: 20px 0 0 -30px;
-  padding: 0 50px;
-  font-weight: 600;
 }
 .page-head .content button:hover{
-  border: 3px solid #036aed;
-  background-color: #036aed;
-  transition: .3s ease;
+  transition: all 10ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+  background-color: #0b66da;
 }
