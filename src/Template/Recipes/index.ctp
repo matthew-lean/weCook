@@ -30,14 +30,15 @@
                   <td><?= h($recipe->description) ?></td>
                   <td><?= h($recipe->created) ?></td>
                   <td><?= h($recipe->modified) ?></td>
-                  <td><?= $recipe->has('parent_recipe') ? $this->Html->link($recipe->parent_recipe->name, ['controller' => 'Recipes', 'action' => 'view', $recipe->parent_recipe->id]) : '' ?></td>
+                  <td><?= $recipe->has('parent_id') ? $this->Html->link($recipe->parent_id, ['controller' => 'Recipes', 'action' => 'view', $recipe->parent_id]) : '' ?></td>
+                  <!-- <td><?= $recipe->has('parent_recipe') ? $this->Html->link($recipe->parent_recipe->name, ['controller' => 'Recipes', 'action' => 'view', $recipe->parent_recipe->id]) : '' ?></td> -->
                   <!-- <td><?= $this->Number->format($recipe->cooktime) ?></td>
                   <td><?= $this->Number->format($recipe->preptime) ?></td> -->
 
                   <td class="actions">
                       <?= $this->Html->link(__('View'), ['action' => 'view', $recipe->id]) ?>
                       <?= $this->Html->link(__('Edit'), ['action' => 'edit', $recipe->id]) ?>
-                      <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $recipe->id], ['confirm' => __('Are you sure you want to delete # {0}?', $recipe->id)]) ?>
+                      <?= $this->Form->postLink(__('Del'), ['action' => 'delete', $recipe->id], ['confirm' => __('Are you sure you want to delete # {0}?', $recipe->id)]) ?>
                       <?= $this->Html->link(__('Version'), ['action' => 'version', $recipe->id]) ?>
                   </td>
               </tr>

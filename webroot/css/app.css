@@ -422,7 +422,7 @@ fieldset legend{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(images/1.jpg);
+    background-image: url(../img/1.jpg);
 }
 .page-head .container {
     height: 100%;
