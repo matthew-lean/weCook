@@ -95,7 +95,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
               <!-- Logout/Login Buttons-->
               <?php if($loggedIn) : ?>
                     <!--Current User -->
-                    <li><i class="fa fa-user-o" aria-hidden="true"></i><?= $this->Html->link($authUser['name'], array('controller' => 'users', 'action' => 'view', $authUser['id']))?>  </li>
+                    <li><i class="fa fa-user-o"></i><?= $this->Html->link($authUser['name'], array('controller' => 'users', 'action' => 'view', $authUser['id']))?></li>
                     <li><?= $this->Html->link("<i class='fa fa-sign-out'></i> Logout", ['controller' => 'users', 'action' => 'logout'], ['escape' => false]); ?> </li>
               <?php else : ?>
                     <li><?= $this->Html->link("Login", ['controller' => 'users', 'action' => 'login'], ['escape' => false]); ?> </li>
@@ -104,8 +104,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             </ul>
             </div>
         </div>
-
-        <?= $this->Flash->render() ?>
 
         <div class="sub-nav">
           <div class="site-container">
@@ -118,6 +116,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             </ul>
           </div>
         </div>
+
+        <?= $this->Flash->render() ?>
 
 <!-- <div class="site-container"> -->
 

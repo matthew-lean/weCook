@@ -37,6 +37,10 @@ class RecipesController extends AppController
         ]);
         $this->set('recipe', $recipe);
         $this->set('_serialize', ['recipe']);
+
+        $users = $this->Recipes->find('list', ['limit' => 100]);
+        $this->set(compact('recipe', 'users'));
+
     }
     /**
      * Add method
@@ -77,7 +81,7 @@ class RecipesController extends AppController
     public function edit($id = null)
     {
         //Log the form data
-        Log::write('debug', $this->request->getData());
+        // Log::write('debug', $this->request->getData());
         $recipe = $this->Recipes->get($id, [
             'contain' => ['Users.Colours','Ingredients','Steps']
         ]);

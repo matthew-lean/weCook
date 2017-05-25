@@ -24,7 +24,7 @@
                 </div>
               </div>
               <div class="parent_id">
-                <p><?= h($recipe->parent_id)?></p>
+                  <p><?= $recipe->has('parent_id') ? $this->Html->link($recipe->parent_id, ['controller' => 'Recipes', 'action' => 'view', $recipe->parent_id]) : '' ?></p>
               </div>
       </div>
 
