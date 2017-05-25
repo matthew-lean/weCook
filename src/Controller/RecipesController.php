@@ -17,7 +17,7 @@ class RecipesController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Users']
+            'contain' => ['Users','ParentRecipes']
         ];
         $recipes = $this->paginate($this->Recipes);
         $this->set(compact('recipes'));
@@ -33,14 +33,11 @@ class RecipesController extends AppController
     public function view($id = null)
     {
         $recipe = $this->Recipes->get($id, [
-            'contain' => ['Users','Users.Colours','Ingredients', 'Steps']
+            'contain' => ['Users', 'ParentRecipes', 'Ingredients', 'ChildRecipes', 'RecipesVersions', 'Steps']
         ]);
-        $this->set('recipe', $recipe);
-        $recipes = $this->paginate($this->Recipes);
-        $this->set('_serialize', ['recipes']);
-        $this->set(compact('recipes', 'users'));
-        $parent_recipe = ('parent_id');
 
+        $this->set('recipe', $recipe);
+        $this->set('_serialize', ['recipe']);
     }
     /**
      * Add method
@@ -54,10 +51,8 @@ class RecipesController extends AppController
         ]);
         if ($this->request->is('post')) {
             $recipe = $this->Recipes->patchEntity($recipe, $this->request->getData());
-
             // sets the post id to equal the parent id ?
             $parent_id = $recipe->id;
-
             if ($this->Recipes->save($recipe, ['associated' => ['Steps','Ingredients']])) {
                 $this->Flash->success(__('The recipe has been saved!'));
                 //redirect to the newly created recipe
@@ -66,8 +61,9 @@ class RecipesController extends AppController
             $this->Flash->error(__('The recipe could not be saved... :( Please, try again.'));
         }
         $users = $this->Recipes->Users->find('list', ['limit' => 200]);
+        $parentRecipes = $this->Recipes->ParentRecipes->find('list', ['limit' => 200]);
         $ingredients = $this->Recipes->Ingredients->find('list', ['limit' => 200]);
-        $this->set(compact('recipe', 'users', 'ingredients'));
+        $this->set(compact('recipe', 'users', 'parentRecipes', 'ingredients'));
         $this->set('_serialize', ['recipe']);
         $this->set('recipe', $recipe);
     }
@@ -85,7 +81,6 @@ class RecipesController extends AppController
         $recipe = $this->Recipes->get($id, [
             'contain' => ['Users.Colours','Ingredients','Steps']
         ]);
-
         if ($this->request->is(['patch', 'post', 'put'])) {
             $recipe = $this->Recipes->patchEntity($recipe, $this->request->getData());
             if ($this->Recipes->save($recipe)) {
@@ -97,12 +92,10 @@ class RecipesController extends AppController
         }
         $users = $this->Recipes->Users->find('list', ['limit' => 200]);
         $ingredients = $this->Recipes->Ingredients->find('list', ['limit' => 200]);
-        $this->set(compact('recipe', 'users', 'ingredients'));
+        $parentRecipes = $this->Recipes->ParentRecipes->find('list', ['limit' => 200]);
+        $this->set(compact('recipe', 'users', 'parentRecipes', 'ingredients'));
         $this->set('_serialize', ['recipe']);
-        // // add the edit as a new recipe
-        // $this->set('recipe', $recipe);
     }
-
     // new fuction version to edit and save recipes
     public function version($id = null)
     {
