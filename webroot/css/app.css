@@ -416,3 +416,60 @@ fieldset legend{
 .pink{
   background-color: #ff2d55;
 }
+
+/*Homepage*/
+.page-head{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(images/1.jpg);
+}
+.page-head .container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    display: -webkit-flex;
+    -ms-flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+.page-head .content {
+    text-align: center;
+    padding: 125px 0;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+.page-head .content h1{
+  font-size: 4em;
+  font-weight: 600;
+  color: #fff;
+}
+.page-head .content p{
+  color: #fff;
+  font-size: 1.2em;
+  margin: 10px 0 0 0;
+}
+.page-head .content button{
+  background-color: rgba(3, 106, 237, 0);
+  border: 3px solid #fff;
+  transition: .3s ease;
+  margin: 20px 0 0 -30px;
+  padding: 0 50px;
+  font-weight: 600;
+}
+.page-head .content button:hover{
+  border: 3px solid #036aed;
+  background-color: #036aed;
+  transition: .3s ease;
+}

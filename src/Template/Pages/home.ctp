@@ -44,8 +44,22 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 </head>
 <body>
     <?= $this->Flash->render() ?>
-    <h1>Test</h1>
-    
+
+<div class="page-head">
+  <div class="site-container">
+    <div class="container">
+      <div class="content">
+        <h1>BBQ Season!</h1>
+        <p>Tips from the commity on having the best bbq!</p>
+        <button>Read Here</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 <footer>
 </footer>
 </body>
