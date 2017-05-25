@@ -352,6 +352,21 @@ label {
   border-radius: 3px;
   background-color: #eceef1;
 }
+.view .parent_id{
+  margin: 15px 30px 0 0;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: #eceef1;
+  max-width: 210px;
+}
+.view .parent_id {
+  margin: 15px 30px 0 0;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  border: 1px solid #eceef1;
+  max-width: 210px;
+}
 .form .cooktime ,.form .preptime{
   float: left;
   margin-right: 30px;

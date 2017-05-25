@@ -23,8 +23,11 @@
                   <p><?= h($recipe->preptime)?> mins</p>
                 </div>
               </div>
-              <div class="parent_id">
+
+              <div class="parent_id" style="border-top:solid 3px #<?= ($recipe->user->colour->hex)?>!important">
+                  <!-- Parent Recipe -->
                   <p><?= $recipe->has('parent_id') ? $this->Html->link($recipe->parent_id, ['controller' => 'Recipes', 'action' => 'view', $recipe->parent_id]) : '' ?></p>
+                  <p><?= $recipe->has('parent_id') ? $this->Html->link($recipe->user->name, ['controller' => 'users', 'action' => 'view', $recipe->user->id]) : '' ?></p>
               </div>
       </div>
 

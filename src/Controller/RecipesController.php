@@ -33,13 +33,13 @@ class RecipesController extends AppController
     public function view($id = null)
     {
         $recipe = $this->Recipes->get($id, [
-            'contain' => ['Users','Users.Colours', 'Ingredients', 'Steps']
+            'contain' => ['Users','Users.Colours','Ingredients', 'Steps']
         ]);
         $this->set('recipe', $recipe);
-        $this->set('_serialize', ['recipe']);
-
-        $users = $this->Recipes->find('list', ['limit' => 100]);
-        $this->set(compact('recipe', 'users'));
+        $recipes = $this->paginate($this->Recipes);
+        $this->set('_serialize', ['recipes']);
+        $this->set(compact('recipes', 'users'));
+        $parent_recipe = ('parent_id');
 
     }
     /**
