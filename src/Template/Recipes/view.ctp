@@ -81,7 +81,7 @@
         </table>
         <?php endif; ?>
     </div>
-    <div class="related">
+    <!-- <div class="related">
         <h4><?= __('Related Recipes Versions') ?></h4>
         <?php if (!empty($recipe->recipes_versions)): ?>
         <table cellpadding="0" cellspacing="0">
@@ -105,7 +105,7 @@
             <?php endforeach; ?>
         </table>
         <?php endif; ?>
-    </div>
+    </div> -->
 
     <div class="related">
         <h4><?= __('Ingredients') ?></h4>
