@@ -9,12 +9,25 @@
               echo $this->Form->control('password');
               // echo $this->Form->control('colour_id');
               ?>
-              <div class="col blue"><input type="radio" name="colour_id" value="1" id="colour-id-1"></div>
-              <div class="col red"><input type="radio" name="colour_id" value="2" id="colour-id-2"></div>
-              <div class="col green"><input type="radio" name="colour_id" value="3" id="colour-id-3"></div>
-              <div class="col orange"><input type="radio" name="colour_id" value="4" id="colour-id-4"></div>
-              <div class="col yellow"><input type="radio" name="colour_id" value="5" id="colour-id-5"></div>
-              <div class="col pink"><input type="radio" name="colour_id" value="6" id="colour-id-6"></div>
+              <div class="cc-selector">
+                <input id="colour-id-1" type="radio" name="colour_id" value="1" />
+                <label class="col blue" for="colour-id-1"></label>
+
+                <input id="colour-id-2" type="radio" name="colour_id" value="2" />
+                <label class="col red"for="colour-id-2"></label>
+
+                <input id="colour-id-3" type="radio" name="colour_id" value="3" />
+                <label class="col green" for="colour-id-3"></label>
+
+                <input id="colour-id-4" type="radio" name="colour_id" value="4" />
+                <label class="col orange"for="colour-id-4"></label>
+
+                <input id="colour-id-5" type="radio" name="colour_id" value="5" />
+                <label class="col yellow" for="colour-id-5"></label>
+
+                <input id="colour-id-6" type="radio" name="colour_id" value="6" />
+                <label class="col pink"for="colour-id-6"></label>
+              </div>
               <?
           ?>
       </fieldset>

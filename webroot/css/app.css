@@ -412,13 +412,6 @@ fieldset legend{
     border-radius: 4px;
     padding: 30px 200px;
 }
-.col{
-  width: 50px;
-  height: 50px;
-  background-color: #f2f2f2;
-  float: left;
-  margin:17px;
-}
 .blue{
   background-color: #036aed;
 }
@@ -438,6 +431,50 @@ fieldset legend{
   background-color: #ff2d55;
 }
 
+.cc-selector input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+}
+
+.cc-selector input:active +.col{opacity: .9;}
+.cc-selector input:checked +.col{
+    -webkit-filter: none;
+       -moz-filter: none;
+            filter: none;
+    border-style: solid;
+  border-width: 7px;
+  border-top-color: rgba(0, 0, 0, 0.2);
+  border-left-color: rgba(0, 0, 0, 0.2);
+  border-right-color: rgba(0, 0, 0, 0.2);
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+}
+.col{
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin:17px;
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+    -webkit-filter: brightness(.9) opacity(.9);
+    -moz-filter: brightness(.9) opacity(.9);
+    filter: brightness(.9) opacity(.9);
+}
+.col:hover{
+    -webkit-filter: brightness(1) opacity(1);
+       -moz-filter: brightness(1) opacity(1);
+            filter: brightness(1) opacity(1);
+}
+.register input[type="checkbox"]+label, input[type="radio"]+label {
+    display: inline-block;
+    margin: 0px;
+}
 /*Homepage*/
 .page-head{
     background-position: center;
