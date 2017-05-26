@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2017 at 12:14 PM
+-- Generation Time: May 26, 2017 at 04:03 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -172,7 +172,11 @@ INSERT INTO `ingredients` (`id`, `name`) VALUES
 (119, 'one'),
 (120, 'one'),
 (121, 'two'),
-(122, 'green');
+(122, 'green'),
+(123, 'green'),
+(124, 'ramen '),
+(125, 'ramen '),
+(126, 'egg');
 
 -- --------------------------------------------------------
 
@@ -203,7 +207,10 @@ INSERT INTO `recipes` (`id`, `user_id`, `name`, `description`, `created`, `modif
 (125, 1, 'Cookies', 'cookie recipe ', '2017-05-24 09:56:18', '2017-05-24 09:56:18', NULL, 12, 5),
 (126, 1, 'Cookies version?', 'cookie recipe ', '2017-05-24 11:09:02', '2017-05-24 11:09:02', 125, 12, 5),
 (129, 1, 'Cookies version version ?', 'cookie recipe ', '2017-05-24 11:17:33', '2017-05-24 11:17:33', 126, 12, 5),
-(131, 2, 'title', 'desc', '2017-05-24 11:40:21', '2017-05-24 11:40:21', NULL, 1, 2);
+(131, 2, 'title', 'desc', '2017-05-24 11:40:21', '2017-05-24 11:40:21', NULL, 1, 2),
+(132, 1, 'New', 'desc', '2017-05-25 16:38:15', '2017-05-25 16:38:15', 131, 1, 2),
+(133, 1, 'Ramen', 'simple ramen recipe ', '2017-05-26 15:23:06', '2017-05-26 15:23:06', NULL, 5, 1),
+(134, 2, 'Ramen with egg', 'simple ramen recipe now with an egg', '2017-05-26 15:25:36', '2017-05-26 15:25:36', 133, 7, 1);
 
 -- --------------------------------------------------------
 
@@ -227,8 +234,10 @@ INSERT INTO `recipes_ingredients` (`id`, `recipe_id`, `ingredient_id`) VALUES
 (137, 123, 100),
 (136, 123, 99),
 (134, 124, 97),
+(161, 133, 124),
 (139, 125, 102),
 (135, 124, 98),
+(160, 132, 123),
 (142, 125, 105),
 (141, 125, 104),
 (133, 124, 96),
@@ -242,7 +251,9 @@ INSERT INTO `recipes_ingredients` (`id`, `recipe_id`, `ingredient_id`) VALUES
 (146, 126, 109),
 (145, 126, 108),
 (144, 126, 107),
-(143, 126, 106);
+(143, 126, 106),
+(162, 134, 125),
+(163, 134, 126);
 
 -- --------------------------------------------------------
 
@@ -593,7 +604,14 @@ INSERT INTO `steps` (`id`, `recipe_id`, `description`, `position`) VALUES
 (351, 130, '1', 1),
 (352, 130, '2', 2),
 (353, 130, 'three', 3),
-(354, 131, '1', 1);
+(354, 131, '1', 1),
+(355, 132, '1', 1),
+(356, 133, 'Open ramen packet ', 1),
+(357, 133, 'boil water and add ramen ', 2),
+(358, 133, 'you have ramen', 3),
+(359, 134, 'Open ramen packet ', 1),
+(360, 134, 'boil water and add ramen and egg', 2),
+(361, 134, 'you have ramen but now with an egg', 3);
 
 -- --------------------------------------------------------
 
@@ -680,17 +698,17 @@ ALTER TABLE `colours`
 -- AUTO_INCREMENT for table `ingredients`
 --
 ALTER TABLE `ingredients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=127;
 --
 -- AUTO_INCREMENT for table `recipes`
 --
 ALTER TABLE `recipes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
 --
 -- AUTO_INCREMENT for table `recipes_ingredients`
 --
 ALTER TABLE `recipes_ingredients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=164;
 --
 -- AUTO_INCREMENT for table `recipes_versions`
 --
@@ -700,7 +718,7 @@ ALTER TABLE `recipes_versions`
 -- AUTO_INCREMENT for table `steps`
 --
 ALTER TABLE `steps`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=355;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=362;
 --
 -- AUTO_INCREMENT for table `users`
 --
