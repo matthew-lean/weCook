@@ -7,6 +7,6 @@
           <?= $this->Form->input('password', array('type' => 'password')); ?>
           <?= $this->Form->submit('Login', array('class' => 'button')); ?>
         <?= $this->Form->end(); ?>
-    <div>
+    </div>
   </div>
 </div>
