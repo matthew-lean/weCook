@@ -439,12 +439,20 @@ fieldset legend{
 .pink{
   background-color: #ff2d55;
 }
-
+.cc-selector{
+  height: 50px;
+  margin-top: 30px;
+}
 .cc-selector input{
     margin:0;padding:0;
     -webkit-appearance:none;
        -moz-appearance:none;
             appearance:none;
+            display: none;
+}
+.cc-selector input[type="checkbox"]+label, input[type="radio"]+label{
+  margin-left: 0;
+  margin-right: 42px !important;
 }
 
 .cc-selector input:active +.col{opacity: .9;}

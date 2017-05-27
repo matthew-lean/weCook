@@ -7,7 +7,6 @@
               echo $this->Form->control('name', ['label' => 'Username','error' => false]);;
               echo $this->Form->control('email');
               echo $this->Form->control('password');
-              // echo $this->Form->control('colour_id');
               ?>
               <div class="cc-selector">
                 <input id="colour-id-1" type="radio" name="colour_id" value="1" />
@@ -26,7 +25,7 @@
                 <label class="col yellow" for="colour-id-5"></label>
 
                 <input id="colour-id-6" type="radio" name="colour_id" value="6" />
-                <label class="col pink"for="colour-id-6"></label>
+                <label class="col pink" for="colour-id-6" style="margin-right: 0 !important;"></label>
               </div>
               <?
           ?>

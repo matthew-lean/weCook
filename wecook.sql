@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 26, 2017 at 04:03 PM
+-- Generation Time: May 27, 2017 at 10:58 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -637,7 +637,9 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `colour_id`, `created`, `modified`) VALUES
 (1, 'matt', 'mttlean@gmail.com', '$2y$10$Q65/gUFq8L49EEeFiipRneVePypfjNZfSdMnYCsMj0DsKHzTpdh4W', 1, '2017-03-19 22:51:01', '2017-03-19 22:53:10'),
 (2, 'John', 'john@mail.com', '$2y$10$e2tfHLLVeU.m1oc38mXsJ.ciCbEQZPBdoxGA7hXztOMHK3PnFhi2q', 2, '2017-03-21 15:10:09', '2017-03-21 16:16:22'),
-(10, 'shaun', 'shaun@mail.com', '$2y$10$ftoOepD3p7kQlX23PDP.tuH60NoxuCLshfUBHbuktdgP1jIu/SFDO', 6, '2017-05-22 14:29:09', '2017-05-22 14:29:09');
+(11, 'Fred', 'fred@mail.com', '$2y$10$OmuUz7LTpIMCkV2A9uQCg.DHZg1gdbU/UypdzGiF0fiD3kxjCUdlq', 3, '2017-05-26 17:25:24', '2017-05-26 17:25:24'),
+(10, 'shaun', 'shaun@mail.com', '$2y$10$ftoOepD3p7kQlX23PDP.tuH60NoxuCLshfUBHbuktdgP1jIu/SFDO', 6, '2017-05-22 14:29:09', '2017-05-22 14:29:09'),
+(12, 'Hector', 'hector@mail.com', '$2y$10$V0sQ2nOUkBwpRO6W6U8FXu.bxs.4/O/hY8jxY.GF6pm7Z/KQk1IX6', 5, '2017-05-27 10:56:10', '2017-05-27 10:56:10');
 
 --
 -- Indexes for dumped tables
@@ -723,7 +725,7 @@ ALTER TABLE `steps`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
