@@ -214,7 +214,7 @@ div.message{
 .sub-nav ul li:hover{
   color: #000;
   transition: all 10ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
-  background-color: #f8f8f8;
+  background-color: #f9f9f9;
 }
 .sub-nav .right a:link, .sub-nav .right a:visited{
   color:#036aed;
@@ -411,6 +411,71 @@ fieldset legend{
 /*Recipe View */
 .view .ingredients{
   margin: 30px 0 0 0;
+}
+
+/*Recipe List*/
+.project-list-item {
+    display: block;
+    margin: 0 auto;
+    background-color: #fff;
+    border-bottom: 1px solid #eceef1;
+    overflow: hidden;
+}
+.project-list-item:hover {
+    background-color: #f9f9f9
+}
+.recipes-content{
+  display: block;
+    border-radius: 3px;
+    margin: 0 0 20px 0;
+    padding: 30px 0 0 0;
+}
+.project-list-item .content-wrap {
+  width: 600px;
+  float: left;
+  position: relative;
+}
+.project-list-item .content{
+    padding: 20px 0;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+.project-list-item .description p{
+  font-size: 0.8em;
+}
+.project-list-item .recipe-id p{
+  font-size: 0.8em;
+  display: inline-block;
+}
+.project-list-item h2{
+  font-family: Open Sans;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin: 0 auto;
+}
+.project-list-item h4 {
+    font-family: Open Sans;
+    font-size: 0.9em;
+    font-weight: 400;
+    margin: 0 auto;
+    color: #036aed;
+}
+.user{
+  float: left;
+  height: 100px;
+  width: 100px;
+  display:flex;justify-content:center;align-items:center;
+}
+.user-block{
+  width: 50px;
+  height: 50px;
+  border-radius: 40px;
+  background-color: #eceef1;
+  display:flex;justify-content:center;align-items:center;
+}
+.user-block p a:link, .user-block p a:visited{
+  color: #fff;
 }
 
 /*Register User / Login User*/

@@ -4,6 +4,44 @@
   */
 ?>
 <div class="site-container">
+  <div class="recipes-content">
+    <?php foreach ($recipes as $recipe): ?>
+    <div class="project-list-item">
+      <div class="user">
+        <div class="user-block" style="background-color:#<?= ($recipe->user->colour->hex)?>!important">
+          <p><?= $recipe->has('user') ? $this->Html->link($recipe->user->name, ['controller' => 'Users', 'action' => 'view', $recipe->user->id]) : '' ?></p>
+        </div>
+      </div>
+      <div class="content-wrap">
+          <div class="content">
+              <div class="title">
+                  <h2><?= $recipe->has('name') ? $this->Html->link($recipe->name, ['controller' => 'Recipes', 'action' => 'view', $recipe->id]) : '' ?></h2>
+              </div>
+              <div class="description">
+                <p><?= h($recipe->description) ?></p>
+              </div>
+              <div class="recipe-id">
+                <p><?= $recipe->has('user') ? $this->Html->link($recipe->user->name, ['controller' => 'Users', 'action' => 'view', $recipe->user->id]) : '' ?></p>
+                <!-- <p> - <?= $this->Number->format($recipe->id) ?></p> -->
+              </div>
+              <!-- <div class="recipe-id">
+                  <p><?= $this->Html->link(__('View'), ['action' => 'view', $recipe->id]) ?></p>
+                  <p><?= $this->Html->link(__('Version'), ['action' => 'Version', $recipe->id]) ?></p>
+              </div> -->
+          </div>
+      </div>
+                <!-- <div class="content_wrap_alt">
+                    <div class="parent_recipe">
+                      <p><?= $recipe->has('parent_recipe') ? $this->Html->link($recipe->parent_recipe->name, ['controller' => 'Recipes', 'action' => 'view', $recipe->parent_recipe->id]) : '' ?></p>
+                    </div>
+                </div> -->
+      </div>
+      <?php endforeach; ?>
+  </div>
+</div>
+
+<!-- Old Table View -->
+
 <div class="recipes index large-9 medium-8 columns content">
     <h3><?= __('Recipes') ?></h3>
     <table cellpadding="0" cellspacing="0">

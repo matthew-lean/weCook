@@ -17,7 +17,7 @@ class RecipesController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Users','ParentRecipes']
+            'contain' => ['Users.Colours','Users','ParentRecipes']
         ];
         $recipes = $this->paginate($this->Recipes);
         $this->set(compact('recipes'));
@@ -33,7 +33,7 @@ class RecipesController extends AppController
     public function view($id = null)
     {
         $recipe = $this->Recipes->get($id, [
-            'contain' => ['Users', 'ParentRecipes', 'Ingredients', 'ChildRecipes', 'RecipesVersions', 'Steps']
+            'contain' => ['Users.Colours','Users', 'ParentRecipes', 'Ingredients', 'ChildRecipes', 'RecipesVersions', 'Steps']
         ]);
 
         $this->set('recipe', $recipe);
