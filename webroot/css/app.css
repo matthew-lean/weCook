@@ -441,6 +441,7 @@ fieldset legend{
   float: left;
   position: relative;
   margin-right: 4%;
+  margin-left: 4%;
 }
 .project-list-item .content-wrap-alt {
     display: block;
