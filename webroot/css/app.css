@@ -414,6 +414,12 @@ fieldset legend{
 }
 
 /*Recipe List*/
+.main-title {
+    padding: 20px 20px 20px 30px;
+    background-color: #fff;
+    border-radius: 3px 3px 0 0;
+    border-bottom: 1px solid #eceef1;
+}
 .project-list-item {
     display: block;
     margin: 0 auto;
@@ -431,9 +437,24 @@ fieldset legend{
     padding: 30px 0 0 0;
 }
 .project-list-item .content-wrap {
-  width: 600px;
+  width: 40%;
   float: left;
   position: relative;
+  margin-right: 4%;
+}
+.project-list-item .content-wrap-alt {
+    display: block;
+    margin: 0 auto;
+    background-color: #fff;
+    border-bottom: 1px solid #eceef1;
+    overflow: hidden;
+}
+.project-list-item .action {
+    width: 6%;
+    height: 100px;
+    border-left: 1px solid #eceef1;
+    float: right;
+    position: relative;
 }
 .project-list-item .content{
     padding: 20px 0;
@@ -441,10 +462,14 @@ fieldset legend{
     z-index: 2;
     width: 100%;
 }
+.project-list-item .description{
+  margin-top: 5px;
+    display: inline-block;
+}
 .project-list-item .description p{
   font-size: 0.8em;
 }
-.project-list-item .recipe-id p{
+.project-list-item .extra p{
   font-size: 0.8em;
   display: inline-block;
 }
@@ -461,10 +486,10 @@ fieldset legend{
     margin: 0 auto;
     color: #036aed;
 }
-.user{
+.project-list-item .user{
   float: left;
   height: 100px;
-  width: 100px;
+  width: 12%;
   display:flex;justify-content:center;align-items:center;
 }
 .user-block{

@@ -17,11 +17,11 @@ class RecipesController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Users.Colours','Users','ParentRecipes']
+            'contain' => ['Users.Colours','Users','ParentRecipes','ChildRecipes']
         ];
         $recipes = $this->paginate($this->Recipes);
         $this->set(compact('recipes'));
-        $this->set('_serialize', ['recipes']);
+        $this->set('_serialize', ['recipe']);
     }
     /**
      * View method

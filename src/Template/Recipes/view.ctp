@@ -4,6 +4,20 @@
   */
 ?>
 <div class="site-container">
+  <div class="recipes view large-9 medium-8 columns content">
+
+    <div class="user">
+      <div class="user-block" style="background-color:#<?= ($recipe->user->colour->hex)?>!important">
+        <p><?= $recipe->has('user') ? $this->Html->link($recipe->user->name, ['controller' => 'Users', 'action' => 'view', $recipe->user->id]) : '' ?></p>
+      </div>
+    </div>
+
+    <h3><?= h($recipe->name) ?></h3>
+
+  </div>
+</div>
+
+
 <div class="recipes view large-9 medium-8 columns content">
     <h3><?= h($recipe->name) ?></h3>
     <table class="vertical-table">

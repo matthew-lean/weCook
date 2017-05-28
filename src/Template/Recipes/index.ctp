@@ -5,6 +5,10 @@
 ?>
 <div class="site-container">
   <div class="recipes-content">
+    <div class="main-title">
+            <h3>Recipes</h3>
+            <p></p>
+    </div>
     <?php foreach ($recipes as $recipe): ?>
     <div class="project-list-item">
       <div class="user">
@@ -20,22 +24,47 @@
               <div class="description">
                 <p><?= h($recipe->description) ?></p>
               </div>
-              <div class="recipe-id">
-                <p><?= $recipe->has('user') ? $this->Html->link($recipe->user->name, ['controller' => 'Users', 'action' => 'view', $recipe->user->id]) : '' ?></p>
-                <!-- <p> - <?= $this->Number->format($recipe->id) ?></p> -->
-              </div>
-              <!-- <div class="recipe-id">
-                  <p><?= $this->Html->link(__('View'), ['action' => 'view', $recipe->id]) ?></p>
-                  <p><?= $this->Html->link(__('Version'), ['action' => 'Version', $recipe->id]) ?></p>
+              <!-- <div class="extra">
+                <p><?= $this->Html->link(__('View'), ['action' => 'view', $recipe->id]) ?></p>
+                <p><?= $this->Html->link(__('Edit'), ['action' => 'edit', $recipe->id]) ?></p>
+                <p><?= $this->Html->link(__('Version'), ['action' => 'Version', $recipe->id]) ?><p>
+                <p><?= $this->Form->postLink(__('Del'), ['action' => 'delete', $recipe->id], ['confirm' => __('Are you sure you want to delete # {0}?', $recipe->id)]) ?><p>
               </div> -->
           </div>
       </div>
-                <!-- <div class="content_wrap_alt">
-                    <div class="parent_recipe">
-                      <p><?= $recipe->has('parent_recipe') ? $this->Html->link($recipe->parent_recipe->name, ['controller' => 'Recipes', 'action' => 'view', $recipe->parent_recipe->id]) : '' ?></p>
-                    </div>
-                </div> -->
+      <!-- <div class="action">
+        <p><?= $this->Html->link(__('View'), ['action' => 'view', $recipe->id]) ?></p>
+        <p><?= $this->Html->link(__('Edit'), ['action' => 'edit', $recipe->id]) ?></p>
+        <p><?= $this->Html->link(__('Version'), ['action' => 'Version', $recipe->id]) ?><p>
+        <p><?= $this->Form->postLink(__('Del'), ['action' => 'delete', $recipe->id], ['confirm' => __('Are you sure you want to delete # {0}?', $recipe->id)]) ?><p>
+      </div> -->
+      <!-- <div class="content-wrap-alt">
+          <div class="content">
+              <div class="title">
+                <h2>Parent Recipe</h2>
+              </div>
+              <div class="description">
+                  <h2><?= $recipe->has('parent_recipe') ? $this->Html->link($recipe->parent_recipe->name, ['controller' => 'Recipes', 'action' => 'view', $recipe->parent_recipe->id]) : '' ?></h2>
+              </div>
+          </div>
+      </div> -->
+      <div class="content-wrap-alt">
+          <div class="content">
+              <div class="title">
+                <h2>Child Recipes</h2>
+              </div>
+              <div class="description">
+                <?php foreach ($recipe->child_recipes as $childRecipes): ?>
+                <tr>
+                    <td><?= h($childRecipes->user_id) ?></td>
+                    <td><?= h($childRecipes->name) ?></td>
+                    <td><?= h($childRecipes->description) ?></td>
+                <tr>
+                <?php endforeach; ?>
+              </div>
+          </div>
       </div>
+    </div>
       <?php endforeach; ?>
   </div>
 </div>
