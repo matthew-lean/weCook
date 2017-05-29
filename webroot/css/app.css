@@ -397,7 +397,7 @@ label {
   margin-bottom: 10px;
 }
 .ingredients{
-  margin-top: 100px;
+
 }
 .ingredients .bubble{
     display: inline-block;
@@ -457,7 +457,7 @@ fieldset legend{
   width: 40%;
   float: left;
   position: relative;
-  margin-right: 4%;
+  margin-right: 6%;
   margin-left: 4%;
 }
 .list-item .content-wrap-alt {
@@ -471,11 +471,19 @@ fieldset legend{
   padding: 0;
 }
 .child-container{
-  width: 100%;
+  width: 84%;
   height: inherit;
   float: left;
   border-top: solid 1px #f2f2f2;
   margin-left: 16%;
+}
+.version-title{
+    width: 100%;
+    height: inherit;
+    float: left;
+    padding-left: 16%;
+    background-color: #f9f9f9;
+    border-top: solid 1px #f2f2f2;
 }
 .child-container .version-title{
   width: 20%;
@@ -507,8 +515,9 @@ fieldset legend{
     padding-left: 10px;
 }
 .child-container .child{
-  height: inherit;
-  float: left;
+    height: inherit;
+    float: right;
+    padding-right: 16%;
 }
 .child-container .name a:link, .child-container .name a:visited{
   color: inherit;
@@ -527,12 +536,18 @@ fieldset legend{
   display: inline-block;
   font-size: 0.8em;
 }
-.list-item .action {
-    width: 6%;
+.list-item .ingredients {
+    width: 38%;
     height: 100px;
-    border-left: 1px solid #eceef1;
     float: right;
     position: relative;
+}
+.list-item .ingredients-container{
+  height: inherit;
+  padding: 20px 20px 0 0;
+}
+.list-item .ingredients h2{
+  margin-bottom: 15px !important;
 }
 .list-item .content{
     padding: 20px 0;

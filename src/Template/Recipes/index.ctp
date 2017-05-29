@@ -32,15 +32,20 @@
               <!-- </div> -->
           </div>
       </div>
-      <div class="create-version">
-        <p><?= $this->Html->link(__("<i class='fa fa-plus'></i> Create a Version"), ['action' => 'Version', $recipe->id] ,['escape' => false]) ?><p>
+
+      <div class="ingredients">
+        <div class="ingredients-container">
+          <h2><?= __('Ingredients') ?></h2>
+          <?php if (!empty($recipe->ingredients)): ?>
+              <?php foreach ($recipe->ingredients as $ingredients): ?>
+              <div class="ingredient">
+                  <div class="bubble"><?= h($ingredients->name) ?></div>
+              </div>
+              <?php endforeach; ?>
+          </table>
+          <?php endif; ?>
+        </div>
       </div>
-      <!-- <div class="action">
-        <p><?= $this->Html->link(__('View'), ['action' => 'view', $recipe->id]) ?></p>
-        <p><?= $this->Html->link(__('Edit'), ['action' => 'edit', $recipe->id]) ?></p>
-        <p><?= $this->Html->link(__('Version'), ['action' => 'Version', $recipe->id]) ?><p>
-        <p><?= $this->Form->postLink(__('Del'), ['action' => 'delete', $recipe->id], ['confirm' => __('Are you sure you want to delete # {0}?', $recipe->id)]) ?><p>
-      </div> -->
 
       <!-- Parent Recipe currently hidden -->
 
@@ -57,6 +62,9 @@
 
       <div class="content-wrap-alt">
           <div class="content">
+              <div class="version-title">
+                <p>Versions</p>
+              </div>
                 <?php foreach ($recipe->child_recipes as $childRecipes): ?>
                 <div class="child-container">
                     <div class="name" class="user-block" style="border-left:solid 5px #<?= ($childRecipes->user->colour->hex)?>!important; color:#<?= ($childRecipes->user->colour->hex);?>">
@@ -69,6 +77,9 @@
                 </div>
                 <?php endforeach; ?>
           </div>
+      </div>
+      <div class="create-version">
+        <p><?= $this->Html->link(__("<i class='fa fa-plus'></i> Create a Version"), ['action' => 'Version', $recipe->id] ,['escape' => false]) ?><p>
       </div>
 
     </div>

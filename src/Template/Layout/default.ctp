@@ -183,7 +183,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                   <li><?= $this->Html->link('Home',['controller' => '', 'action' => 'index']); ?></li>
                   <li><?= $this->Html->link('About',['controller' => 'About', 'action' => 'index']); ?></li>
                   <li><?= $this->Html->link(__('Recipes'), ['controller' => 'Recipes', 'action' => 'index']) ?> </li>
-                  <li><?= $this->Html->link("<i class='fa fa-plus'></i> Add Recipe", ['controller' => 'Recipes', 'action' => 'add'],['escape' => false]); ?></li>
+                  <!-- <li><?= $this->Html->link("<i class='fa fa-plus'></i> Add Recipe", ['controller' => 'Recipes', 'action' => 'add'],['escape' => false]); ?></li> -->
                 </ul>
               </div>
               <div class="nav">
