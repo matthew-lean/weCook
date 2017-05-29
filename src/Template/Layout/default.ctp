@@ -168,8 +168,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
               </a>
                   <p>
                   weCook is a social recipe site built with simplicity in mind.
-                  Share your recipes, create versions of other user’s recipes and make something new together! 😊
-                  <!-- <img src="../img/smile.png"></img> -->
+                  Share your recipes, create versions of other user’s recipes and make something new together!
+                  <?= $this->Html->image('smile.png', ['alt' => 'CakePHP']); ?>
                   </p>
                   <p>
                     Created by <a href="http://matthewlean.co.uk">Matthew Lean</a>
