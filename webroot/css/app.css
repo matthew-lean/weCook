@@ -88,6 +88,16 @@ h3 {
   font-size: 1.2rem !important;
   font-weight: 400;
   margin: 0 auto !important;
+  color: #333333 !important;
+}
+
+h4 {
+  font-family: Open Sans;
+  font-size: 1rem !important;
+  font-weight: 400;
+  margin: 0 auto !important;
+  color: #333333 !important;
+  border: none !important;
 }
 
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea{
@@ -737,20 +747,46 @@ footer .container {
     -webkit-box-pack: center;
     justify-content: center;
 }
+footer a:link, footer a:visited{
+    color:#333333;
+}
+footer a:link:hover, footer a:visited:hover{
+    color:#036aed;
+}
 footer .content {
-    text-align: center;
-    padding: 60px 0 40px 0;
+    padding: 40px 0;
     position: relative;
     z-index: 2;
     width: 100%;
 }
+footer .info{
+  width:50%;
+  float: left;
+  margin-right: 10%;
+}
+footer .info img{
+  width: 20px;
+}
 footer .nav{
-    display: block;
+    display: table-caption;
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
     height: 40px;
-    margin-top: 30px;
+    width: 20%;
+    /* margin-left: 10%; */
+    float: left;
+}
+footer .nav .title{
+    margin: 20px 0 10px 0 !important;
+}
+footer .nav ul{
+  margin: 0;
+  width: 108px;
+}
+footer .info p{
+  margin-top: 15px;
+  font-size: .9em;
 }
 footer .nav ul{
     list-style: none;
@@ -759,6 +795,22 @@ footer .nav ul li{
   display: inline-block;
     line-height: 24px;
     margin-right: 10px;
+}
+footer .nav a:link, footer .nav a:visited{
+  border-bottom: 1px solid #eceef1;
+  transition: border-color .15s ease-out;
+}
+footer .nav a:link:hover, footer .nav a:visited:hover{
+  border-bottom: 1px solid #036aed;
+  transition: border-color .15s ease-out;
+}
+footer .info p a:link, footer .info p a:visited{
+  border-bottom: 1px solid #eceef1;
+  transition: border-color .15s ease-out;
+}
+footer .info p a:link:hover, footer .info p a:visited:hover{
+  border-bottom: 1px solid #036aed;
+  transition: border-color .15s ease-out;
 }
 .subtext{
   height: 50px;
