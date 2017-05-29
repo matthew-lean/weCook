@@ -12,8 +12,8 @@
 
     <div class="list-item">
       <div class="user">
-        <div class="user-block" style="background-color:#<?= ($recipe->user->colour->hex)?>!important">
-          <p><?= $recipe->has('user') ? $this->Html->link($recipe->user->name, ['controller' => 'Users', 'action' => 'view', $recipe->user->id]) : '' ?></p>
+        <div class="user-block" style="border:solid 1px #<?= ($recipe->user->colour->hex)?>!important; color:#<?= ($recipe->user->colour->hex)?>!important;">
+          <?= $recipe->has('user') ? $this->Html->link($recipe->user->name, ['controller' => 'Users', 'action' => 'view', $recipe->user->id]) : '' ?>
         </div>
       </div>
       <div class="content-wrap">
