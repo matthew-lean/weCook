@@ -26,11 +26,14 @@
               </div>
               <!-- <div class="extra">
                 <p><?= $this->Html->link(__('View'), ['action' => 'view', $recipe->id]) ?></p>
-                <p><?= $this->Html->link(__('Edit'), ['action' => 'edit', $recipe->id]) ?></p>
-                <p><?= $this->Html->link(__('Version'), ['action' => 'Version', $recipe->id]) ?><p>
-                <p><?= $this->Form->postLink(__('Del'), ['action' => 'delete', $recipe->id], ['confirm' => __('Are you sure you want to delete # {0}?', $recipe->id)]) ?><p>
-              </div> -->
+                <!-- <p><?= $this->Html->link(__('Edit'), ['action' => 'edit', $recipe->id]) ?></p> -->
+                <!-- <p><?= $this->Html->link(__('Version'), ['action' => 'Version', $recipe->id]) ?><p> -->
+                <!-- <p><?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $recipe->id], ['confirm' => __('Are you sure you want to delete # {0}?', $recipe->id)]) ?><p> -->
+              <!-- </div> -->
           </div>
+      </div>
+      <div class="create-version">
+        <p><?= $this->Html->link(__("<i class='fa fa-plus'></i> Create a Version"), ['action' => 'Version', $recipe->id] ,['escape' => false]) ?><p>
       </div>
       <!-- <div class="action">
         <p><?= $this->Html->link(__('View'), ['action' => 'view', $recipe->id]) ?></p>
@@ -38,6 +41,9 @@
         <p><?= $this->Html->link(__('Version'), ['action' => 'Version', $recipe->id]) ?><p>
         <p><?= $this->Form->postLink(__('Del'), ['action' => 'delete', $recipe->id], ['confirm' => __('Are you sure you want to delete # {0}?', $recipe->id)]) ?><p>
       </div> -->
+
+      <!-- Parent Recipe currently hidden -->
+
       <!-- <div class="content-wrap-alt">
           <div class="content">
               <div class="title">
@@ -48,20 +54,19 @@
               </div>
           </div>
       </div> -->
+
       <div class="content-wrap-alt">
           <div class="content">
-              <div class="title">
-                <h2>Child Recipes</h2>
-              </div>
-              <div class="description">
                 <?php foreach ($recipe->child_recipes as $childRecipes): ?>
-                <tr>
-                    <td><?= h($childRecipes->user_id) ?></td>
-                    <td><?= h($childRecipes->name) ?></td>
-                    <td><?= h($childRecipes->description) ?></td>
-                <tr>
+                <div class="child-container">
+                    <div class="name">
+                      <p><?= $this->Html->link(__($childRecipes->name), ['controller' => 'Recipes','action' => 'view', $childRecipes->id]) ?></p>
+                    </div>
+                    <div class="child">
+                      <p><?= $this->Html->link(__($childRecipes->user->name), ['controller' => 'Users','action' => 'view', $childRecipes->user_id]) ?></p>
+                    </div>
+                </div>
                 <?php endforeach; ?>
-              </div>
           </div>
       </div>
     </div>

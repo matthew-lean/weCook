@@ -426,9 +426,10 @@ fieldset legend{
     background-color: #fff;
     border-bottom: 1px solid #eceef1;
     overflow: hidden;
+    margin-bottom: 10px;
 }
 .project-list-item:hover {
-    background-color: #f9f9f9
+    /*background-color: #f9f9f9*/
 }
 .recipes-content{
   display: block;
@@ -446,9 +447,51 @@ fieldset legend{
 .project-list-item .content-wrap-alt {
     display: block;
     margin: 0 auto;
-    background-color: #fff;
     border-bottom: 1px solid #eceef1;
     overflow: hidden;
+    width: 100%;
+}
+.project-list-item .content-wrap-alt .content{
+  padding: 0;
+}
+.child-container{
+  width: 100%;
+  height: inherit;
+  float: left;
+  border-top: solid 1px #f2f2f2;
+  margin-left: 16%;
+}
+.child-container .version-title{
+  width: 20%;
+  height: inherit;
+  float: left;
+}
+.create-version{
+    width: 100%;
+    height: inherit;
+    float: left;
+    border-top: solid 1px #f2f2f2;
+    padding-left: 16%;
+    background-color: #f9f9f9;
+}
+.child-container .name{
+  width: 40%;
+  height: inherit;
+  float: left;
+}
+.child-container .child{
+  width: 5%;
+  height: inherit;
+  float: left;
+}
+.child-container .description{
+  width: 20%;
+  height: inherit;
+    float: left;
+}
+.child-container p{
+  display: inline-block;
+  font-size: 0.8em;
 }
 .project-list-item .action {
     width: 6%;
@@ -473,6 +516,7 @@ fieldset legend{
 .project-list-item .extra p{
   font-size: 0.8em;
   display: inline-block;
+  margin-right: 5px;
 }
 .project-list-item h2{
   font-family: Open Sans;

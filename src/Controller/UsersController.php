@@ -135,7 +135,6 @@ class UsersController extends AppController
     //Public pages which don't require user login
     public function beforeFilter(Event $event){
       $this->Auth->allow(['register']);
-      $this->Auth->allow(['about']);
     }
     //Finds the current user in the session
     public function findUser(){
