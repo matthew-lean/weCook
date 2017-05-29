@@ -64,7 +64,7 @@ p {
   letter-spacing: .01em;
   font-weight: 400;
   font-style: normal;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   line-height: 1.7;
   margin: 0 auto;
 }
@@ -420,7 +420,13 @@ fieldset legend{
     border-radius: 3px 3px 0 0;
     border-bottom: 1px solid #eceef1;
 }
-.project-list-item {
+.main-title button{
+    background-color: #f9f9f9;
+}
+.main-title button:hover{
+    background-color: #f2f2f2;
+}
+.list-item {
     display: block;
     margin: 0 auto;
     background-color: #fff;
@@ -428,7 +434,7 @@ fieldset legend{
     overflow: hidden;
     margin-bottom: 10px;
 }
-.project-list-item:hover {
+.list-item:hover {
     /*background-color: #f9f9f9*/
 }
 .recipes-content{
@@ -437,21 +443,21 @@ fieldset legend{
     margin: 0 0 20px 0;
     padding: 30px 0 0 0;
 }
-.project-list-item .content-wrap {
+.list-item .content-wrap {
   width: 40%;
   float: left;
   position: relative;
   margin-right: 4%;
   margin-left: 4%;
 }
-.project-list-item .content-wrap-alt {
+.list-item .content-wrap-alt {
     display: block;
     margin: 0 auto;
     border-bottom: 1px solid #eceef1;
     overflow: hidden;
     width: 100%;
 }
-.project-list-item .content-wrap-alt .content{
+.list-item .content-wrap-alt .content{
   padding: 0;
 }
 .child-container{
@@ -474,64 +480,85 @@ fieldset legend{
     padding-left: 16%;
     background-color: #f9f9f9;
 }
+.parent{
+    width: 100%;
+    height: inherit;
+    float: left;
+    border-top: solid 1px #f2f2f2;
+    padding-left: 16%;
+    background-color: #f9f9f9;
+}
 .child-container .name{
-  width: 40%;
+    width: 30%;
+    height: inherit;
+    float: left;
+    overflow: hidden;
+    border-left: 5px solid #f9f9f9;
+    padding-left: 10px;
+}
+.child-container .child{
   height: inherit;
   float: left;
 }
-.child-container .child{
-  width: 5%;
-  height: inherit;
-  float: left;
+.child-container .name a:link, .child-container .name a:visited{
+  color: inherit;
+  font-size: 0.8em
+}
+.child-container .child a:link, .child-container .child a:visited{
+  color: inherit;
+  font-size: 0.8em
 }
 .child-container .description{
   width: 20%;
   height: inherit;
-    float: left;
+  float: left;
 }
 .child-container p{
   display: inline-block;
   font-size: 0.8em;
 }
-.project-list-item .action {
+.list-item .action {
     width: 6%;
     height: 100px;
     border-left: 1px solid #eceef1;
     float: right;
     position: relative;
 }
-.project-list-item .content{
+.list-item .content{
     padding: 20px 0;
     position: relative;
     z-index: 2;
     width: 100%;
 }
-.project-list-item .description{
+.list-item .description{
   margin-top: 5px;
     display: inline-block;
 }
-.project-list-item .description p{
+.list-item .description p{
   font-size: 0.8em;
 }
-.project-list-item .extra p{
+.list-item .extra p{
   font-size: 0.8em;
   display: inline-block;
   margin-right: 5px;
 }
-.project-list-item h2{
+.list-item h2{
   font-family: Open Sans;
     font-size: 0.9rem;
     font-weight: 400;
     margin: 0 auto;
 }
-.project-list-item h4 {
+.list-item .title a:link, .list-item .title a:visited{
+  color:inherit !important;
+}
+.list-item h4 {
     font-family: Open Sans;
     font-size: 0.9em;
     font-weight: 400;
     margin: 0 auto;
     color: #036aed;
 }
-.project-list-item .user{
+.list-item .user{
   float: left;
   height: 100px;
   width: 12%;
