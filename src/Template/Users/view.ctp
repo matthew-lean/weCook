@@ -19,8 +19,8 @@
               <div class="list-item">
                 <div class="content-wrap">
                     <div class="content">
-                        <div class="title">
-                            <h2><?= h($recipes->name) ?></h2>
+                        <div class="title" style="color:#<?= ($recipes->user->colour->hex)?>!important">
+                            <h2><?= $this->Html->link($recipes->name, ['controller' => 'Recipes', 'action' => 'view', $recipes->id]); ?></h2>
                         </div>
                         <div class="description">
                           <p><?= h($recipes->description) ?></p>
@@ -69,7 +69,7 @@
                 </div>
 
                 <div class="create-version">
-                  <p><?= $this->Html->link(__("<i class='fa fa-plus'></i> Create a Version"), ['action' => 'Version', $recipes->id] ,['escape' => false]) ?><p>
+                  <p><?= $this->Html->link(__("<i class='fa fa-plus'></i> Create a Version"), ['controller' => 'Recipes','action' => 'Version', $recipes->id] ,['escape' => false]) ?><p>
                 </div>
               </div>
               <?php endforeach; ?>
