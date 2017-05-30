@@ -490,13 +490,16 @@ fieldset legend{
   height: inherit;
   float: left;
 }
-.create-version{
-    width: 100%;
-    height: inherit;
-    float: left;
-    border-top: solid 1px #f2f2f2;
-    padding-left: 16%;
-    background-color: #f9f9f9;
+.list-item .create-version a:link, .list-item .create-version a:visited {
+  width: 100%;
+  height: inherit;
+  float: left;
+  padding: 10px 0;
+  padding-left: 16%;
+}
+.list-item .create-version a:link:hover , .list-item .create-version a:visited:hover{
+  transition: all 10ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+  background-color: #f9f9f9;
 }
 .parent{
     width: 100%;
@@ -590,12 +593,15 @@ fieldset legend{
   padding: 20px 0 0 20px;
 }
 .user-block{
-  padding: 5px;
   border-radius: 5px;
-  background-color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+.user-block a:link, .user-block a:visited{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
 }
 .user-block:hover{
   transition: all 10ms cubic-bezier(0.250, 0.100, 0.250, 1.000);

@@ -63,7 +63,7 @@
       <div class="content-wrap-alt">
           <div class="content">
               <div class="version-title">
-                <p>Versions</p>
+                <p><i class="fa fa-arrow-down" aria-hidden="true"></i> Versions</p>
               </div>
                 <?php foreach ($recipe->child_recipes as $childRecipes): ?>
                 <div class="child-container">
