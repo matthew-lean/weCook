@@ -514,8 +514,6 @@ fieldset legend{
     height: inherit;
     float: left;
     overflow: hidden;
-    border-left: 5px solid #f9f9f9;
-    padding-left: 10px;
 }
 .child-container .child{
     height: inherit;
@@ -541,7 +539,6 @@ fieldset legend{
 }
 .list-item .ingredients {
     width: 38%;
-    height: 100px;
     float: right;
     position: relative;
 }
