@@ -496,10 +496,12 @@ fieldset legend{
   float: left;
   padding: 10px 0;
   padding-left: 16%;
+  border: 1px solid rgba(0, 0, 0, 0);
 }
 .list-item .create-version a:link:hover , .list-item .create-version a:visited:hover{
   transition: all 10ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
   background-color: #f9f9f9;
+  border: 1px solid;
 }
 .parent{
     width: 100%;
