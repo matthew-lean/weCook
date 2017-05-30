@@ -5,8 +5,15 @@
 ?>
 <div class="site-container">
   <!-- users colour is grabbed and used as the background to the header -->
-  <div class="profile-header" style="background-color:#<?= ($user->colour->hex)?>!important">
-    <h1><?= h($user->name) ?></h1>
+  <div class="profile-header">
+    <div class="container">
+        <div class="content">
+          <div class="profile-circle" style="background-color:#<?= ($user->colour->hex)?>!important">
+          </div>
+          <h2 style="color:#<?= ($user->colour->hex)?>!important"><?= h($user->name) ?></h2>
+          <p>Extra Infomation</p>
+      </div>
+    </div>
   </div>
 
   <div class="recipes-content">
