@@ -42,7 +42,6 @@
                   <div class="bubble"><?= h($ingredients->name) ?></div>
               </div>
               <?php endforeach; ?>
-          </table>
           <?php endif; ?>
         </div>
       </div>
@@ -79,6 +78,7 @@
                 <?php endforeach; ?>
           </div>
       </div>
+
       <div class="create-version">
         <p><?= $this->Html->link(__("<i class='fa fa-plus'></i> Create a Version"), ['action' => 'Version', $recipe->id] ,['escape' => false]) ?><p>
       </div>

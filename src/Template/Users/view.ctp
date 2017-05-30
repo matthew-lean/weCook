@@ -16,7 +16,7 @@
     </div>
 
               <?php foreach ($user->recipes as $recipes): ?>
-              <div class="project-list-item">
+              <div class="list-item">
                 <div class="content-wrap">
                     <div class="content">
                         <div class="title">
@@ -26,18 +26,50 @@
                           <p><?= h($recipes->description) ?></p>
                         </div>
                       </div>
-                  <!-- <td><?= h($recipes->id) ?></td>
-                  <td><?= h($recipes->user_id) ?></td> -->
-                  <!-- <td><?= h($recipes->name) ?></td>
-                  <td><?= h($recipes->description) ?></td>
-                  <td><?= h($recipes->created) ?></td>
-                  <td><?= h($recipes->modified) ?></td> -->
-                  <td class="actions">
+
+                  <!-- <td class="actions">
                       <?= $this->Html->link(__('View'), ['controller' => 'Recipes', 'action' => 'view', $recipes->id]) ?>
                       <?= $this->Html->link(__('Edit'), ['controller' => 'Recipes', 'action' => 'edit', $recipes->id]) ?>
                       <?= $this->Html->link(__('Version'), ['controller' => 'Recipes', 'action' => 'Version', $recipes->id]) ?>
                       <?= $this->Form->postLink(__('Delete'), ['controller' => 'Recipes', 'action' => 'delete', $recipes->id], ['confirm' => __('Are you sure you want to delete # {0}?', $recipes->id)]) ?>
-                  </td>
+                  </td> -->
+                </div>
+
+                <div class="ingredients">
+                    <div class="ingredients-container">
+                      <h2><?= __('Ingredients') ?></h2>
+                      <?php if (!empty($recipes->ingredients)): ?>
+                          <?php foreach ($recipes->ingredients as $ingredients): ?>
+                          <div class="ingredient">
+                              <div class="bubble"><?= h($ingredients->name) ?></div>
+                          </div>
+                      <?php endforeach; ?>
+                    <?php endif; ?>
+                    </div>
+                </div>
+
+                <div class="content-wrap-alt">
+                    <div class="content">
+                        <div class="version-title">
+                          <p><i class="fa fa-arrow-down" aria-hidden="true"></i> Versions</p>
+                        </div>
+                          <?php foreach ($recipes->child_recipes as $childRecipes): ?>
+                          <div class="child-container">
+                              <div class="name" class="user-block" style="color:#<?= ($childRecipes->user->colour->hex);?>">
+                                <i class="fa fa-circle" aria-hidden="true"></i>
+                                <?= $this->Html->link(__($childRecipes->name), ['controller' => 'Recipes','action' => 'view', $childRecipes->id]) ?>
+                              </div>
+                              <div class="child" style="color:#<?= ($childRecipes->user->colour->hex)?>">
+                                <i class="fa fa-user-o" aria-hidden="true" style="color:#<?= ($childRecipes->user->colour->hex)?>"></i>
+                                  <?= $this->Html->link(__($childRecipes->user->name), ['controller' => 'Users','action' => 'view', $childRecipes->user_id]) ?>
+                              </div>
+                          </div>
+                          <?php endforeach; ?>
+                    </div>
+                </div>
+
+                <div class="create-version">
+                  <p><?= $this->Html->link(__("<i class='fa fa-plus'></i> Create a Version"), ['action' => 'Version', $recipes->id] ,['escape' => false]) ?><p>
                 </div>
               </div>
               <?php endforeach; ?>
