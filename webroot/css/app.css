@@ -396,8 +396,19 @@ label {
 .form .method .title, .form .ingredients .title{
   margin-bottom: 10px;
 }
-.ingredients{
-
+.form .ingredients{
+  margin-top: 90px;
+}
+.form .version-info p{
+  display: inline-block;
+}
+.form .version-info .version-user a:link, .form .version-info .version-user a:visited{
+  color: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.form .version-user{
+  display: inline;
 }
 .ingredients .bubble{
     display: inline-block;

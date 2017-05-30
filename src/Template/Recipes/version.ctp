@@ -7,11 +7,15 @@
   <div class="recipes form large-9 medium-8 columns content">
       <?= $this->Form->create($recipe) ?>
       <fieldset>
-          <legend><?= __('Creating a version of ') ?>
-            <h1><?= h($recipe->name)?></h1>
-            <p style="color:#<?= ($recipe->user->colour->hex)?>!important;">originally made by <?= $recipe->has('user') ? $this->Html->link($recipe->user->name, ['controller' => 'Users', 'action' => 'view', $recipe->user->id]) : '' ?></p>
-
-          </legend>
+            <legend><?= __('Creating a version of ') ?>
+              <h1><?= h($recipe->name)?></h1>
+              <div class="version-info">
+              <p>originally made by
+                <div class="version-user" style="color:#<?= ($recipe->user->colour->hex)?>!important;">
+                <?= $recipe->has('user') ? $this->Html->link($recipe->user->name, ['controller' => 'Users', 'action' => 'view', $recipe->user->id]) : '' ?>
+                </div>
+            </legend>
+          </div>
           <?php
               echo $this->Form->create($recipe);
               //grabs the current user and hides the input
