@@ -12,10 +12,13 @@
 
     <div class="list-item">
       <div class="user">
-        <div class="user-block" style="border:solid 1px #<?= ($recipe->user->colour->hex)?>!important; color:#<?= ($recipe->user->colour->hex)?>!important;">
-          <?= $recipe->has('user') ? $this->Html->link($recipe->user->name, ['controller' => 'Users', 'action' => 'view', $recipe->user->id]) : '' ?>
+        <div class="user-block" style="background-color:#<?= ($recipe->user->colour->hex)?>!important; color:#<?= ($recipe->user->colour->hex)?>!important;">
+          <i class="fa fa-user-o" aria-hidden="true"></i>
         </div>
-      </div>
+        <div class="user-name" style="color:#<?= ($recipe->user->colour->hex)?>!important;">
+        <?= $recipe->has('user') ? $this->Html->link($recipe->user->name, ['controller' => 'Users', 'action' => 'view', $recipe->user->id]) : '' ?>
+        </div>
+    </div>
       <div class="content-wrap">
           <div class="content">
               <div class="title" style="color:#<?= ($recipe->user->colour->hex)?>!important">

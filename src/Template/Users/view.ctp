@@ -9,6 +9,7 @@
     <div class="container">
         <div class="content">
           <div class="profile-circle" style="background-color:#<?= ($user->colour->hex)?>!important">
+            <i class="fa fa-user-o fa-3x" aria-hidden="true"></i>
           </div>
           <h2 style="color:#<?= ($user->colour->hex)?>!important"><?= h($user->name) ?></h2>
           <p>Extra Infomation</p>
