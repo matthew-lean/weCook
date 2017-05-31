@@ -510,6 +510,7 @@ fieldset legend{
   float: left;
   border-top: solid 1px #f2f2f2;
   margin-left: 16%;
+  padding: 6px 0;
 }
 .version-title{
     width: 100%;
@@ -550,6 +551,9 @@ fieldset legend{
     height: inherit;
     float: left;
     overflow: hidden;
+}
+.child-container .name .fa{
+  font-size: 12px;
 }
 .child-container .child{
     height: inherit;
@@ -623,7 +627,7 @@ fieldset legend{
   float: left;
   height: 100px;
   width: 12%;
-  padding: 20px 0 0 20px;
+  padding: 25px 0 0 35px;
 }
 .user-block{
   border-radius: 50px;

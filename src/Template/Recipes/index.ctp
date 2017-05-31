@@ -70,7 +70,7 @@
                 <?php foreach ($recipe->child_recipes as $childRecipes): ?>
                 <div class="child-container">
                     <div class="name" class="user-block" style="color:#<?= ($childRecipes->user->colour->hex);?>">
-                      <i class="fa fa-circle" aria-hidden="true"></i>
+                      <i class="fa fa-chevron-right" aria-hidden="true"></i>
                       <?= $this->Html->link(__($childRecipes->name), ['controller' => 'Recipes','action' => 'view', $childRecipes->id]) ?>
                     </div>
                     <div class="child" style="color:#<?= ($childRecipes->user->colour->hex)?>">
@@ -88,4 +88,4 @@
 
     </div>
       <?php endforeach; ?>
-  </div>
+    </div>
