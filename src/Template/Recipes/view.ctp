@@ -4,6 +4,56 @@
   */
 ?>
 <div class="site-container">
+  <div class="recipes view large-9 medium-8 columns content" style="border-top:solid 5px #<?= ($recipe->user->colour->hex)?>!important;">
+
+    <div class="info">
+              <h1><?= h($recipe->name) ?></h1>
+              <div class="description">
+                <p><?= h($recipe->description) ?></p>
+              </div>
+              <div class="user-name" style="color:#<?= ($recipe->user->colour->hex)?>!important;">
+                <div class="user">
+                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                  <div class="user-name" style="color:#<?= ($recipe->user->colour->hex)?>!important;">
+                  <?= $recipe->has('user') ? $this->Html->link($recipe->user->name, ['controller' => 'Users', 'action' => 'view', $recipe->user->id]) : '' ?>
+                  </div>
+                </div>
+              </div>
+              <div class="times">
+                <div class="cooktime">
+                  <div class="title">
+                    <p>Cook Time</p>
+                  </div>
+                  <div class="value">
+                    <p><?= h($recipe->cooktime)?> mins</p>
+                  </div>
+                </div>
+                <div class="preptime">
+                  <div class="title">
+                    <p>Prep Time</p>
+                  </div>
+                    <div class="value">
+                      <p><?= h($recipe->preptime)?> mins</p>
+                    </div>
+                </div>
+              </div>
+      </div>
+
+    <div class="ingredients">
+          <!-- <h4><?= __('Ingredients') ?></h4> -->
+          <?php if (!empty($recipe->ingredients)): ?>
+
+              <?php foreach ($recipe->ingredients as $ingredients): ?>
+              <div class="ingredients">
+                  <div class="bubble"><?= h($ingredients->name) ?></div>
+              </div>
+              <?php endforeach; ?>
+          </table>
+          <?php endif; ?>
+    </div>
+</div>
+  <!-- </div>
+<div class="site-container">
   <div class="recipes view large-9 medium-8 columns content">
 
     <div class="user">
@@ -15,7 +65,7 @@
     <h3><?= h($recipe->name) ?></h3>
 
   </div>
-</div>
+</div> -->
 
 
 <div class="recipes view large-9 medium-8 columns content">

@@ -12,7 +12,7 @@
             <i class="fa fa-user-o fa-3x" aria-hidden="true"></i>
           </div>
           <h2 style="color:#<?= ($user->colour->hex)?>!important"><?= h($user->name) ?></h2>
-          <p>Extra Infomation</p>
+          <p>User from <?= h($user->created) ?></p>
       </div>
     </div>
   </div>

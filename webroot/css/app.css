@@ -366,6 +366,13 @@ label {
   background-color: #fff;
   margin: 0 auto;
   display:flex;justify-content:center;align-items:center;
+  filter: none;
+  border-style: solid;
+  border-width: 7px;
+  border-top-color: rgba(0, 0, 0, 0.2);
+  border-left-color: rgba(0, 0, 0, 0.2);
+  border-right-color: rgba(0, 0, 0, 0.2);
+  border-bottom-color: rgba(0, 0, 0, 0.2);
 }
 .profile-circle .fa{
   color: #fff;
@@ -388,9 +395,22 @@ label {
 .view .cooktime, .view .preptime{
   float: left;
   margin-right: 30px;
-  padding: 10px;
   border-radius: 3px;
   background-color: #eceef1;
+  display: -webkit-inline-box;
+}
+.view .cooktime .title , .view .preptime .title{
+  padding: 10px 10px;
+}
+.view .cooktime .value , .view .preptime .value{
+  background-color: #fff;
+  border: solid 1px #eceef1;
+  padding: 10px 10px;
+  border-radius: 3px;
+}
+.view .info .times{
+  padding: 10px 0;
+  display: flex;
 }
 .view .parent_id{
   margin: 15px 30px 0 0;
@@ -455,6 +475,18 @@ fieldset legend{
 .view .ingredients{
   margin: 30px 0 0 0;
 }
+.view .info{
+  border-bottom: 1px solid #eceef1;
+  padding-bottom: 25px;
+}
+.view .info p{
+  font-size: 0.9em;
+}
+.view .user{
+  display: -webkit-box;
+  padding: 15px 0;
+}
+
 
 /*Recipe List*/
 .main-title {
@@ -637,6 +669,13 @@ fieldset legend{
   display: flex;
   justify-content: center;
   align-items: center;
+  filter: none;
+  border-style: solid;
+  border-width: 4px;
+  border-top-color: rgba(0, 0, 0, 0.2);
+  border-left-color: rgba(0, 0, 0, 0.2);
+  border-right-color: rgba(0, 0, 0, 0.2);
+  border-bottom-color: rgba(0, 0, 0, 0.2);
 }
 .user-block .fa{
   color: #fff;

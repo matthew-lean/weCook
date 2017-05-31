@@ -19,22 +19,23 @@
         <?= $recipe->has('user') ? $this->Html->link($recipe->user->name, ['controller' => 'Users', 'action' => 'view', $recipe->user->id]) : '' ?>
         </div>
     </div>
-      <div class="content-wrap">
-          <div class="content">
-              <div class="title" style="color:#<?= ($recipe->user->colour->hex)?>!important">
-                  <h2><?= $recipe->has('name') ? $this->Html->link($recipe->name, ['controller' => 'Recipes', 'action' => 'view', $recipe->id]) : '' ?></h2>
-              </div>
-              <div class="description">
-                <p><?= h($recipe->description) ?></p>
-              </div>
-              <!-- <div class="extra">
-                <p><?= $this->Html->link(__('View'), ['action' => 'view', $recipe->id]) ?></p>
-                <!-- <p><?= $this->Html->link(__('Edit'), ['action' => 'edit', $recipe->id]) ?></p> -->
-                <!-- <p><?= $this->Html->link(__('Version'), ['action' => 'Version', $recipe->id]) ?><p> -->
-                <!-- <p><?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $recipe->id], ['confirm' => __('Are you sure you want to delete # {0}?', $recipe->id)]) ?><p> -->
-              <!-- </div> -->
-          </div>
+
+    <div class="content-wrap">
+      <div class="content">
+        <div class="title" style="color:#<?= ($recipe->user->colour->hex)?>!important">
+          <h2><?= $recipe->has('name') ? $this->Html->link($recipe->name, ['controller' => 'Recipes', 'action' => 'view', $recipe->id]) : '' ?></h2>
+        </div>
+        <div class="description">
+          <p><?= h($recipe->description) ?></p>
+        </div>
+        <!-- <div class="extra">
+          <p><?= $this->Html->link(__('View'), ['action' => 'view', $recipe->id]) ?></p>
+          <!-- <p><?= $this->Html->link(__('Edit'), ['action' => 'edit', $recipe->id]) ?></p> -->
+          <!-- <p><?= $this->Html->link(__('Version'), ['action' => 'Version', $recipe->id]) ?><p> -->
+          <!-- <p><?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $recipe->id], ['confirm' => __('Are you sure you want to delete # {0}?', $recipe->id)]) ?><p> -->
+        <!-- </div> -->
       </div>
+    </div>
 
       <div class="ingredients">
         <div class="ingredients-container">
