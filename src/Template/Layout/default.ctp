@@ -45,6 +45,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->fetch('script') ?>
 </head>
 <body>
+  <div class="maincontent">
         <div class="navbar">
           <div class="site-container">
             <ul class="left">
@@ -123,7 +124,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <div class="clearfix">
         <?= $this->fetch('content') ?>
     </div>
-
+  </div>
     <footer>
       <div class="site-container">
         <div class="container">

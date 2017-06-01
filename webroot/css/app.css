@@ -9,7 +9,9 @@ body {
 *{
   box-sizing: border-box;
 }
-
+.maincontent{
+  min-height: calc(100vh - 332px);
+}
 .site-container {
     width: 910px;
     margin: 0 auto;
