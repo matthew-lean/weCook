@@ -491,16 +491,16 @@ fieldset legend{
 .view .ingredients{
   margin: 15px 0 0 0;
 }
-.view .info{
-  /*border-bottom: 1px solid #eceef1;*/
-  padding-bottom: 25px;
+.view .info .description{
+  margin: 15px 0;
+  width: 50%;
 }
 .view .info p{
-  font-size: 0.9em;
+  /*font-size: 0.9em;*/
 }
 .view .user{
   display: -webkit-box;
-  padding: 15px 0;
+  padding: 10px 0;
 }
 
 
