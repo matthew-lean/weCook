@@ -932,6 +932,35 @@ footer a:link, footer a:visited{
 footer a:link:hover, footer a:visited:hover{
     color:#036aed;
 }
+footer a svg {
+  transition: 200ms;
+  transition-timing-function: ease-in-out;
+  -webkit-transition: 200ms;
+  -webkit-transition-timing-function: ease-in-out;
+}
+a svg:hover .blue-logo{
+  animation: logocolour 2s infinite;
+}
+@keyframes logocolour {
+  0% {
+    fill:#036aed;
+  }
+  20% {
+    fill:#ff3a2f;
+  }
+  40% {
+    fill:#4cd964;
+  }
+  60% {
+    fill:#ff9500;
+  }
+  80% {
+    fill:#ffcc00;
+  }
+  100% {
+    fill:#ff2d55;
+  }
+}
 footer .content {
     padding: 40px 0;
     position: relative;
