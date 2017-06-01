@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2017 at 11:07 AM
+-- Generation Time: Jun 01, 2017 at 08:42 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -649,7 +649,7 @@ CREATE TABLE `users` (
   `name` varchar(32) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `colour_id` int(11) NOT NULL,
+  `colour_id` int(11) NOT NULL DEFAULT '1',
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -663,7 +663,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `colour_id`, `created`, 
 (2, 'John', 'john@mail.com', '$2y$10$e2tfHLLVeU.m1oc38mXsJ.ciCbEQZPBdoxGA7hXztOMHK3PnFhi2q', 2, '2017-03-21 15:10:09', '2017-03-21 16:16:22'),
 (11, 'Fred', 'fred@mail.com', '$2y$10$OmuUz7LTpIMCkV2A9uQCg.DHZg1gdbU/UypdzGiF0fiD3kxjCUdlq', 3, '2017-05-26 17:25:24', '2017-05-26 17:25:24'),
 (10, 'shaun', 'shaun@mail.com', '$2y$10$ftoOepD3p7kQlX23PDP.tuH60NoxuCLshfUBHbuktdgP1jIu/SFDO', 6, '2017-05-22 14:29:09', '2017-05-22 14:29:09'),
-(12, 'Hector', 'hector@mail.com', '$2y$10$V0sQ2nOUkBwpRO6W6U8FXu.bxs.4/O/hY8jxY.GF6pm7Z/KQk1IX6', 5, '2017-05-27 10:56:10', '2017-05-27 10:56:10');
+(12, 'Hector', 'hector@mail.com', '$2y$10$V0sQ2nOUkBwpRO6W6U8FXu.bxs.4/O/hY8jxY.GF6pm7Z/KQk1IX6', 5, '2017-05-27 10:56:10', '2017-05-27 10:56:10'),
+(13, 'david', 'david@mail.com', '$2y$10$4QMnLifkAJN2UXoa0KxcueOiisOfczzf4EAivhTi3j6xgty0HxbyW', 1, '2017-06-01 20:41:58', '2017-06-01 20:41:58');
 
 --
 -- Indexes for dumped tables
@@ -749,7 +750,7 @@ ALTER TABLE `steps`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
