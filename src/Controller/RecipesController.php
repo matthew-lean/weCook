@@ -30,6 +30,25 @@ class RecipesController extends AppController
         $this->set(compact('recipes','users'));
         $this->set('_serialize', ['recipe']);
     }
+
+    // Home
+
+    public function home()
+    {
+        $this->paginate = [
+            'contain' => ['Users.Colours','Users','ParentRecipes','ChildRecipes', 'Ingredients','ChildRecipes.Users','ChildRecipes.Users.Colours'],
+            'limit' => 3,
+            'order' => [
+              'created' => 'desc'
+            ]
+        ];
+
+        $recipes = $this->paginate($this->Recipes);
+
+
+        $this->set(compact('recipes','users'));
+        $this->set('_serialize', ['recipe']);
+    }
     /**
      * View method
      *
