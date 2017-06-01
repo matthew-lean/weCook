@@ -5,7 +5,7 @@
 ?>
 <div class="site-container">
   <!-- users colour is grabbed and used as the background to the header -->
-  <div class="profile-header">
+  <div class="profile-header" style="background-color:#<?= ($user->colour->hex)?>!important">
     <div class="container">
         <div class="content">
           <div class="profile-circle" style="background-color:#<?= ($user->colour->hex)?>!important">
