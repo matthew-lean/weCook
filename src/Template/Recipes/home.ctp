@@ -53,7 +53,12 @@
 <div class="site-container">
   <div class="recipes-content">
     <div class="main-title">
-            <h3>Recipes</h3>
+            <div class="title">
+              <h3>Recipes</h3>
+            </div>
+            <div class="all-recipes">
+              <h3><?= $this->Html->link('All Recipes',['controller' => 'recipes', 'action' => 'index']); ?></h3>
+            </div>
     </div>
     <?php foreach ($recipes as $recipe): ?>
 
