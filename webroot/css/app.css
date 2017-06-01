@@ -503,7 +503,6 @@ fieldset legend{
   padding: 10px 0;
 }
 
-
 /*Recipe List*/
 .main-title {
     padding: 20px 30px;
@@ -856,7 +855,7 @@ fieldset legend{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(../img/1.jpg);
+    background-color: #3588f2;
     border-radius: 3px;
 }
 .page-head .container {

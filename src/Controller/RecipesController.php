@@ -136,9 +136,10 @@ class RecipesController extends AppController
             if ($this->Recipes->save($recipe, ['associated' => ['Steps','Ingredients']])) {
                 $this->Flash->success(__('A version has been created'));
                 //redirect to the edited recipe
-                return $this->redirect(['action' => 'view',$recipe->id]);
+                return $this->redirect(['action' => 'index',$recipe->id]);
             }
             $this->Flash->error(__('That recipe version was not made...'));
+            return $this->redirect(['action' => 'index']);
         }
         $users = $this->Recipes->Users->find('list', ['limit' => 100]);
         $ingredients = $this->Recipes->Ingredients->find('list', ['limit' => 100]);
