@@ -40,7 +40,7 @@ class RecipesController extends AppController
     public function view($id = null)
     {
         $recipe = $this->Recipes->get($id, [
-            'contain' => ['Users.Colours','Users', 'ParentRecipes', 'Ingredients', 'ChildRecipes', 'RecipesVersions', 'Steps']
+            'contain' => ['Users.Colours','Users', 'ParentRecipes', 'Ingredients', 'ChildRecipes', 'ChildRecipes.Users.Colours','RecipesVersions', 'Steps']
         ]);
 
         $this->set('recipe', $recipe);

@@ -427,6 +427,22 @@ label {
   border: 1px solid #eceef1;
   max-width: 210px;
 }
+.view .method-container .position{
+  float: left;
+}
+.view .method-container .position{
+  padding: 10px 25px;
+}
+.view .method-container .step{
+  margin-bottom: 10px;
+}
+.view .method-container .description {
+  background-color: #f9f9f9;
+  padding: 5px;
+}
+.view .method-container .description p{
+  padding: 5px;
+}
 .form .cooktime ,.form .preptime{
   float: left;
   margin-right: 30px;
@@ -473,10 +489,10 @@ fieldset legend{
 
 /*Recipe View */
 .view .ingredients{
-  margin: 30px 0 0 0;
+  margin: 15px 0 0 0;
 }
 .view .info{
-  border-bottom: 1px solid #eceef1;
+  /*border-bottom: 1px solid #eceef1;*/
   padding-bottom: 25px;
 }
 .view .info p{
@@ -536,14 +552,6 @@ fieldset legend{
 .list-item .content-wrap-alt .content{
   padding: 0;
 }
-.child-container{
-  width: 84%;
-  height: inherit;
-  float: left;
-  border-top: solid 1px #f2f2f2;
-  margin-left: 16%;
-  padding: 6px 0;
-}
 .version-title{
     width: 100%;
     height: inherit;
@@ -551,11 +559,6 @@ fieldset legend{
     padding-left: 16%;
     background-color: #f9f9f9;
     border-top: solid 1px #f2f2f2;
-}
-.child-container .version-title{
-  width: 20%;
-  height: inherit;
-  float: left;
 }
 .list-item .create-version a:link, .list-item .create-version a:visited {
   width: 100%;
@@ -578,11 +581,24 @@ fieldset legend{
     padding-left: 16%;
     background-color: #f9f9f9;
 }
+.child-container{
+  width: 84%;
+  height: inherit;
+  float: left;
+  border-top: solid 1px #f2f2f2;
+  margin-left: 16%;
+  padding: 6px 0;
+}
 .child-container .name{
     width: 55%;
     height: inherit;
     float: left;
     overflow: hidden;
+}
+.child-container .version-title{
+  width: 20%;
+  height: inherit;
+  float: left;
 }
 .child-container .name .fa{
   font-size: 12px;
@@ -608,6 +624,45 @@ fieldset legend{
 .child-container p{
   display: inline-block;
   font-size: 0.8em;
+}
+.version-nav .version-title{
+  padding-left: 0;
+  background-color: rgba(0, 0, 0, 0);
+  border-top: none;
+  padding-bottom: 15px;
+}
+.version-nav .child-container{
+  width: auto;
+  height: inherit;
+  float: left;
+  border: solid 1px #f2f2f2;
+  margin-right: 25px;
+  margin-left: 0;
+  padding: 10px 15px;
+}
+.version-nav .child-container .name{
+  width: auto;
+  height: inherit;
+  float: left;
+  overflow: hidden;
+}
+.version-nav .child-container .child{
+  height: inherit;
+  float: none;
+  padding-right: 0;
+}
+.version-nav .create-version{
+  float: right;
+}
+.version-nav button{
+  background: #fff;
+  border: 1px solid #eceeef;
+  padding: 0px 25px;
+}
+.version-nav button:hover{
+  transition: all 10ms cubic-bezier(0.250, 0.100, 0.250, 1.000);
+  background-color: #f9f9f9;
+  border: 1px solid #036aed;
 }
 .list-item .ingredients {
     width: 38%;
