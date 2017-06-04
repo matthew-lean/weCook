@@ -386,6 +386,290 @@ label {
   height: 200px;
   background: linear-gradient(270deg, #00d0ff, #036aed);
 }
+.about .page-head{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background: #ffffff;
+  border-radius: 3px;
+  border-top: 1px solid #eceef1;
+}
+.about .content{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+}
+.about .content p{
+  margin-top: 12px;
+  margin-left: 128px;
+  margin-right: 128px;
+  color: #8a8e94;
+  line-height: 1.65em;
+  text-align: justify;
+  font-size: 0.9rem;
+}
+.about .content h1{
+  margin-bottom: 24px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 34px;
+  margin: 52px 0 0;
+}
+.feature-wrapper{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+.join-now .about-container{
+}
+.join-now .feature-wrapper{
+  flex-direction: column;
+}
+.join-now .feature-wrapper h2{
+  margin-bottom: 20px !important;
+}
+.join-now .join-button{
+  display: grid;
+  height: 50px;
+  margin-top: 25px;
+}
+.join-now a:link, .join-now a:visited {
+  padding: 10px 50px;
+  background-color: #036aed;
+  color: #fff;
+  border-radius: 4px;
+  border: solid 7px #036aed;
+}
+.join-now a:link:hover , .join-now a:visited:hover{
+  border-style: solid;
+  border-width: 7px;
+  border-top-color: rgba(0, 0, 0, 0.2);
+  border-left-color: rgba(0, 0, 0, 0.2);
+  border-right-color: rgba(0, 0, 0, 0.2);
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+}
+
+.join-now {
+  width: 100%;
+  height: 300px;
+}
+.join-now .content img{
+  width: 400px
+}
+
+.header .site-container {
+  max-width: 910px;
+  width: 90%;
+  margin: 0 auto;
+  min-width: 320px;
+  height: inherit;
+  position: relative;
+  user-select: none;
+}
+.header .content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.header .content img {
+  width: 242px;
+  height: auto;
+}
+
+@keyframes animation {
+  0% {
+    transform: translate3d(0, -10px, 0);
+    animation-timing-function: ease-in; }
+  50% {
+    transform: translate3d(0, 10px, 0);
+    animation-timing-function: ease-out; }
+  100% {
+    transform: translate3d(0, -10px, 0); } }
+
+.svg-1 {
+  position: absolute;
+  fill: none;
+  stroke: #84b6f6;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+  left: 15%;
+  top: 10%;
+  animation-name: animation;
+  animation-duration: 5s;
+  animation-iteration-count: infinite; }
+
+.svg-2 {
+  position: absolute;
+  fill: none;
+  stroke: #fc9c97;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+  left: 73%;
+  top: 0%;
+  animation-name: animation;
+  animation-duration: 7.1s;
+  animation-iteration-count: infinite; }
+
+.svg-3 {
+  position: absolute;
+  fill: none;
+  stroke: #fce380;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+  left: 30%;
+  top: 50%;
+  animation-name: animation;
+  animation-duration: 5.2s;
+  animation-iteration-count: infinite; }
+
+.svg-4 {
+  position: absolute;
+  fill: none;
+  stroke: #fc9c97;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+  left: 35%;
+  top: 0%;
+  animation-name: animation;
+  animation-duration: 6.3s;
+  animation-iteration-count: infinite; }
+
+.svg-5 {
+  position: absolute;
+  fill: none;
+  stroke: #96e3b7;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+  left: 70%;
+  top: 55%;
+  animation-name: animation;
+  animation-duration: 5.4s;
+  animation-iteration-count: infinite; }
+
+.svg-6 {
+  position: absolute;
+  fill: none;
+  stroke: #ffcc00;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+  left: 80%;
+  top: 30%;
+  animation-name: animation;
+  animation-duration: 7.5s;
+  animation-iteration-count: infinite; }
+
+.svg-7 {
+  position: absolute;
+  fill: none;
+  stroke: #84b6f6;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+  left: 55%;
+  top: 0%;
+  animation-name: animation;
+  animation-duration: 5.6s;
+  animation-iteration-count: infinite; }
+
+.svg-8 {
+  position: absolute;
+  fill: none;
+  stroke: #96e3b7;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+  left: 20%;
+  top: 35%;
+  animation-name: animation;
+  animation-duration: 6.7s;
+  animation-iteration-count: infinite; }
+
+
+
+.feature-wrapper-2 .padding-gutter{
+  width: 445px;
+}
+.feature-2 .home-features__block h2{
+  animation: logocolour 2s infinite;
+}
+.feature-wrapper-last{
+  margin-bottom: 120px;
+}
+.feature .text{
+    width: 600px;
+    padding-left: 100px;
+    position: relative;
+}
+.about-container{
+  position: relative;
+  z-index: 10;
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+}
+.feature-1{
+  position: relative;
+  background-color: #eceef1;
+  width: 100%;
+}
+.feature-2{
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+}
+.feature-3{
+  position: relative;
+  width: 100%;
+  background-color: #f9f9f9;
+}
+.feature-3 ::-webkit-media-controls {
+  display:none !important;
+}
+.feature-4 .home-features__block button{
+  background-color: #fff;
+  border: solid 1px #333333;
+}
+.align--middle {
+    -ms-flex-align: center;
+    align-items: center;
+}
+.align {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    align-items: center;
+}
+.padding-gutter {
+    padding: 15px;
+}
+.home-features__block {
+    width: 600px;
+    padding-left: 100px;
+    position: relative;
+}
+.spacing-bottom {
+    margin-bottom: 15px;
+}
+.spacing-top-narrow {
+    margin-top: 7.5px;
+}
+.text-medium {
+  font-size: .9rem;
+  line-height: 1.85em;
+}
 
 /*Recipe Page*/
 .time{
@@ -504,6 +788,15 @@ fieldset legend{
 .view .user{
   display: -webkit-box;
   padding: 10px 0;
+}
+ul.pagination li.active a {
+    background-color: #036aed;
+    color: #FFF;
+    font-weight: bold;
+    cursor: default;
+}
+ul.pagination li a, ul.pagination li button {
+    border: solid 1px #ddd;
 }
 
 /*Recipe List*/
@@ -785,6 +1078,9 @@ fieldset legend{
 .blue{
   background-color: #036aed;
 }
+.text-blue{
+  color: #036aed;
+}
 .red{
   background-color: #ff3a2f;
 }
@@ -945,21 +1241,27 @@ a svg:hover .blue-logo{
 @keyframes logocolour {
   0% {
     fill:#036aed;
+    color: #036aed;
   }
   20% {
     fill:#ff3a2f;
+    color: #ff3a2f;
   }
   40% {
     fill:#4cd964;
+    color: #4cd964
   }
   60% {
     fill:#ff9500;
+    color: #ff9500
   }
   80% {
     fill:#ffcc00;
+    color: #ffcc00
   }
   100% {
     fill:#ff2d55;
+    color: #ff2d55
   }
 }
 footer .content {

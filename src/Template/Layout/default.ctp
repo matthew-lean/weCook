@@ -108,8 +108,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <div class="sub-nav">
           <div class="site-container">
             <ul class="left">
-              <li><?= $this->Html->link(__('Recipes'), ['controller' => 'Recipes', 'action' => 'index']) ?> </li>
-              <li><?= $this->Html->link(__('Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
+              <li><?= $this->Html->link(__("<i class='fa fa-list'></i> Recipes"), ['controller' => 'Recipes', 'action' => 'index'],['escape' => false]) ?> </li>
+              <!-- <li><?= $this->Html->link(__('Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li> -->
             </ul>
             <ul class="right">
               <li><?= $this->Html->link("<i class='fa fa-plus'></i> Add Recipe", ['controller' => 'Recipes', 'action' => 'add'],['escape' => false]); ?></li>
