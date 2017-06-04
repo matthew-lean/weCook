@@ -59,4 +59,24 @@ $(document).ready(function() {
 	//call function
 	ingredientcounter()
 
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	$('.version-title').click(function() {
+
+		var $ans = $(this).next(".child-container");
+        $ans.slideToggle(); //toggle the current one
+        $(".ans").not($ans).slideUp(); //hide the others
+  });
+
+  $('.child-container').hide();
+
+  // var count = 0;
+  // $('#IngredientAdd').on('click',function(){
+  //   $('.Ingredient:eq('+count+')').show();
+  //   count++;
+  // });
+
+
 });

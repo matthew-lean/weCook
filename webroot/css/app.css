@@ -612,6 +612,9 @@ label {
     padding-left: 100px;
     position: relative;
 }
+.home .about {
+  marign-top:100px;
+}
 .about-container{
   position: relative;
   z-index: 10;
