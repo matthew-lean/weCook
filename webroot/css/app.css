@@ -877,7 +877,7 @@ ul.pagination li a, ul.pagination li button {
 }
 .version-title p .hightlight{
   color: #f9f9f9;
-  
+
 }
 .list-item .create-version a:link, .list-item .create-version a:visited {
   width: 100%;
@@ -909,7 +909,7 @@ ul.pagination li a, ul.pagination li button {
   padding: 6px 0;
 }
 .child-container .name{
-    width: 55%;
+    width: 50%;
     height: inherit;
     float: left;
     overflow: hidden;
