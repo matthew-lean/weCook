@@ -872,6 +872,13 @@ ul.pagination li a, ul.pagination li button {
     background-color: #f9f9f9;
     border-top: solid 1px #f2f2f2;
 }
+.version-title p{
+  display: inline;
+}
+.version-title p .hightlight{
+  color: #f9f9f9;
+  
+}
 .list-item .create-version a:link, .list-item .create-version a:visited {
   width: 100%;
   height: inherit;
@@ -943,7 +950,7 @@ ul.pagination li a, ul.pagination li button {
   border-top: none;
   padding-bottom: 15px;
 }
-.version-nav .child-container{
+.version-nav .child-container-alt{
   width: auto;
   height: inherit;
   float: left;
@@ -952,13 +959,13 @@ ul.pagination li a, ul.pagination li button {
   margin-left: 0;
   padding: 10px 15px;
 }
-.version-nav .child-container .name{
+.version-nav .child-container-alt .name{
   width: auto;
   height: inherit;
   float: left;
   overflow: hidden;
 }
-.version-nav .child-container .child{
+.version-nav .child-container-alt .child{
   height: inherit;
   float: none;
   padding-right: 0;

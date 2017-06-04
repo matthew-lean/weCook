@@ -44,11 +44,11 @@
 <div class="recipes version-nav view large-9 medium-8 columns content">
   <div class="content-wrap-alt">
       <div class="content">
-          <div class="version-title">
+          <div class="version-title-alt">
             <h4>Versions</h4>
           </div>
             <?php foreach ($recipe->child_recipes as $childRecipes): ?>
-            <div class="child-container">
+            <div class="child-container-alt">
                 <div class="name" class="user-block" style="color:#<?= ($childRecipes->user->colour->hex);?>">
                   <!-- <i class="fa fa-chevron-right" aria-hidden="true"></i> -->
                   <?= $this->Html->link(__($childRecipes->name), ['controller' => 'Recipes','action' => 'view', $childRecipes->id]) ?>

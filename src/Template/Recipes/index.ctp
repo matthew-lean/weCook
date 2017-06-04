@@ -67,6 +67,7 @@
           <div class="content">
               <div class="version-title">
                 <p><i class="fa fa-arrow-down" aria-hidden="true"></i> Versions</p>
+                <p class="highlight"></p>
               </div>
                 <?php foreach ($recipe->child_recipes as $childRecipes): ?>
                 <div class="child-container">

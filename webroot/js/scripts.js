@@ -63,6 +63,8 @@ $(document).ready(function() {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+	//Toggle child versions
+
 	$('.version-title').click(function() {
 
 		var $ans = $(this).next(".child-container");
@@ -70,13 +72,8 @@ $(document).ready(function() {
         $(".ans").not($ans).slideUp(); //hide the others
   });
 
-  $('.child-container').hide();
+  // $('.child-container').hide();
 
-  // var count = 0;
-  // $('#IngredientAdd').on('click',function(){
-  //   $('.Ingredient:eq('+count+')').show();
-  //   count++;
-  // });
-
+	var count = $(".child-container").length;
 
 });
