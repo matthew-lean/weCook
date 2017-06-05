@@ -2,6 +2,7 @@
 namespace App\Controller;
 use App\Controller\AppController;
 use Cake\Log\Log;
+use Cake\Event\Event;
 /**
  * Recipes Controller
  *
@@ -163,5 +164,10 @@ class RecipesController extends AppController
             $this->Flash->error(__('The recipe could not be deleted. Please, try again.'));
         }
         return $this->redirect(['action' => 'index']);
+    }
+
+    //Public pages which don't require user login
+    public function beforeFilter(Event $event){
+      $this->Auth->allow(['home']);
     }
 }

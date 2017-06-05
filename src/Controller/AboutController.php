@@ -3,6 +3,8 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 
+use Cake\Event\Event;
+
 /**
  * Colours Controller
  *
@@ -19,6 +21,11 @@ class AboutController extends AppController
     public function index()
     {
 
+    }
+
+    //Public pages which don't require user login
+    public function beforeFilter(Event $event){
+      $this->Auth->allow(['index']);
     }
 
     /**
