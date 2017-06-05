@@ -30,10 +30,10 @@
         </div>
         <!-- <div class="extra">
           <p><?= $this->Html->link(__('View'), ['action' => 'view', $recipe->id]) ?></p>
-          <!-- <p><?= $this->Html->link(__('Edit'), ['action' => 'edit', $recipe->id]) ?></p> -->
-          <!-- <p><?= $this->Html->link(__('Version'), ['action' => 'Version', $recipe->id]) ?><p> -->
-          <!-- <p><?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $recipe->id], ['confirm' => __('Are you sure you want to delete # {0}?', $recipe->id)]) ?><p> -->
-        <!-- </div> -->
+          <p><?= $this->Html->link(__('Edit'), ['action' => 'edit', $recipe->id]) ?></p>
+          <p><?= $this->Html->link(__('Version'), ['action' => 'Version', $recipe->id]) ?><p>
+          <p><?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $recipe->id], ['confirm' => __('Are you sure you want to delete # {0}?', $recipe->id)]) ?><p>
+          </div> -->
       </div>
     </div>
 

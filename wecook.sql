@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2017 at 08:42 PM
+-- Generation Time: Jun 05, 2017 at 01:57 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -187,7 +187,38 @@ INSERT INTO `ingredients` (`id`, `name`) VALUES
 (134, '20ml water'),
 (135, '2 spoons sugar'),
 (136, '20ml water'),
-(137, '50g flour');
+(137, '50g flour'),
+(138, 'eggs'),
+(139, 'd'),
+(140, '225g butter'),
+(141, '110g caster sugar'),
+(142, '275g plain flour'),
+(143, '1 teaspoon ginger'),
+(144, '75 milk chocolate chips'),
+(145, '75 milk chocolate chips'),
+(146, '1 teaspoon ginger'),
+(147, '200g plain flour'),
+(148, '110g caster sugar'),
+(149, '225g butter'),
+(150, '75g cocoa powder'),
+(151, '3 tablespoons of honey'),
+(152, 'crushed hazelnuts'),
+(153, '200g dark chocolate'),
+(154, '100g unsalted butter'),
+(155, '250g caster sugar'),
+(156, '4 large eggs'),
+(157, '1tsp vanilla essence'),
+(158, '60g plain flour'),
+(159, '60g cocoa powder'),
+(160, '100g soft brown sugar'),
+(161, '100g caster sugar'),
+(162, '100g butter'),
+(163, '1 egg'),
+(164, '1tsp vanilla extract'),
+(165, '225g plain flour'),
+(166, '140g milk chocolate'),
+(167, '85g white chocolate chips'),
+(168, '85g plain chocolate chips');
 
 -- --------------------------------------------------------
 
@@ -213,17 +244,10 @@ CREATE TABLE `recipes` (
 --
 
 INSERT INTO `recipes` (`id`, `user_id`, `name`, `description`, `created`, `modified`, `parent_id`, `cooktime`, `preptime`) VALUES
-(123, 1, 'Brownies', 'a fantastic cookie recipe, these delicious cookies are almost cakes, with a lovely soft texture that melts in your mouth, you will have the adults and children coming back for more!!!', '2017-05-22 17:32:47', '2017-05-28 12:29:40', NULL, 15, 10),
-(135, 2, 'Johns Cookies', 'a recipe my dad taught me ', '2017-05-28 15:42:15', '2017-05-28 15:42:15', 126, 12, 5),
-(126, 1, 'Cookies version?', 'cookie recipe ', '2017-05-24 11:09:02', '2017-05-24 11:09:02', 125, 12, 5),
-(129, 1, 'Cookies version version ?', 'cookie recipe ', '2017-05-24 11:17:33', '2017-05-24 11:17:33', 126, 12, 5),
-(131, 2, 'title', 'desc', '2017-05-24 11:40:21', '2017-05-24 11:40:21', NULL, 1, 2),
-(132, 1, 'New', 'desc', '2017-05-25 16:38:15', '2017-05-25 16:38:15', 131, 1, 2),
-(133, 1, 'Ramen', 'simple ramen recipe ', '2017-05-26 15:23:06', '2017-05-26 15:23:06', NULL, 5, 1),
-(134, 2, 'Ramen with egg', 'simple ramen recipe now with an egg', '2017-05-26 15:25:36', '2017-05-26 15:25:36', 133, 7, 1),
-(136, 1, 'Johns Cookies matts version', 'a recipe my dad taught me ', '2017-06-01 11:02:21', '2017-06-01 11:02:21', 135, 11, 6),
-(137, 1, 'Test', 'desc', '2017-06-01 11:05:17', '2017-06-01 11:05:17', NULL, 1, 24),
-(138, 1, 'Test New', 'desc new', '2017-06-01 11:05:55', '2017-06-01 11:05:55', 137, 5, 2);
+(141, 2, 'Basic Cookie Recipe', 'This is a basic cookie recipe, add what you like to it! ', '2017-06-05 13:41:35', '2017-06-05 13:41:35', NULL, 15, 5),
+(142, 10, 'Chocolate honey cookies', 'A variation on the Basic Cookie recipe by John', '2017-06-05 13:44:01', '2017-06-05 13:44:01', 141, 15, 5),
+(143, 1, 'Chocolate Brownies', 'This is a simple chocolate brownie recipe. Dark chocolate and really gooey insides! the best way imo :)', '2017-06-05 13:51:02', '2017-06-05 13:51:02', NULL, 20, 10),
+(144, 1, 'Triple Chocolate Cookies', 'Cookies with white, milk and dark chocolate, so so nice! ', '2017-06-05 13:57:12', '2017-06-05 13:57:12', 141, 10, 15);
 
 -- --------------------------------------------------------
 
@@ -243,30 +267,35 @@ CREATE TABLE `recipes_ingredients` (
 --
 
 INSERT INTO `recipes_ingredients` (`id`, `recipe_id`, `ingredient_id`) VALUES
-(166, 123, 129),
-(165, 123, 128),
-(164, 123, 127),
-(174, 138, 137),
-(161, 133, 124),
-(170, 137, 133),
-(173, 138, 136),
-(160, 132, 123),
-(169, 136, 132),
-(168, 136, 131),
-(172, 138, 135),
-(159, 131, 122),
-(171, 137, 134),
-(167, 135, 130),
-(152, 129, 115),
-(151, 129, 114),
-(150, 129, 113),
-(149, 129, 112),
-(146, 126, 109),
-(145, 126, 108),
-(144, 126, 107),
-(143, 126, 106),
-(162, 134, 125),
-(163, 134, 126);
+(192, 143, 155),
+(191, 143, 154),
+(190, 143, 153),
+(200, 144, 163),
+(187, 142, 150),
+(197, 144, 160),
+(199, 144, 162),
+(186, 142, 149),
+(195, 143, 158),
+(194, 143, 157),
+(198, 144, 161),
+(185, 142, 148),
+(196, 143, 159),
+(193, 143, 156),
+(184, 142, 147),
+(183, 142, 146),
+(182, 142, 145),
+(181, 141, 144),
+(180, 141, 143),
+(179, 141, 142),
+(178, 141, 141),
+(177, 141, 140),
+(189, 142, 152),
+(188, 142, 151),
+(201, 144, 164),
+(202, 144, 165),
+(203, 144, 166),
+(204, 144, 167),
+(205, 144, 168);
 
 -- --------------------------------------------------------
 
@@ -635,7 +664,30 @@ INSERT INTO `steps` (`id`, `recipe_id`, `description`, `position`) VALUES
 (375, 138, ' step one ', 1),
 (376, 138, 'step two', 2),
 (377, 138, 'step three', 3),
-(378, 138, 'new step four', 4);
+(378, 138, 'new step four', 4),
+(379, 139, 'Mix the ingredients together ', 1),
+(380, 140, 'd', 1),
+(381, 141, 'Preheat the oven at 170oC (375oF) or gas mark 3.', 1),
+(382, 141, 'Cream the butter in a large bowl or in a food mixer until it is soft. Add the sugar and beat until the mixture is light and fluffy.', 2),
+(383, 141, 'Sift the flour into the mixture and add optional ingredients. Bring the mixture together in a figure of eight until it forms a dough.', 3),
+(384, 141, 'Using your hands, make walnut sized balls and place them slightly apart from eachother on a tray (You don\'t need to grease or line a tray). Flat', 4),
+(385, 141, 'Place the cookies onto a cooling rack and leave them there for around 15 mins. Once cool serve.', 5),
+(386, 142, 'Preheat the oven at 170oC (375oF) or gas mark 3.', 1),
+(387, 142, 'Cream the butter in a large bowl or in a food mixer until it is soft. Add the sugar and beat until the mixture is light and fluffy.', 2),
+(388, 142, 'Sift the flour into the mixture and add optional ingredients. Bring the mixture together in a figure of eight until it forms a dough.', 3),
+(389, 142, 'Using your hands, make walnut sized balls and place them slightly apart from eachother on a tray (You don\'t need to grease or line a tray). Flat', 4),
+(390, 142, 'Place the cookies onto a cooling rack and leave them there for around 15 mins. Once cool serve.', 5),
+(391, 143, 'Heat the oven to 180c/ gas mark 4.', 1),
+(392, 143, 'Break up the chocolate and melt in the microwave or over a bain marie', 2),
+(393, 143, 'Put the butter and sugar into the bowl and mix, also adding the eggs and vanilla essence', 3),
+(394, 143, 'Spoon the cooled melted chocolate onto the mixture and combine, also add the cocoa powder', 4),
+(395, 143, 'Spoon the mixture into a tin lined with brown paper, cook or 20 mins or until firm to touch', 5),
+(396, 143, 'Remove from the tin onto a wire cooling rack, leave for a while, cut into squares and enjoy! ', 6),
+(397, 144, 'Preheat the oven at 200C / gas 6', 1),
+(398, 144, 'Mix sugar, butter , egg, vanilla flour and half melted milk chocolate', 2),
+(399, 144, ' Add white and plain chocolate chips and combine', 3),
+(400, 144, 'Use a ice-cream scoop to get equal sizes, place on trays and cook for 9 mins', 4),
+(401, 144, 'Remove cookies when they are golden brown, leave to cool, drizzle with the remaining melted chocolate and enjoy! ', 5);
 
 -- --------------------------------------------------------
 
@@ -664,7 +716,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `colour_id`, `created`, 
 (11, 'Fred', 'fred@mail.com', '$2y$10$OmuUz7LTpIMCkV2A9uQCg.DHZg1gdbU/UypdzGiF0fiD3kxjCUdlq', 3, '2017-05-26 17:25:24', '2017-05-26 17:25:24'),
 (10, 'shaun', 'shaun@mail.com', '$2y$10$ftoOepD3p7kQlX23PDP.tuH60NoxuCLshfUBHbuktdgP1jIu/SFDO', 6, '2017-05-22 14:29:09', '2017-05-22 14:29:09'),
 (12, 'Hector', 'hector@mail.com', '$2y$10$V0sQ2nOUkBwpRO6W6U8FXu.bxs.4/O/hY8jxY.GF6pm7Z/KQk1IX6', 5, '2017-05-27 10:56:10', '2017-05-27 10:56:10'),
-(13, 'david', 'david@mail.com', '$2y$10$4QMnLifkAJN2UXoa0KxcueOiisOfczzf4EAivhTi3j6xgty0HxbyW', 1, '2017-06-01 20:41:58', '2017-06-01 20:41:58');
+(13, 'david', 'david@mail.com', '$2y$10$4QMnLifkAJN2UXoa0KxcueOiisOfczzf4EAivhTi3j6xgty0HxbyW', 1, '2017-06-01 20:41:58', '2017-06-01 20:41:58'),
+(14, 'Roger', 'roger@mail.com', '$2y$10$ZRa2dSe/NmlztxbmQUkDIOy5NcuFkF/jzr3c7BI97/fqV6uvRLSsu', 2, '2017-06-04 19:35:00', '2017-06-04 19:35:00');
 
 --
 -- Indexes for dumped tables
@@ -725,17 +778,17 @@ ALTER TABLE `colours`
 -- AUTO_INCREMENT for table `ingredients`
 --
 ALTER TABLE `ingredients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=138;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=169;
 --
 -- AUTO_INCREMENT for table `recipes`
 --
 ALTER TABLE `recipes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
 --
 -- AUTO_INCREMENT for table `recipes_ingredients`
 --
 ALTER TABLE `recipes_ingredients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=175;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=206;
 --
 -- AUTO_INCREMENT for table `recipes_versions`
 --
@@ -745,12 +798,12 @@ ALTER TABLE `recipes_versions`
 -- AUTO_INCREMENT for table `steps`
 --
 ALTER TABLE `steps`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=379;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=402;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
