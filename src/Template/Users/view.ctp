@@ -81,6 +81,6 @@
                 </div>
               </div>
               <?php endforeach; ?>
-          </table>
+
   </div>
 </div>

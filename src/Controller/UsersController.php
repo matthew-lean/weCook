@@ -19,6 +19,7 @@ class UsersController extends AppController
         $this->paginate = [
             'contain' => ['Colours']
         ];
+
         $users = $this->paginate($this->Users);
         $this->set(compact('users'));
         $this->set('_serialize', ['users']);
@@ -35,6 +36,7 @@ class UsersController extends AppController
         $user = $this->Users->get($id, [
             'contain' => ['Colours', 'Recipes','Recipes.Ingredients','Recipes.ChildRecipes','Recipes.Users.Colours','Recipes.ChildRecipes.Users','Recipes.ChildRecipes.Users.Colours']
         ]);
+
         $this->set('user', $user);
         $this->set('_serialize', ['user']);
     }

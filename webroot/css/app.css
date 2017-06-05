@@ -325,9 +325,17 @@ button, .button{
     white-space: nowrap;
     background-color: #036aed;
     border-radius: 3px;
+    border-width: 4px;
+    border-color: #0f65d1;
 }
 button:hover, button:focus, .button:hover, .button:focus{
-  background-color:#0b66da;
+  background-color: #0f65d1;
+  border-style: solid;
+  border-width: 4px;
+  border-top-color: rgba(0, 0, 0, 0.2);
+  border-left-color: rgba(0, 0, 0, 0.2);
+  border-right-color: rgba(0, 0, 0, 0.2);
+  border-bottom-color: rgba(0, 0, 0, 0.2);
 }
 .form button:hover, .form button:focus{
   background-color:#0b66da;
