@@ -134,7 +134,7 @@ class UsersController extends AppController
         $this->Flash->success('You are logged out');
         return $this->redirect($this->Auth->logout());
     }
-    //Public pages which don't require user login
+    // Public pages which don't require user login
     public function beforeFilter(Event $event){
       $this->Auth->allow(['register']);
     }
